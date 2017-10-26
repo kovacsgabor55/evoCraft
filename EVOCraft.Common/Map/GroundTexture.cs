@@ -1,4 +1,4 @@
-﻿namespace EvoCraft.Common
+﻿namespace EvoCraft.Core
 {
     /// <summary>
     /// A föld kinézete egy adott helyen

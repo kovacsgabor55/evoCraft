@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EvoCraft.Common
+namespace EvoCraft.Core
 {
     [Serializable]
     public class GunMan : Unit

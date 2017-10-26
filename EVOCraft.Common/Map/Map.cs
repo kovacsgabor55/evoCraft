@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EvoCraft.Common
+namespace EvoCraft.Core
 {
     /// <summary>
     /// Holds all the data in the map in a 2d array of cells and the basic properties of the map.

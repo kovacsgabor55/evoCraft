@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EvoCraft.Common
+namespace EvoCraft.Core
 {
     /// <summary>
     /// Meant to represent mines

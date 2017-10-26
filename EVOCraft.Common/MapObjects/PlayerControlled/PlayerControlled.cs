@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EvoCraft.Common
+namespace EvoCraft.Core
 {
     /// <summary>
     /// Common abstraction for all player controlled units.

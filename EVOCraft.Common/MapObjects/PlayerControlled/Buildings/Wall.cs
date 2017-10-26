@@ -1,4 +1,4 @@
-﻿namespace EvoCraft.Common
+﻿namespace EvoCraft.Core
 {
     /// <summary>
     /// Basic building that blocks people.

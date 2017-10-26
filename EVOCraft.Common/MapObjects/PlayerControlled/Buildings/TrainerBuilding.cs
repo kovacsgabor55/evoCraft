@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EvoCraft.Common
+namespace EvoCraft.Core
 {
     public abstract class TrainerBuilding : Building
     {

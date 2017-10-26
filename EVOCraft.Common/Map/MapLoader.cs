@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace EvoCraft.Common
+namespace EvoCraft.Core
 {
     /// <summary>
     /// Loads the maps from the predefined way of .txt files.

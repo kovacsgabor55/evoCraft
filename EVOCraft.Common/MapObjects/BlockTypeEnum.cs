@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EvoCraft.Common
+namespace EvoCraft.Core
 {
     /// <summary>
     /// Tells wether an object can be on the same cell with other cells. <para/>

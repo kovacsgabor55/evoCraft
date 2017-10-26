@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EvoCraft.Common
+namespace EvoCraft.Core
 {
     /// <summary>
     /// A "Cell" or "Tile" in the map used only for the Pathfinding.

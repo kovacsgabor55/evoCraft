@@ -1,0 +1,5 @@
+D:\prog\Git\evoCraft\ChatBackEnd\bin\Debug\ChatBackEnd.dll
+D:\prog\Git\evoCraft\ChatBackEnd\bin\Debug\ChatBackEnd.pdb
+D:\prog\Git\evoCraft\ChatBackEnd\obj\Debug\ChatBackEnd.csprojResolveAssemblyReference.cache
+D:\prog\Git\evoCraft\ChatBackEnd\obj\Debug\ChatBackEnd.dll
+D:\prog\Git\evoCraft\ChatBackEnd\obj\Debug\ChatBackEnd.pdb

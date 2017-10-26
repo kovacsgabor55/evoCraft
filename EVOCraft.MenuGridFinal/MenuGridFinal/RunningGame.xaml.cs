@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Windows.Controls;
 using System.Windows.Threading;
-using EvoCraft.Common;
+using EvoCraft.Core;
 using System.IO;
 using System.Media;
 using System.Xml.Serialization;

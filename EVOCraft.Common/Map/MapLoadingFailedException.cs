@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EvoCraft.Common
+namespace EvoCraft.Core
 {
     /// <summary>
     /// Egy általánosító Exception annak a céljából, hogy egyértelmű legyen, hogy mit dobhat a MapLoader.

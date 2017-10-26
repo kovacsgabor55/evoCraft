@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVOCraft.Common", "EVOCraft.Common\EVOCraft.Common.csproj", "{4B6E5A4D-61C6-4A02-8AAD-291EC2FDF61C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVOCraft.Core", "EVOCraft.Common\EVOCraft.Core.csproj", "{4B6E5A4D-61C6-4A02-8AAD-291EC2FDF61C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVOCraft.Common_uTest", "EVOCraft.Common_UTest\EVOCraft.Common_uTest.csproj", "{6C4FEA83-5F18-4A30-9B5B-75241ACFF553}"
 EndProject
@@ -43,26 +43,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 6
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs41
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = EVOCraft.Common\\EVOCraft.Common.csproj
-		SccProjectName1 = EVOCraft.Common
-		SccLocalPath1 = EVOCraft.Common
-		SccProjectUniqueName2 = EVOCraft.Common_UTest\\EVOCraft.Common_uTest.csproj
-		SccProjectName2 = EVOCraft.Common_UTest
-		SccLocalPath2 = EVOCraft.Common_UTest
-		SccProjectUniqueName3 = ChatBackEnd\\ChatBackEnd.csproj
-		SccProjectName3 = ChatBackEnd
-		SccLocalPath3 = ChatBackEnd
-		SccProjectUniqueName4 = EVOCraft.MenuGridFinal\\MenuGridFinal\\EVOCraft.MenuGridFinal.csproj
-		SccProjectName4 = EVOCraft.MenuGridFinal/MenuGridFinal
-		SccLocalPath4 = EVOCraft.MenuGridFinal\\MenuGridFinal
-		SccProjectUniqueName5 = EvoCraft\u0020Setup\\EvoCraft\u0020Setup.vdproj
-		SccProjectName5 = EvoCraft\u0020Setup
-		SccLocalPath5 = EvoCraft\u0020Setup
 	EndGlobalSection
 EndGlobal

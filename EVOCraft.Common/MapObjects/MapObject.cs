@@ -1,4 +1,4 @@
-﻿namespace EvoCraft.Common
+﻿namespace EvoCraft.Core
 {
     /// <summary>
     /// Base class for all objects that will be displayed on the map.

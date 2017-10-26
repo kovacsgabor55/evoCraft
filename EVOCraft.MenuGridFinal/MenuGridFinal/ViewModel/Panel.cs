@@ -1,4 +1,4 @@
-﻿using EvoCraft.Common;
+﻿using EvoCraft.Core;
 using System.Collections.Generic;
 using System.ComponentModel;
 
@@ -14,7 +14,7 @@ namespace MenuGridFinal
             myActions = new List<ActionOnPanel>();
             for (int i=0; i< 8; i++)
             {
-                myActions.Add(new ActionOnPanel(EvoCraft.Common.Actions.None));
+                myActions.Add(new ActionOnPanel(EvoCraft.Core.Actions.None));
             }
             myFood = 100;
             myGold = 200;

@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using EvoCraft.Common;
+using EvoCraft.Core;
 using System.Collections.Generic;
 
 namespace EVOCraft.Common_UTest

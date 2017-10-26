@@ -1,4 +1,4 @@
-﻿namespace EvoCraft.Common
+﻿namespace EvoCraft.Core
 {
     public abstract class AggressiveAnimal : Animal
     {

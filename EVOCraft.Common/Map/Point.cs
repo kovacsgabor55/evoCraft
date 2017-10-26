@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EvoCraft.Common
+namespace EvoCraft.Core
 {
     /// <summary>
     /// Egy helyt jelölő osztály, aminek hasznos metódusai vannak a működéshez végzett számításokhoz.

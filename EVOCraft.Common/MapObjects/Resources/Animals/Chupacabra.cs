@@ -1,4 +1,4 @@
-﻿namespace EvoCraft.Common
+﻿namespace EvoCraft.Core
 {
     public class Chupacabra: AggressiveAnimal
     {

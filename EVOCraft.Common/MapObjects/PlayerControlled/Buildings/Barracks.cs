@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace EvoCraft.Common
+namespace EvoCraft.Core
 {
     public class Barracks : TrainerBuilding
     {

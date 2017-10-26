@@ -59,9 +59,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EVOCraft.Common\EVOCraft.Common.csproj">
+    <ProjectReference Include="..\EVOCraft.Common\EVOCraft.Core.csproj">
       <Project>{4b6e5a4d-61c6-4a02-8aad-291ec2fdf61c}</Project>
-      <Name>EVOCraft.Common</Name>
+      <Name>EVOCraft.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
