@@ -5,7 +5,6 @@ using System.IO;
 using System.Xml.Serialization;
 using System.Windows.Media.Animation;
 using System.Media;
-using ChatBackend;
 
 namespace View
 {
@@ -44,11 +43,11 @@ namespace View
 
             if (File.Exists("options.xml"))
             {
-                XmlSerializer xs = new XmlSerializer(typeof(Information));
+                /*XmlSerializer xs = new XmlSerializer(typeof(Information));
                 FileStream read = new FileStream("options.xml", FileMode.Open, FileAccess.Read, FileShare.Read);
                 Information info = (Information)xs.Deserialize(read);
 
-               options.yourNameTextBox.Text = info.UserName;
+               options.yourNameTextBox.Text = info.UserName;*/
             }
         }
 

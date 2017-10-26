@@ -5,11 +5,7 @@ using System.Windows.Threading;
 using EvoCraft.Core;
 using System.IO;
 using System.Media;
-using System.Xml.Serialization;
 using System.Windows.Input;
-using ChatBackend;
-using System.Windows.Navigation;
-using System.Collections.Generic;
 
 namespace View
 {
@@ -21,7 +17,7 @@ namespace View
         ViewModel viewModel;
         BackgroundWorker threadForBackEnd;
         SoundPlayer soundPlayer = new SoundPlayer();
-        private ChatBackend.ChatBackend backend;
+        //private ChatBackend.ChatBackend backend;
 
         public RunningGame()
         {
@@ -181,14 +177,14 @@ namespace View
 
         private void EndGame()
         {
-            EndGameWindow modalWindow = new EndGameWindow(Engine.State);
+            /*EndGameWindow modalWindow = new EndGameWindow(Engine.State);
             modalWindow.ShowDialog();
 
             if (modalWindow.response == GameState.Defeat)
             {
                 MainMenu page = new MainMenu();
                 this.NavigationService.Navigate(page);
-            }
+            }*/
         }
 
 

@@ -14,3 +14,4 @@ D:\prog\Git\evoCraft\EVOCraft.Common\bin\Debug\EVOCraft.common.dll
 D:\prog\Git\evoCraft\EVOCraft.Common\bin\Debug\EVOCraft.common.pdb
 D:\prog\Git\evoCraft\EVOCraft.Common\obj\Debug\EVOCraft.common.dll
 D:\prog\Git\evoCraft\EVOCraft.Common\obj\Debug\EVOCraft.common.pdb
+D:\prog\Git\evoCraft\EVOCraft.Common\obj\Debug\EVOCraft.Core.csprojResolveAssemblyReference.cache
