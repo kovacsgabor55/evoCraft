@@ -214,10 +214,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ChatBackEnd\ChatBackEnd.csproj">
-      <Project>{032d963e-6451-4214-95c8-8fe91c6eceb5}</Project>
-      <Name>ChatBackEnd</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\EVOCraft.Common\EVOCraft.Core.csproj">
       <Project>{4b6e5a4d-61c6-4a02-8aad-291ec2fdf61c}</Project>
       <Name>EVOCraft.Core</Name>
