@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace MenuGridFinal
+namespace View
 {
     /// <summary>
     /// Copied code from StackOwerflow to make clicks work. IDK how it works but it does, so don't bother with it.

@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 
-namespace MenuGridFinal
+namespace View
 {
     /// <summary>
     /// Interaction logic for LogoScreen.xaml

@@ -1,7 +1,7 @@
 ﻿using EvoCraft.Core;
 using System;
 
-namespace MenuGridFinal
+namespace View
 {
     /// <summary>
     /// Class that helps the conversion of the type of a MapObject to a MapObjectImage Enum.

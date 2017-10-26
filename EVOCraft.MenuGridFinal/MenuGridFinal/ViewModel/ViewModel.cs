@@ -1,7 +1,7 @@
 ﻿using EvoCraft.Core;
 using System.Collections.Generic;
 
-namespace MenuGridFinal
+namespace View
 {
     /// <summary>
     /// Az összekötő kapocs a Model és a View Között. A valóságos váltotatásokat a RunningGame végzi.

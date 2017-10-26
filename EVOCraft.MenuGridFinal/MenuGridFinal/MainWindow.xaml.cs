@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace MenuGridFinal
+namespace View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

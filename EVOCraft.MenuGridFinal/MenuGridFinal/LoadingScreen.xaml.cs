@@ -5,7 +5,7 @@ using System.Windows.Navigation;
 using System.Windows.Threading;
 using System.Windows.Media;
 
-namespace MenuGridFinal
+namespace View
 {
     /// <summary>
     /// Interaction logic for LoadingScreen.xaml

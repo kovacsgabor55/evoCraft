@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using System.IO;
 using System.Xml.Serialization;
 
-namespace MenuGridFinal
+namespace View
 {
     /// <summary>
     /// Interaction logic for Join.xaml

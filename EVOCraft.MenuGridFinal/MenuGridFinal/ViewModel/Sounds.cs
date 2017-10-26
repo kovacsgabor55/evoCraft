@@ -5,7 +5,7 @@ using System.IO;
 using System.Media;
 using System.Windows.Media;
 
-namespace MenuGridFinal
+namespace View
 {
     public class Sounds
     {
@@ -221,18 +221,18 @@ namespace MenuGridFinal
 
         public static void StartMenuMusic()
         {
-            if (!global::MenuGridFinal.Properties.Settings.Default.MenuSoundPlayerActive)
+            if (!global::View.Properties.Settings.Default.MenuSoundPlayerActive)
             {
                 menuSoundPlayer.SoundLocation = path + "EpicSongForMenu.wav";
                 menuSoundPlayer.PlayLooping();
-                global::MenuGridFinal.Properties.Settings.Default.MenuSoundPlayerActive = true;
+                global::View.Properties.Settings.Default.MenuSoundPlayerActive = true;
             }
         }
 
         public static void StopMenuMusic()
         {
             menuSoundPlayer.Stop();
-            global::MenuGridFinal.Properties.Settings.Default.MenuSoundPlayerActive = false;
+            global::View.Properties.Settings.Default.MenuSoundPlayerActive = false;
         }
 
         public static void InGameMusic()

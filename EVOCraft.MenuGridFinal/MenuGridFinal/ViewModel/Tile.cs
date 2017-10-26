@@ -1,7 +1,7 @@
 ﻿using EvoCraft.Core;
 using System.ComponentModel;
 
-namespace MenuGridFinal
+namespace View
 {
     /// <summary>
     /// Ez az osztály a kirajzolás egy cellája.

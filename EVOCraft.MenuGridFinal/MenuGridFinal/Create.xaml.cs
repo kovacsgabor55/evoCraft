@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MenuGridFinal
+namespace View
 {
     /// <summary>
     /// Interaction logic for Create.xaml

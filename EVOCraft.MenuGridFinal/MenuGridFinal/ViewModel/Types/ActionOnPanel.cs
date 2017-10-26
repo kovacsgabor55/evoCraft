@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace MenuGridFinal
+namespace View
 {
     public class ActionOnPanel : INotifyPropertyChanged
     {

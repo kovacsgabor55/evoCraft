@@ -7,7 +7,7 @@ using System.Windows.Media.Animation;
 using System.Media;
 using ChatBackend;
 
-namespace MenuGridFinal
+namespace View
 {
     /// <summary>
     /// Interaction logic for MainMenu.xaml

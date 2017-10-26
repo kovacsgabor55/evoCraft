@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MenuGridFinal.Properties {
+namespace View.Properties {
     using System;
     
     

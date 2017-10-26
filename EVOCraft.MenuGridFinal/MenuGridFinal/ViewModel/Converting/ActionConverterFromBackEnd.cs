@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace MenuGridFinal
+namespace View
 {
     /// <summary>
     /// Helps the conversion from the back end types to the front end rendering types

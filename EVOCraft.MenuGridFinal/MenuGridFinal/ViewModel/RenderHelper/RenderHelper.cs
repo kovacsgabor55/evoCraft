@@ -1,6 +1,6 @@
 ﻿using EvoCraft.Core;
 
-namespace MenuGridFinal
+namespace View
 {
     public class RenderHelper
     {

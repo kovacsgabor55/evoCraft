@@ -5,7 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 
-namespace MenuGridFinal
+namespace View
 {
     /// <summary>
     /// Interaction logic for TutorialsPage.xaml

@@ -17,7 +17,7 @@ using System.Xml.Serialization;
 using System.Windows.Media.Animation;
 using ChatBackend;
 
-namespace MenuGridFinal
+namespace View
 {
     /// <summary>
     /// Interaction logic for Options.xaml

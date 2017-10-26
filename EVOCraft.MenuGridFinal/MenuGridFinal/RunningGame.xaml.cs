@@ -11,7 +11,7 @@ using ChatBackend;
 using System.Windows.Navigation;
 using System.Collections.Generic;
 
-namespace MenuGridFinal
+namespace View
 {
     /// <summary>
     /// Interaction logic for RunningGame.xaml
@@ -27,13 +27,13 @@ namespace MenuGridFinal
         {
             InitializeComponent();
 
-            if (!global::MenuGridFinal.Properties.Settings.Default.RunningGameSoundPlayerActive)
+            if (!global::View.Properties.Settings.Default.RunningGameSoundPlayerActive)
             {
                 string path = System.IO.Directory.GetCurrentDirectory();
                 path = new DirectoryInfo(path).FullName.ToString();
                 soundPlayer.SoundLocation = path + "\\Sounds\\EpicBattleMusic.wav";
                 soundPlayer.PlayLooping();
-                global::MenuGridFinal.Properties.Settings.Default.RunningGameSoundPlayerActive = true;
+                global::View.Properties.Settings.Default.RunningGameSoundPlayerActive = true;
             }
             
             //// Loading a Map
@@ -165,11 +165,11 @@ namespace MenuGridFinal
                 switch (viewModel.Panel.CurrentGameState)
                 {
                     case GameState.Victory:
-                        global::MenuGridFinal.Properties.Settings.Default.RunningGameSoundPlayerActive = false;
+                        global::View.Properties.Settings.Default.RunningGameSoundPlayerActive = false;
                         Sounds.PlayVictorySong();
                         break;
                     case GameState.Defeat:
-                        global::MenuGridFinal.Properties.Settings.Default.RunningGameSoundPlayerActive = false;
+                        global::View.Properties.Settings.Default.RunningGameSoundPlayerActive = false;
                         Sounds.PlayDefeatSong();
                         break;
                     default:
@@ -227,7 +227,7 @@ namespace MenuGridFinal
         private void Page_onClose()
         {
             soundPlayer.Stop();
-            global::MenuGridFinal.Properties.Settings.Default.RunningGameSoundPlayerActive = false;
+            global::View.Properties.Settings.Default.RunningGameSoundPlayerActive = false;
         }
         
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace MenuGridFinal
+namespace View
 {
     /// <summary>
     /// Ez az osztály tartalmazza azokat a bind-olt propertyket amik a játékban a panelen jelennek meg.

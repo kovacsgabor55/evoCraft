@@ -1,4 +1,4 @@
-﻿namespace MenuGridFinal
+﻿namespace View
 {
     public class RenderCell
     {
