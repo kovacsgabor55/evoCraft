@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVOCraft.Core", "EVOCraft.Common\EVOCraft.Core.csproj", "{4B6E5A4D-61C6-4A02-8AAD-291EC2FDF61C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVOCraft.Common_uTest", "EVOCraft.Common_UTest\EVOCraft.Common_uTest.csproj", "{6C4FEA83-5F18-4A30-9B5B-75241ACFF553}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVOCraft.Core.UnitTest", "EVOCraft.Common_UTest\EVOCraft.Core.UnitTest.csproj", "{6C4FEA83-5F18-4A30-9B5B-75241ACFF553}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVOCraft.View", "EVOCraft.MenuGridFinal\MenuGridFinal\EVOCraft.View.csproj", "{046E695D-DAE0-4FA3-8FE6-CD226F3769DD}"
 	ProjectSection(ProjectDependencies) = postProject

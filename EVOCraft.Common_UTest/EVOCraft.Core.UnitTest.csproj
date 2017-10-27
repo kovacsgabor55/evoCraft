@@ -6,8 +6,8 @@
     <ProjectGuid>{6C4FEA83-5F18-4A30-9B5B-75241ACFF553}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EVOCraft.Common_UTest</RootNamespace>
-    <AssemblyName>EVOCraft.Common_UTest</AssemblyName>
+    <RootNamespace>EVOCraft.Core.UnitTest</RootNamespace>
+    <AssemblyName>EVOCraft.Core.UnitTest</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
