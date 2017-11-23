@@ -1,0 +1,89 @@
+﻿
+# This is a comment line
+# Every property is set in the following way:
+# PropertyName: value
+# The values can be strings or numbers, the types need to correspond to the given property.
+# This file shows all the possible properties and their values.
+
+# General info
+Title: Victory - Defeat test
+Author: Lévai Krisztián
+
+# Starting Resources
+Gold: 200
+Wood: 200
+Food: 200
+
+# Map Size
+Width: 50
+Height: 40
+
+# Now let's see the map data. It is set in a very particular way.
+# The parser will look for the "Map:" keyword.
+# After that, no more comments can be made. The parser will expect every line to be as long as the width
+# and it will expect that there be height amount of lines.
+# Every character will have a meaning for it:
+# 
+# . means nothing, it is used for spacing the characters out.
+# 
+# H means MainHall
+# X means Wall
+# B means Barracs
+# E means Tower
+# S means MedicalTent
+
+# W means Worker
+# S means Soldier
+# P means Hero
+# D means Doctor
+
+# O means Rock (O like Ocean, not zero.)
+# T means Tree
+# M means Mine (Every mine starts with 500 gold.)
+# F means Farm
+# 1 means Sloth
+# 2 means Llama
+# 3 means Chupacabra
+# 4 means Boss
+
+Map:
+OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+O.............O..................................O
+O..S..........O..................................O
+O.............O..................................O
+O.............OO.................................O
+O.............3O.................................O
+OOOOOOOOOOOOOOOO.................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
