@@ -10,7 +10,6 @@ D:\prog\Git\evoCraft\EVOCraft.Common\bin\Debug\PersistedData\Sablonok\sablon50-4
 D:\prog\Git\evoCraft\EVOCraft.Common\bin\Debug\Maps\first.txt
 D:\prog\Git\evoCraft\EVOCraft.Common\bin\Debug\PersistedData\Sablonok\sablon.txt
 D:\prog\Git\evoCraft\EVOCraft.Common\bin\Debug\Maps\defender.txt
-D:\prog\Git\evoCraft\EVOCraft.Common\bin\Debug\EVOCraft.common.dll
 D:\prog\Git\evoCraft\EVOCraft.Common\bin\Debug\EVOCraft.common.pdb
 D:\prog\Git\evoCraft\EVOCraft.Common\obj\Debug\EVOCraft.common.dll
 D:\prog\Git\evoCraft\EVOCraft.Common\obj\Debug\EVOCraft.common.pdb
@@ -31,3 +30,5 @@ D:\prog\Git\evoCraft\EvoCraft.Core\bin\Debug\EvoCraft.Core.pdb
 D:\prog\Git\evoCraft\EvoCraft.Core\obj\Debug\EvoCraft.Core.csprojResolveAssemblyReference.cache
 D:\prog\Git\evoCraft\EvoCraft.Core\obj\Debug\EvoCraft.Core.dll
 D:\prog\Git\evoCraft\EvoCraft.Core\obj\Debug\EvoCraft.Core.pdb
+D:\prog\Git\evoCraft\EvoCraft.Core\bin\Debug\EvoCraft.Common.dll
+D:\prog\Git\evoCraft\EvoCraft.Core\bin\Debug\EvoCraft.Common.pdb

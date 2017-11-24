@@ -1,4 +1,5 @@
 ﻿using EvoCraft.Core;
+using EvoCraft.Common;
 using System.Collections.Generic;
 using System.ComponentModel;
 
@@ -14,7 +15,7 @@ namespace View
             myActions = new List<ActionOnPanel>();
             for (int i=0; i< 8; i++)
             {
-                myActions.Add(new ActionOnPanel(EvoCraft.Core.Actions.None));
+                myActions.Add(new ActionOnPanel(EvoCraft.Common.Actions.None));
             }
             myFood = 100;
             myGold = 200;

@@ -200,6 +200,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EvoCraft.Common\EvoCraft.Common.csproj">
+      <Project>{28992031-8E72-419F-ACD5-C9DF52640179}</Project>
+      <Name>EvoCraft.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EvoCraft.Core\EvoCraft.Core.csproj">
       <Project>{4b6e5a4d-61c6-4a02-8aad-291ec2fdf61c}</Project>
       <Name>EVOCraft.Core</Name>

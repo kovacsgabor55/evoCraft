@@ -1,4 +1,6 @@
-﻿namespace EvoCraft.Core
+﻿using EvoCraft.Common;
+
+namespace EvoCraft.Core
 {
     public class FarmBuilding : Building
     {

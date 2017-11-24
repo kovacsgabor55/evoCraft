@@ -1,4 +1,5 @@
-﻿using EvoCraft.Core;
+﻿using EvoCraft.Common;
+using EvoCraft.Core;
 using System.Collections.Generic;
 
 namespace View
@@ -46,7 +47,7 @@ namespace View
         /// <param name="tile"></param>
         private void OnTileActionClick(Tile tile)
         {
-            Point pointOnMap = new Point(tile.Row + RenderHelper.Instance.LeftTopCorner.Row, tile.Col + RenderHelper.Instance.LeftTopCorner.Column);
+            EvoCraft.Common.Point pointOnMap = new Point(tile.Row + RenderHelper.Instance.LeftTopCorner.Row, tile.Col + RenderHelper.Instance.LeftTopCorner.Column);
             Cell selectedCell = Engine.Map.GetCellAt(pointOnMap); // Innen lehet tudni, hova klikkeltek
 
             if (Engine.SelectedMapObject != null)
@@ -151,7 +152,7 @@ namespace View
         private void OnTileSelectionClick(Tile tile)
         {
             BuildMode = false;
-            Point pointOnMap = new Point(tile.Row + RenderHelper.Instance.LeftTopCorner.Row, tile.Col + RenderHelper.Instance.LeftTopCorner.Column);
+            EvoCraft.Common.Point pointOnMap = new Point(tile.Row + RenderHelper.Instance.LeftTopCorner.Row, tile.Col + RenderHelper.Instance.LeftTopCorner.Column);
             Cell selectedCell = Engine.Map.GetCellAt(pointOnMap); // Innen lehet tudni, hova klikkeltek
 
             MapObject mo = null;

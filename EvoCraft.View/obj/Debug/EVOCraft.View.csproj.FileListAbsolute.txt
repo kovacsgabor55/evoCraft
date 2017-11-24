@@ -175,3 +175,5 @@ D:\prog\Git\evoCraft\EvoCraft.View\obj\Debug\TutorialsPage.baml
 D:\prog\Git\evoCraft\EvoCraft.View\obj\Debug\EvoCraft.g.resources
 D:\prog\Git\evoCraft\EvoCraft.View\obj\Debug\MenuGridFinal.Properties.Resources.resources
 D:\prog\Git\evoCraft\EvoCraft.View\obj\Debug\EvoCraft.View.csproj.GenerateResource.Cache
+D:\prog\Git\evoCraft\EvoCraft.View\bin\Debug\EvoCraft.Common.dll
+D:\prog\Git\evoCraft\EvoCraft.View\bin\Debug\EvoCraft.Common.pdb
