@@ -14,7 +14,7 @@ namespace EvoCraft.Core
             : base("Medical tent", 100, 10, PlayerId, null, UnderConstruction, 4, new ResourceSet(GoldCost, FoodCost, FoodCost))
         { }
         
-        internal override void FinishBuilding()
+        public override void FinishBuilding()
         {
             ActualHealthPoints = MaximalHealthPoints;
             PossibleActions = new List<Actions> { Actions.TrainDoctor, Actions.Cancel };

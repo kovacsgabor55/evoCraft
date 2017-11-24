@@ -52,7 +52,7 @@ namespace EvoCraft.Core
             }
         }
 
-        internal override void FinishBuilding()
+        public override void FinishBuilding()
         {
             ActualHealthPoints = MaximalHealthPoints;
             SightRange = 11;

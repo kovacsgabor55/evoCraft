@@ -48,7 +48,7 @@ namespace EvoCraft.Core
         /// <summary>
         /// Heal the target if next to it.
         /// </summary>
-        internal void Heal(Point pos)
+        public void Heal(Point pos)
         {
             if (MoveTarget != null && pos.DistanceFrom(MoveTarget) == 1)
             {

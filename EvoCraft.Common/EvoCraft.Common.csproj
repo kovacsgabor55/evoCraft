@@ -39,10 +39,15 @@
     <Compile Include="MapObjects\BlockTypeEnum.cs" />
     <Compile Include="MapObjects\MapObject.cs" />
     <Compile Include="MapObjects\PlayerControlled\Actions.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Buildings\Building.cs" />
+    <Compile Include="MapObjects\PlayerControlled\PlayerControlled.cs" />
     <Compile Include="MapObjects\Resources\ResourceType.cs" />
     <Compile Include="MapObjects\Rock.cs" />
     <Compile Include="Map\Point.cs" />
     <Compile Include="ResourceSet.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MapObjects\PlayerControlled\Units\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

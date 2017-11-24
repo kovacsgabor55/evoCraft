@@ -19,7 +19,7 @@ namespace EvoCraft.Core
         }
 
         // it changes into a farm resource when it is finished.
-        internal override void FinishBuilding()
+        public override void FinishBuilding()
         {
             bool found;
             Point pos = Engine.GetMapObjectPosition(this, out found);

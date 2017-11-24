@@ -51,24 +51,24 @@
     <Compile Include="AStar\AStarSearch.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="MapObjects\Bullet.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Buildings\Barracks.cs" />
     <Compile Include="MapObjects\PlayerControlled\Buildings\FarmBuilding.cs" />
     <Compile Include="MapObjects\PlayerControlled\Buildings\MedicalTent.cs" />
     <Compile Include="MapObjects\PlayerControlled\Buildings\Tower.cs" />
     <Compile Include="MapObjects\PlayerControlled\Buildings\TrainerBuilding.cs" />
-    <Compile Include="MapObjects\PlayerControlled\PlayerControlled.cs" />
     <Compile Include="MapObjects\PlayerControlled\Units\GunMan.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Units\Unit.cs" />
     <Compile Include="MapObjects\Resources\Animals\AggressiveAnimal.cs" />
     <Compile Include="MapObjects\Resources\Animals\Boss.cs" />
     <Compile Include="MapObjects\Resources\Animals\Rolls.cs" />
     <Compile Include="MapObjects\PlayerControlled\Units\Doctor.cs" />
     <Compile Include="MapObjects\PlayerControlled\Units\Hero.cs" />
-    <Compile Include="MapObjects\SoundState.cs" />
+    <Compile Include="Map\PointExtension.cs" />
+    <Compile Include="SoundState.cs" />
     <Compile Include="Engine.cs" />
-    <Compile Include="MapObjects\PlayerControlled\Buildings\Barracks.cs" />
     <Compile Include="MapObjects\PlayerControlled\Units\Order.cs" />
     <Compile Include="MapObjects\PlayerControlled\Units\Soldier.cs" />
     <Compile Include="MapObjects\Resources\Animals\Animal.cs" />
-    <Compile Include="MapObjects\PlayerControlled\Buildings\Building.cs" />
     <Compile Include="MapObjects\Resources\Animals\Chupacabra.cs" />
     <Compile Include="MapObjects\Resources\Farm.cs" />
     <Compile Include="MapObjects\Resources\Animals\Llama.cs" />
@@ -103,11 +103,9 @@
     <Compile Include="ProfileManager.cs" />
     <Compile Include="MapObjects\Resources\Resource.cs" />
     <Compile Include="MapObjects\Resources\Tree.cs" />
-    <Compile Include="MapObjects\PlayerControlled\Units\Unit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MapObjects\PlayerControlled\Buildings\Wall.cs" />
     <Compile Include="MapObjects\PlayerControlled\Units\Worker.cs" />
-    <Compile Include="ResourceSet.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Maps\battle.txt">

@@ -17,7 +17,7 @@ namespace EvoCraft.Core
         { }
         
 
-        internal override void FinishBuilding()
+        public override void FinishBuilding()
         {
             ActualHealthPoints = MaximalHealthPoints;
             PossibleActions = new List<Actions> { Actions.TrainSoldier, Actions.TrainPozsiHero, Actions.TrainGunMan, Actions.Cancel };

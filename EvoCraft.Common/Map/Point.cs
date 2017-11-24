@@ -37,17 +37,17 @@ namespace EvoCraft.Common
         /// </summary>
         /// <param name="points"></param>
         /// <returns></returns>
-        public bool IsInList(List<Point> points)
-        {
-            foreach(Point p in points)
-            {
-                if (p.Equals(this))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
+        //public bool IsInList(List<Point> points)
+        //{
+        //    foreach(Point p in points)
+        //    {
+        //        if (p.Equals(this))
+        //        {
+        //            return true;
+        //        }
+        //    }
+        //    return false;
+        //}
         
         public override string ToString()
         {

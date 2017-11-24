@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EvoCraft.Common
+﻿namespace EvoCraft.Common
 {
     /// <summary>
     /// Tells wether an object can be on the same cell with other cells. <para/>
