@@ -43,7 +43,12 @@
     <Compile Include="MapObjects\PlayerControlled\PlayerControlled.cs" />
     <Compile Include="MapObjects\Resources\ResourceType.cs" />
     <Compile Include="MapObjects\Rock.cs" />
+    <Compile Include="Map\Cell.cs" />
+    <Compile Include="Map\Direction.cs" />
+    <Compile Include="Map\GroundTexture.cs" />
+    <Compile Include="Map\Map.cs" />
     <Compile Include="Map\Point.cs" />
+    <Compile Include="Map\VisibilityType.cs" />
     <Compile Include="ResourceSet.cs" />
   </ItemGroup>
   <ItemGroup>
