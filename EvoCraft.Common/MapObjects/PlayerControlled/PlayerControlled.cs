@@ -15,7 +15,7 @@ namespace EvoCraft.Common
         /// <summary>
         /// The actual Health Points of the building
         /// </summary>
-        public int ActualHealthPoints { get; protected internal set; }
+        public int ActualHealthPoints { get; set; }
 
         /// <summary>
         /// The id of the player that owns the building.
@@ -62,20 +62,6 @@ namespace EvoCraft.Common
             this.Costs = Costs;
             this.PossibleActions = PossibleActions;
             this.NextAxtion = NextAxtion;
-        }
-
-        public void TakeDamage(int damage)
-        {
-            ActualHealthPoints -= damage;
-        }
-
-        public void TakeHealing(int points)
-        {
-            ActualHealthPoints += points;
-            if (ActualHealthPoints > MaximalHealthPoints)
-            {
-                ActualHealthPoints = MaximalHealthPoints;
-            }
         }
     }
 }

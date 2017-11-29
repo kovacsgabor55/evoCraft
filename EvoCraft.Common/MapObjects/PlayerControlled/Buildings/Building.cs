@@ -45,15 +45,6 @@ namespace EvoCraft.Common
             this.InitialBuildTime = BuildTime;
         }
 
-        public void beBuilt()
-        {
-            if (IsUnderConstruction && BuildTime > 0)
-            {
-                BuildTime--;
-                ActualHealthPoints += MaximalHealthPoints / InitialBuildTime;
-            }
-        }
-
         public virtual void FinishBuilding()
         {
             ActualHealthPoints = MaximalHealthPoints;
