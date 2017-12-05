@@ -54,7 +54,7 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Units
             {
                 foreach (MapObject mo in Engine.Map.GetCellAt(MoveTarget).MapObjects)
                 {
-                    if (mo.GetType().IsSubclassOf(typeof(Unit)))
+                    if (mo is Unit)))
                     {
                         Unit a = (Unit)mo;
                         a.TakeHealing(Damage);

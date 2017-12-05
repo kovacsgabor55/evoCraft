@@ -31,7 +31,7 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Units
         /// <summary>
         /// Visszaadja az egység sebességét.
         /// </summary>
-        protected public int Speed
+         int Speed
         {
             get
             {
@@ -42,7 +42,7 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Units
         /// <summary>
         /// képzéshez szükséges idő.
         /// </summary>
-        protected public int TrainingTime { get; set; }
+         int TrainingTime { get; set; }
 
 
         public bool AlertMode = true;
@@ -55,7 +55,7 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Units
         /// <param name="damage">Az egység által bevihető sebzés.</param>
         /// <param name="speed">Az egység sebessége.</param>
         /// <param name="cost">Az egység ára.</param>
-        protected public Unit(
+         Unit(
             string Label, 
             int fullhealth, 
             int damage, 

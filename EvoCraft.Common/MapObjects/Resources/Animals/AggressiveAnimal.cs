@@ -21,7 +21,7 @@
                 PlayerControlled playerctrl = null;
                 foreach (MapObject mo in Engine.Map.GetCellAt(MoveTarget).MapObjects)
                 {
-                    if (mo.GetType().IsSubclassOf(typeof(PlayerControlled)))
+                    if (mo is PlayerControlled)))
                     {
                         playerctrl = (PlayerControlled)mo;
                         playerctrl.TakeDamage(Damage);

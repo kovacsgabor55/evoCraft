@@ -1,4 +1,8 @@
-﻿using System;
+﻿using EvoCraft.Common.Map;
+using EvoCraft.Common.MapObjects.PlayerControlled.Buildings;
+using EvoCraft.Common.MapObjects.Resources;
+using EvoCraft.Common.MapObjects.Resources.Animals;
+using System;
 using System.Collections.Generic;
 
 namespace EvoCraft.Common.MapObjects.PlayerControlled.Units
@@ -19,7 +23,7 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Units
         /// <summary>
         /// A munkás maximális tárolási kapacitása
         /// </summary>
-        protected public int Capacity
+         int Capacity
         {
             get
             {
@@ -127,12 +131,12 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Units
                         bool ResourceIsNotValid = true;
                         foreach (MapObject mo in Engine.Map.GetCellAt(RememberedGatherTarget).MapObjects)
                         {
-                            if (mo.GetType().IsSubclassOf(typeof(Resource)))
+                            if (mo is Resource)
                             {
                                 Resource res = (Resource)mo;
                                 if (res.Type == ResourceType.Food)
                                 {
-                                    if (mo.GetType().IsSubclassOf(typeof(Animal)))
+                                    if (mo is Animal)
                                     {
                                         Animal animal = (Animal)mo;
                                         if (animal.Dead)
@@ -165,7 +169,7 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Units
                         ResourceIsNotValid = true;
                         foreach (MapObject mo in Engine.Map.GetCellAt(RememberedGatherTarget).MapObjects)
                         {
-                            if (mo.GetType().IsSubclassOf(typeof(Resource)))
+                            if (mo is Resource)
                             {
                                 Resource res = (Resource)mo;
                                 if (res.Type == ResourceType.Gold)
@@ -184,7 +188,7 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Units
                         ResourceIsNotValid = true;
                         foreach (MapObject mo in Engine.Map.GetCellAt(RememberedGatherTarget).MapObjects)
                         {
-                            if (mo.GetType().IsSubclassOf(typeof(Resource)))
+                            if (mo is Resource)
                             {
                                 Resource res = (Resource)mo;
                                 if (res.Type == ResourceType.Wood)
@@ -231,7 +235,7 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Units
         /// <summary>
         /// Adds the amount if it can. If it can't it simply ignores the amount.
         /// </summary>
-        protected public void AddAmount(int amount)
+         void AddAmount(int amount)
         {
             if (myCapacity > myAmount)
             {
@@ -243,7 +247,7 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Units
             }
         }
 
-        protected public int HowMuchCanILoad()
+         int HowMuchCanILoad()
         {
             return myCapacity - myAmount;
         }
@@ -285,10 +289,10 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Units
             {
                 foreach (MapObject mo in Engine.Map.GetCellAt(MoveTarget).MapObjects)
                 {
-                    if (mo.GetType().IsSubclassOf(typeof(Resource)))
+                    if (mo is Resource)
                     {
 
-                        if (mo.GetType().IsSubclassOf(typeof(Animal)))
+                        if (mo is Animal)
                         {
                             Animal animal = (Animal)mo;
                             if (animal.Dead)
@@ -376,7 +380,7 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Units
             {
                 foreach (MapObject mo in Engine.Map.GetCellAt(MoveTarget).MapObjects)
                 {
-                    if (mo.GetType().IsSubclassOf(typeof(Building)))
+                    if (mo is Building)
                     {
                         Building b = (Building)mo;
                         if (b.IsUnderConstruction)

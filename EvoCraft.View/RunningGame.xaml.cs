@@ -81,7 +81,7 @@ namespace View
                         // Setting target
                         if (Engine.SelectedMapObject != null)
                         {
-                            if (Engine.SelectedMapObject.GetType().IsSubclassOf(typeof(Unit)))
+                            if (Engine.SelectedMapObject is Unit)))
                             {
                                 Unit unit = (Unit)Engine.SelectedMapObject;
                                 if (unit.MoveTarget != null && (unit.MoveTarget.x - RenderHelper.Instance.LeftTopCorner.Row) == i && (unit.MoveTarget.y - RenderHelper.Instance.LeftTopCorner.Column) == j)
@@ -89,7 +89,7 @@ namespace View
                                     viewModel.Tiles[j + i * viewModel.Columns].Selection = SelectionImage.MoveTarget;
                                 }
                             }
-                            if (Engine.SelectedMapObject.GetType().IsSubclassOf(typeof(TrainerBuilding)))
+                            if (Engine.SelectedMapObject is TrainerBuilding)))
                             {
                                 TrainerBuilding b = (TrainerBuilding)Engine.SelectedMapObject;
                                 if (b.SpawnTarget != null && (b.SpawnTarget.x - RenderHelper.Instance.LeftTopCorner.Row) == i && (b.SpawnTarget.y - RenderHelper.Instance.LeftTopCorner.Column) == j)
@@ -110,7 +110,7 @@ namespace View
                                         MapObjectConverterFromBackEnd.Convert(mapObj);
                             } else
                             {
-                                if (mapObj.GetType().IsSubclassOf(typeof(Animal)))
+                                if (mapObj is Animal)))
                                 {
                                     Animal animal = (Animal)mapObj;
                                     if (animal.Dead || viewModel.Tiles[j + i * viewModel.Columns].Visibility == VisibilityType.Active)
@@ -292,7 +292,7 @@ namespace View
                 viewModel.Panel.SelectedMapObjectInfo = "";
                 viewModel.Panel.SelectedMapObjectImage = MapObjectConverterFromBackEnd.Convert(Engine.SelectedMapObject);
                 viewModel.Panel.SelectedMapObjectLabel = Engine.SelectedMapObject.Label;
-                if (Engine.SelectedMapObject.GetType().IsSubclassOf(typeof(Unit)))
+                if (Engine.SelectedMapObject is Unit)))
                 {
                     ActionConverterFromBackEnd.RefreshActionList(viewModel.Panel.Actions, (Unit)Engine.SelectedMapObject);
 
@@ -343,12 +343,12 @@ namespace View
                         viewModel.Panel.SelectedMapObjectInfo = info;
                     }
                 }
-                else if (Engine.SelectedMapObject.GetType().IsSubclassOf(typeof(Building)))
+                else if (Engine.SelectedMapObject is Building)))
                 {
                     Building building = (Building)Engine.SelectedMapObject;
                     viewModel.Panel.SelectedMapObjectHealth = "Health: " + building.ActualHealthPoints + "/" + building.MaximalHealthPoints;
                     ActionConverterFromBackEnd.RefreshActionList(viewModel.Panel.Actions, (Building)Engine.SelectedMapObject);
-                    if (Engine.SelectedMapObject.GetType().IsSubclassOf(typeof(TrainerBuilding)))
+                    if (Engine.SelectedMapObject is TrainerBuilding)))
                     {
                         TrainerBuilding tb = (TrainerBuilding)Engine.SelectedMapObject;
                         if (tb.GetNumberOfUnitsInTheQueue() > 0)
@@ -361,7 +361,7 @@ namespace View
                         }
                     }
                 }
-                else if (Engine.SelectedMapObject.GetType().IsSubclassOf(typeof(Resource)))
+                else if (Engine.SelectedMapObject is Resource)))
                 {
                     ActionConverterFromBackEnd.RefreshActionListToNone(viewModel.Panel.Actions);
 
@@ -374,7 +374,7 @@ namespace View
                         case ResourceType.Gold: info = "Contains: " + resource.Capacity + " gold"; break;
                     }
                     viewModel.Panel.SelectedMapObjectInfo = info;
-                    if (Engine.SelectedMapObject.GetType().IsSubclassOf(typeof(Animal)))
+                    if (Engine.SelectedMapObject is Animal)))
                     {
                         Animal animal = (Animal)Engine.SelectedMapObject;
                         viewModel.Panel.SelectedMapObjectHealth = "Health: " + animal.ActualHealthPoints + "/" + animal.MaximalHealthPoints;

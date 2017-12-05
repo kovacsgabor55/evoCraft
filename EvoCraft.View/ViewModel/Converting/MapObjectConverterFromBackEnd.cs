@@ -39,7 +39,7 @@ namespace View
                 return MapObjectImage.GunMan;
             }
             // Buildings
-            if (mapObj.GetType().IsSubclassOf(typeof(Building)))
+            if (mapObj is Building)))
             {
                 Building b = (Building)mapObj;
                 if (b.IsUnderConstruction)

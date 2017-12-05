@@ -6,6 +6,7 @@ using EvoCraft.Common.MapObjects.PlayerControlled;
 using EvoCraft.Common.MapObjects.PlayerControlled.Units;
 using EvoCraft.Common.MapObjects.Resources.Animals;
 using System;
+using EvoCraft.Common.MapObjects.Resources;
 
 namespace EvoCraft.Core
 {
@@ -94,13 +95,13 @@ namespace EvoCraft.Core
                 
                 if (found)
                 {
-                    if (mapObj.GetType().IsSubclassOf(typeof(PlayerControlled)))
+                    if (mapObj is PlayerControlled)
                     {
                         PlayerControlled unit = (PlayerControlled)mapObj;
                         SetVisibilitiesToActiveInRange(pos, unit.SightRange);
                         thereArePlayerUnits = true;
                     }
-                    if (mapObj.GetType().IsSubclassOf(typeof(AggressiveAnimal)))
+                    if (mapObj is AggressiveAnimal)
                     {
                         AggressiveAnimal ani = (AggressiveAnimal)mapObj;
                         if (!ani.Dead)
@@ -341,7 +342,7 @@ namespace EvoCraft.Core
                     {
                         foreach (MapObject mo in Map.GetCellAt(i, j).MapObjects)
                         {
-                            if (mo.GetType().IsSubclassOf(typeof(PlayerControlled)))
+                            if (mo is PlayerControlled)
                             {
                                 bestRange = mapObjPos.DistanceFrom(p);
                                 nearbyUnitPos = p;
@@ -394,7 +395,7 @@ namespace EvoCraft.Core
                     {
                         foreach (MapObject mo in Map.GetCellAt(i, j).MapObjects)
                         {
-                            if (mo.GetType().IsSubclassOf(typeof(Resource)))
+                            if (mo is Resource)
                             {
                                 Resource res = (Resource)mo;
                                 if (res.Type == carriedResourceType)
@@ -425,7 +426,7 @@ namespace EvoCraft.Core
                     {
                         foreach (MapObject mo in Map.GetCellAt(i, j).MapObjects)
                         {
-                            if (mo.GetType().IsSubclassOf(typeof(Animal)) && !mo.GetType().IsSubclassOf(typeof(AggressiveAnimal)))
+                            if (mo is Animal && !mo is AggressiveAnimal)
                             {
                                 Animal animal = (Animal)mo;
                                 bestRange = pos.DistanceFrom(p);
@@ -462,7 +463,7 @@ namespace EvoCraft.Core
                     {
                         foreach (MapObject mo in Map.GetCellAt(i, j).MapObjects)
                         {
-                            if (mo.GetType().IsSubclassOf(typeof(AggressiveAnimal)))
+                            if (mo is AggressiveAnimal)
                             {
                                 AggressiveAnimal chu = (AggressiveAnimal)mo;
                                 if (!chu.Dead)

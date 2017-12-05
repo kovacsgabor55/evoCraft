@@ -8,20 +8,20 @@
         public int ID
         {
             get { return id; }
-            protected public set { id = value; }
+             set { id = value; }
         }
 
         public string Name
         {
             get { return name; }
-            protected public set { name = value; }
+             set { name = value; }
         }
 
-        protected public Profile()
+         Profile()
         {
         }
 
-        protected public Profile(int id, string name)
+         Profile(int id, string name)
         {
             this.id = id;
             this.name = name;

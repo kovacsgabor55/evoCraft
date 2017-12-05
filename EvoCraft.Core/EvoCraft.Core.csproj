@@ -50,92 +50,28 @@
     <Compile Include="AStar\Node.cs" />
     <Compile Include="AStar\AStarSearch.cs" />
     <Compile Include="GameState.cs" />
-    <Compile Include="MapObjects\Bullet.cs" />
-    <Compile Include="MapObjects\PlayerControlled\Buildings\Barracks.cs" />
     <Compile Include="MapObjects\PlayerControlled\Buildings\BuildingExtension.cs" />
-    <Compile Include="MapObjects\PlayerControlled\Buildings\FarmBuilding.cs" />
-    <Compile Include="MapObjects\PlayerControlled\Buildings\MedicalTent.cs" />
-    <Compile Include="MapObjects\PlayerControlled\Buildings\Tower.cs" />
-    <Compile Include="MapObjects\PlayerControlled\Buildings\TrainerBuilding.cs" />
     <Compile Include="MapObjects\PlayerControlled\PlayerControlledExtension.cs" />
-    <Compile Include="MapObjects\PlayerControlled\Units\GunMan.cs" />
-    <Compile Include="MapObjects\Resources\Animals\AggressiveAnimal.cs" />
-    <Compile Include="MapObjects\Resources\Animals\Boss.cs" />
-    <Compile Include="MapObjects\Resources\Animals\Rolls.cs" />
-    <Compile Include="MapObjects\PlayerControlled\Units\Doctor.cs" />
-    <Compile Include="MapObjects\PlayerControlled\Units\Hero.cs" />
     <Compile Include="Map\CellExtension.cs" />
     <Compile Include="Map\MapExtension.cs" />
     <Compile Include="Map\PointExtension.cs" />
     <Compile Include="ResourceSetExtension.cs" />
     <Compile Include="SoundState.cs" />
     <Compile Include="Engine.cs" />
-    <Compile Include="MapObjects\PlayerControlled\Units\Order.cs" />
-    <Compile Include="MapObjects\PlayerControlled\Units\Soldier.cs" />
-    <Compile Include="MapObjects\Resources\Animals\Animal.cs" />
-    <Compile Include="MapObjects\Resources\Animals\Chupacabra.cs" />
-    <Compile Include="MapObjects\Resources\Farm.cs" />
-    <Compile Include="MapObjects\Resources\Animals\Llama.cs" />
-    <Compile Include="MapObjects\PlayerControlled\Buildings\MainHall.cs" />
-    <Compile Include="MapObjects\Resources\Mine.cs" />
-    <Compile Include="MapObjects\Resources\Animals\Sloth.cs" />
-    <Content Include="Maps\forever.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Maps\labyrinth.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Maps\run.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Maps\victory.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PersistedData\Sablonok\victory.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Maps\AMap.txt" />
     <Compile Include="Map\MapLoader.cs" />
     <Compile Include="Map\MapLoadingFailedException.cs" />
-    <Compile Include="Player.cs" />
-    <Compile Include="Profile.cs" />
     <Compile Include="ProfileManager.cs" />
-    <Compile Include="MapObjects\Resources\Resource.cs" />
-    <Compile Include="MapObjects\Resources\Tree.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MapObjects\PlayerControlled\Buildings\Wall.cs" />
-    <Compile Include="MapObjects\PlayerControlled\Units\Worker.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Maps\battle.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Maps\epic.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PersistedData\Sablonok\Test.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PersistedData\Sablonok\sablon50-40.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Maps\first.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PersistedData\Sablonok\sablon.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Maps\defender.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EvoCraft.Common\EvoCraft.Common.csproj">
       <Project>{28992031-8e72-419f-acd5-c9df52640179}</Project>
       <Name>EvoCraft.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MapObjects\PlayerControlled\Units\" />
+    <Folder Include="MapObjects\Resources\Animals\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

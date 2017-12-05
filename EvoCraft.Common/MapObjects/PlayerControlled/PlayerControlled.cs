@@ -10,7 +10,7 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled
         /// <summary>
         /// The maximal Health Points of the building
         /// </summary>
-        public int MaximalHealthPoints { get; protected public set; }
+        public int MaximalHealthPoints { get; set; }
 
         /// <summary>
         /// The actual Health Points of the building
@@ -20,12 +20,12 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled
         /// <summary>
         /// The id of the player that owns the building.
         /// </summary>
-        public int PlayerId { get; protected public set; }
+        public int PlayerId { get;  set; }
 
         /// <summary>
         /// The range of the sight of the given object.
         /// </summary>
-        public int SightRange { get; protected public set; }
+        public int SightRange { get;  set; }
 
         /// <summary>
         /// The cost of the thing

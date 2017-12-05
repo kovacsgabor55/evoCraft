@@ -1,4 +1,7 @@
 ﻿using EvoCraft.Common;
+using EvoCraft.Common.Map;
+using EvoCraft.Common.MapObjects;
+using EvoCraft.Common.MapObjects.Resources.Animals;
 
 namespace EvoCraft.Core
 {
@@ -46,7 +49,7 @@ namespace EvoCraft.Core
             bool hit = false;
             foreach (MapObject mo in Engine.Map.GetCellAt(pos).MapObjects)
             {
-                if (mo.GetType().IsSubclassOf(typeof(AggressiveAnimal)))
+                if (mo is AggressiveAnimal)
                 {
                     AggressiveAnimal a = (AggressiveAnimal)mo;
                     a.TakeDamage(Damage);

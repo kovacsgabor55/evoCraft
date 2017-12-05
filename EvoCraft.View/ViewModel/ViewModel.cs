@@ -52,7 +52,7 @@ namespace View
 
             if (Engine.SelectedMapObject != null)
             {
-                if (Engine.SelectedMapObject.GetType().IsSubclassOf(typeof(Unit)))
+                if (Engine.SelectedMapObject is Unit)))
                 {
                     Unit unit = (Unit)Engine.SelectedMapObject;
                     unit.MoveTarget = pointOnMap;
@@ -80,7 +80,7 @@ namespace View
                             bool AutomaticWorkTriggered = false;
                             foreach (MapObject mo in selectedCell.MapObjects)
                             {
-                                if (mo.GetType().IsSubclassOf(typeof(Resource)))
+                                if (mo is Resource)))
                                 {
                                     AutomaticWorkTriggered = true;
                                     worker.RememberedGatherTarget = pointOnMap;
@@ -109,7 +109,7 @@ namespace View
                                         }
                                     }
                                 }
-                                if (mo.GetType().IsSubclassOf(typeof(Building)))
+                                if (mo is Building)))
                                 {
                                     Building b = (Building)mo;
                                     if (b.IsUnderConstruction)
@@ -128,7 +128,7 @@ namespace View
                     }
                     Sounds.PlayOrderGivenSound(Engine.SelectedMapObject);
                 }
-                if (Engine.SelectedMapObject.GetType().IsSubclassOf(typeof(TrainerBuilding)))
+                if (Engine.SelectedMapObject is TrainerBuilding)))
                 {
                     TrainerBuilding tb = (TrainerBuilding)Engine.SelectedMapObject;
                     tb.SpawnTarget = pointOnMap;
@@ -175,7 +175,7 @@ namespace View
             }
             if (selectedCell.Visibility == VisibilityType.Explored)
             {
-                if (mo != null && mo.GetType().IsSubclassOf(typeof(Animal)))
+                if (mo != null && mo is Animal)))
                 {
                     Animal animal = (Animal)mo;
                     if (!animal.Dead)
@@ -201,7 +201,7 @@ namespace View
                 switch (actionOnPanel.Type)
                 {
                     case Actions.TrainWorker:
-                        if (Engine.SelectedMapObject.GetType().IsSubclassOf(typeof(TrainerBuilding)))
+                        if (Engine.SelectedMapObject is TrainerBuilding)))
                         {
                             TrainerBuilding mh = (TrainerBuilding)Engine.SelectedMapObject;
                             mh.StartMakingUnit(new Worker(mh.PlayerId));
@@ -210,7 +210,7 @@ namespace View
                         }
                         break;
                     case Actions.TrainSoldier:
-                        if (Engine.SelectedMapObject.GetType().IsSubclassOf(typeof(TrainerBuilding)))
+                        if (Engine.SelectedMapObject is TrainerBuilding)))
                         {
                             TrainerBuilding mh = (TrainerBuilding)Engine.SelectedMapObject;
                             mh.StartMakingUnit(new Soldier(mh.PlayerId));
@@ -219,7 +219,7 @@ namespace View
                         }
                         break;
                     case Actions.TrainPozsiHero:
-                        if (Engine.SelectedMapObject.GetType().IsSubclassOf(typeof(TrainerBuilding)))
+                        if (Engine.SelectedMapObject is TrainerBuilding)))
                         {
                             TrainerBuilding mh = (TrainerBuilding)Engine.SelectedMapObject;
                             mh.StartMakingUnit(new Hero(mh.PlayerId));
@@ -228,7 +228,7 @@ namespace View
                         }
                         break;
                     case Actions.TrainDoctor:
-                        if (Engine.SelectedMapObject.GetType().IsSubclassOf(typeof(TrainerBuilding)))
+                        if (Engine.SelectedMapObject is TrainerBuilding)))
                         {
                             TrainerBuilding mh = (TrainerBuilding)Engine.SelectedMapObject;
                             mh.StartMakingUnit(new Doctor(mh.PlayerId));
@@ -237,7 +237,7 @@ namespace View
                         }
                         break;
                     case Actions.TrainGunMan:
-                        if (Engine.SelectedMapObject.GetType().IsSubclassOf(typeof(TrainerBuilding)))
+                        if (Engine.SelectedMapObject is TrainerBuilding)))
                         {
                             TrainerBuilding mh = (TrainerBuilding)Engine.SelectedMapObject;
                             mh.StartMakingUnit(new GunMan(mh.PlayerId));
@@ -246,7 +246,7 @@ namespace View
                         }
                         break;
                     case Actions.Cancel:
-                        if (Engine.SelectedMapObject.GetType().IsSubclassOf(typeof(TrainerBuilding)))
+                        if (Engine.SelectedMapObject is TrainerBuilding)))
                         {
                             TrainerBuilding mh = (TrainerBuilding)Engine.SelectedMapObject;
                             mh.CancelTraining();
@@ -314,7 +314,7 @@ namespace View
                         break;
                     case Actions.AutoAttack:
                     case Actions.AutoHeal:
-                        if (Engine.SelectedMapObject.GetType().IsSubclassOf(typeof(Unit)))
+                        if (Engine.SelectedMapObject is Unit)))
                         {
                             Unit unit = (Unit)Engine.SelectedMapObject;
                             if (unit.AlertMode)
