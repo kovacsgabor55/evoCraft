@@ -18,10 +18,10 @@ namespace View
         //The balance between the left and right speaker volumes.
         //The ratio of volume across the left and right speakers in a range between -1
         //and 1. The default is 0.
-        private static int balance = 0;
+        public static int balance = 0;
 
         //The media's volume represented on a linear scale between 0 and 1. The default is 0.5.
-        private static int volume = 1;
+        public static int volume = 1;
        
         static Sounds()
         {

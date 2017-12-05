@@ -1,15 +1,13 @@
-﻿using EvoCraft.Common;
-using EvoCraft.Common.Map;
-using EvoCraft.Common.MapObjects;
+﻿using EvoCraft.Common.Map;
 using EvoCraft.Common.MapObjects.Resources.Animals;
 
-namespace EvoCraft.Core
+namespace EvoCraft.Common.MapObjects
 {
     public class Bullet : MapObject
     {
-        private int Damage;
-        private int LifeTime;
-        private Point Target;
+        public int Damage;
+        public int LifeTime;
+        public Point Target;
 
         public Bullet(Point from, Point to, int Damage, int lifeTime) : base (BlockType.NoBlock, 0, "Bullet")
         {
@@ -44,7 +42,7 @@ namespace EvoCraft.Core
             
         }
 
-        private void Hit(Point pos)
+        public void Hit(Point pos)
         {
             bool hit = false;
             foreach (MapObject mo in Engine.Map.GetCellAt(pos).MapObjects)

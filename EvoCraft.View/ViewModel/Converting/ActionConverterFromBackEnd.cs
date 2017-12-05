@@ -56,7 +56,7 @@ namespace View
         }
 
 
-        private static string GetLabelBasedOnActionType(Actions type)
+        public static string GetLabelBasedOnActionType(Actions type)
         {
             switch (type)
             {

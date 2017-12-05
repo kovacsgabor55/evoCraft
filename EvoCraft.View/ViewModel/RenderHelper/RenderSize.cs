@@ -8,8 +8,8 @@
             Height = height;
         }
 
-        private int width;
-        private int height;
+        public int width;
+        public int height;
 
         public int Width
         {

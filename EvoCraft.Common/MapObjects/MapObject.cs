@@ -44,7 +44,7 @@ namespace EvoCraft.Common.MapObjects
         /// <summary>
         /// Helps the id setting process.
         /// </summary>
-        private static int idCoutner = 0;
+        public static int idCoutner = 0;
 
         public MapObject(BlockType BlockType, int ZIndex, string Label)
         {

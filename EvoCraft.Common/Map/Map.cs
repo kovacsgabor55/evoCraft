@@ -125,13 +125,13 @@ namespace EvoCraft.Common.Map
             }
         }
 
-        private List<Cell> cells;
-        private int height;
-        private int width;
-        private int myInitialGold;
-        private int myInitialWood;
-        private int myInitialFood;
-        private string myTitle;
-        private string myAuthor;
+        public List<Cell> cells;
+        public int height;
+        public int width;
+        public int myInitialGold;
+        public int myInitialWood;
+        public int myInitialFood;
+        public string myTitle;
+        public string myAuthor;
     }
 }

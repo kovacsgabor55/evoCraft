@@ -7,7 +7,7 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
 {
     public abstract class TrainerBuilding : Building
     {
-        private List<Unit> TrainingQueue;
+        public List<Unit> TrainingQueue;
         public Point SpawnTarget;
 
         public TrainerBuilding(

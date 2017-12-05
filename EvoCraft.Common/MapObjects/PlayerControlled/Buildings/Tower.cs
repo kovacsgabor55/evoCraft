@@ -1,4 +1,6 @@
-﻿namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
+﻿using EvoCraft.Common.Map;
+
+namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
 {
     public class Tower : Building
     {
@@ -17,8 +19,8 @@
             }
         }
 
-        private int ShootCooldown = 8;
-        private int ActualShootCooldown;
+        public int ShootCooldown = 8;
+        public int ActualShootCooldown;
         public Point Target { get; set; }
 
         public override void Update()

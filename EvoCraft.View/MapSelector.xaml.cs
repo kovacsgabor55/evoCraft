@@ -35,7 +35,7 @@ namespace View
             lvMaps.FontSize = 20;
         }
 
-        private List<Map> maps;
+        public List<Map> maps;
         public List<Map> Maps
         {
             get { return maps; }
@@ -46,15 +46,15 @@ namespace View
             }
         }
 
-        private Map selectedMap = null;
+        public Map selectedMap = null;
         
-        private void BackButton_Click(object sender, RoutedEventArgs e)
+        public void BackButton_Click(object sender, RoutedEventArgs e)
         {
             MainMenu page = new MainMenu();
             this.NavigationService.Navigate(page);
         }
 
-        private void StartButton_Click(object sender, RoutedEventArgs e)
+        public void StartButton_Click(object sender, RoutedEventArgs e)
         {
             if (selectedMap != null)
             {
@@ -65,7 +65,7 @@ namespace View
             }
         }
 
-        private void LvMaps_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        public void LvMaps_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var listview = sender as ListView;
             var item = listview.SelectedItem as Map;

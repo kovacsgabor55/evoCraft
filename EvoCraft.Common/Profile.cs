@@ -2,8 +2,8 @@
 {
     public class Profile
     {
-        protected int id;
-        protected string name;
+        public int id;
+        public string name;
 
         public int ID
         {
@@ -17,11 +17,11 @@
              set { name = value; }
         }
 
-         Profile()
+         public Profile()
         {
         }
 
-         Profile(int id, string name)
+         public Profile(int id, string name)
         {
             this.id = id;
             this.name = name;

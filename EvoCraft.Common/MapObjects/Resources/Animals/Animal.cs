@@ -16,7 +16,7 @@ namespace EvoCraft.Common.MapObjects.Resources.Animals
         /// The actual Health Points
         /// </summary>
         public int ActualHealthPoints { get; set; }
-        protected static Random randomNum = new Random();
+        public static Random randomNum = new Random();
         public bool Dead;
 
         public Animal(string Label, int maxCapacity, int maximalHealthPoints) : base(Label, maxCapacity, BlockType.BlockOtherBlock)
@@ -44,8 +44,8 @@ namespace EvoCraft.Common.MapObjects.Resources.Animals
         }
 
 
-        private int deccayDelay = 0;
-        protected void Decay()
+        public int deccayDelay = 0;
+        public void Decay()
         {
             Capacity--;
         }

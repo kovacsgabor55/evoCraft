@@ -15,13 +15,13 @@ namespace View
             InitializeComponent();
         }
 
-        private void button_Click_1(object sender, RoutedEventArgs e)
+        public void button_Click_1(object sender, RoutedEventArgs e)
         {
             MainMenu mainmenu = new MainMenu();
             this.NavigationService.Navigate(mainmenu);
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        public void button1_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -38,13 +38,13 @@ namespace View
             this.NavigationService.Navigate(mainmenu);
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        public void Page_Loaded(object sender, RoutedEventArgs e)
         {
             DoubleAnimation fadeInAnimation = new DoubleAnimation(0, 1, TimeSpan.FromSeconds(2));
             MainGrid.BeginAnimation(Image.OpacityProperty, fadeInAnimation);
         }
 
-        //private void Options_Loaded(object sender, EventArgs e)
+        //public void Options_Loaded(object sender, EventArgs e)
         //{
         //    if (File.Exists("options.xml"))
         //    {

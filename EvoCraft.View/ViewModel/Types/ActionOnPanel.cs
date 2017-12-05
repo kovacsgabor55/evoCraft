@@ -54,7 +54,7 @@ namespace View
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
 
-        private Actions myType;
-        private string myLabel;
+        public Actions myType;
+        public string myLabel;
     }
 }

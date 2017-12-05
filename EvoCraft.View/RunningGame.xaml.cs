@@ -18,7 +18,7 @@ namespace View
         ViewModel viewModel;
         BackgroundWorker threadForBackEnd;
         SoundPlayer soundPlayer = new SoundPlayer();
-        //private ChatBackend.ChatBackend backend;
+        //public ChatBackend.ChatBackend backend;
 
         public RunningGame()
         {
@@ -58,7 +58,7 @@ namespace View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Render(object sender, RunWorkerCompletedEventArgs e)
+        public void Render(object sender, RunWorkerCompletedEventArgs e)
         {
             if (Engine.State == GameState.Running || Engine.State == GameState.PostVictory)
             {
@@ -176,7 +176,7 @@ namespace View
         
         }
 
-        private void EndGame()
+        public void EndGame()
         {
             /*EndGameWindow modalWindow = new EndGameWindow(Engine.State);
             modalWindow.ShowDialog();
@@ -194,7 +194,7 @@ namespace View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void UpdateBackEnd(object sender, DoWorkEventArgs e)
+        public void UpdateBackEnd(object sender, DoWorkEventArgs e)
         {
             if (Engine.State == GameState.Running || Engine.State == GameState.PostVictory)
             {
@@ -207,7 +207,7 @@ namespace View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void timerCycle(object sender, EventArgs e)
+        public void timerCycle(object sender, EventArgs e)
         {
             if (!threadForBackEnd.IsBusy)
             {
@@ -215,13 +215,13 @@ namespace View
             }
         }
 
-        private void Tile_MouseRightButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        public void Tile_MouseRightButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             Console.WriteLine(sender.GetType());
         }
 
 
-        private void Page_onClose()
+        public void Page_onClose()
         {
             soundPlayer.Stop();
             global::View.Properties.Settings.Default.RunningGameSoundPlayerActive = false;
@@ -245,7 +245,7 @@ namespace View
         //    }
         //}
 
-        //private void textBoxEntryField_KeyDown(object sender, KeyEventArgs e)
+        //public void textBoxEntryField_KeyDown(object sender, KeyEventArgs e)
         //{
         //    if (e.Key == Key.Return || e.Key == Key.Enter)
         //    {
@@ -265,7 +265,7 @@ namespace View
         //    }
         //}
 
-        private void textBoxEntryField_TextChanged(object sender, TextChangedEventArgs e)
+        public void textBoxEntryField_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
@@ -392,7 +392,7 @@ namespace View
             viewModel.Panel.Food = Engine.ThePlayer.Resources.Food;
         }
 
-        private void Grid_KeyDown(object sender, KeyEventArgs e)
+        public void Grid_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.W)
             {
@@ -412,12 +412,12 @@ namespace View
             }
         }
 
-        private void theGame_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        public void theGame_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
             theGame.Focus();
         }
 
-        private void MainMenuButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        public void MainMenuButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             Page_onClose();
             MainMenu page = new MainMenu();

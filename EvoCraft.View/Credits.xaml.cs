@@ -15,13 +15,13 @@ namespace View
             InitializeComponent();
         }
 
-        private void backButton_Click(object sender, RoutedEventArgs e)
+        public void backButton_Click(object sender, RoutedEventArgs e)
         {
             MainMenu mainmenu = new MainMenu();
             this.NavigationService.Navigate(mainmenu);
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        public void Page_Loaded(object sender, RoutedEventArgs e)
         {
             DoubleAnimation fadeInAnimation = new DoubleAnimation(0, 1, TimeSpan.FromSeconds(2));
             MainGrid.BeginAnimation(Image.OpacityProperty, fadeInAnimation);

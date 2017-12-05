@@ -5,7 +5,7 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
     /// <summary>
     /// Meant to represent buildings.
     /// </summary>
-    public abstract class Building : PlayerControlled
+    public abstract class Building : PlayerControlledClass
     {
         public bool IsUnderConstruction { get; set; }
         
@@ -14,12 +14,12 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
         /// </summary>
         public int BuildTime { get; set; }
         
-        public int InitialBuildTime { get; private set; }
+        public int InitialBuildTime { get; public set; }
 
         /// <summary>
         /// The Z index of all ground textures.
         /// </summary>
-        private static readonly int BuildingZIndex = 3;
+        public static readonly int BuildingZIndex = 3;
 
         public Building(
             string Label, 

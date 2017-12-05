@@ -13,13 +13,13 @@ namespace View
             InitializeComponent();
         }
 
-        private void backButton_Click(object sender, RoutedEventArgs e)
+        public void backButton_Click(object sender, RoutedEventArgs e)
         {
             MainMenu mainmenu = new MainMenu();
             this.NavigationService.Navigate(mainmenu);
         }
 
-        private void backButton_Click_1(object sender, RoutedEventArgs e)
+        public void backButton_Click_1(object sender, RoutedEventArgs e)
         {
             MainMenu mainmenu = new MainMenu();
             this.NavigationService.Navigate(mainmenu);

@@ -48,6 +48,6 @@ namespace EvoCraft.Common.Map
             Visibility = VisibilityType.Unexplored;
         }
 
-        private VisibilityType myVisiblitly;
+        public VisibilityType myVisiblitly;
     }
 }

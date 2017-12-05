@@ -22,7 +22,7 @@ namespace View
             Sounds.StartMenuMusic();
         }
 
-        private void exitButton_Click(object sender, RoutedEventArgs e)
+        public void exitButton_Click(object sender, RoutedEventArgs e)
         {
             Sounds.StopMenuMusic();
             Sounds.ShutDown();
@@ -30,13 +30,13 @@ namespace View
             Application.Current.Shutdown();
         }
 
-        private void creditsButton_Click(object sender, RoutedEventArgs e)
+        public void creditsButton_Click(object sender, RoutedEventArgs e)
         {
             Credits credits = new Credits();
             this.NavigationService.Navigate(credits);
         }
 
-        private void optionsButton_Click(object sender, RoutedEventArgs e)
+        public void optionsButton_Click(object sender, RoutedEventArgs e)
         {
             Options options = new Options();
             this.NavigationService.Navigate(options);
@@ -51,19 +51,19 @@ namespace View
             }
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        public void Page_Loaded(object sender, RoutedEventArgs e)
         {
             DoubleAnimation fadeInAnimation = new DoubleAnimation(0, 1, TimeSpan.FromSeconds(2));
             MainGrid.BeginAnimation(Image.OpacityProperty, fadeInAnimation);
         }
 
-        private void tutorialButton_Click(object sender, RoutedEventArgs e)
+        public void tutorialButton_Click(object sender, RoutedEventArgs e)
         {
             TutorialsPage page = new TutorialsPage();
             this.NavigationService.Navigate(page);
         }
 
-        private void singleplayerButton_Click(object sender, RoutedEventArgs e)
+        public void singleplayerButton_Click(object sender, RoutedEventArgs e)
         {
             //Sounds.StopMenuMusic();
             //LoadingScreen page = new LoadingScreen();
@@ -72,7 +72,7 @@ namespace View
             NavigationService.Navigate(page);
         }
 
-        private void multiplayerButton_Click(object sender, RoutedEventArgs e)
+        public void multiplayerButton_Click(object sender, RoutedEventArgs e)
         {
 
         }

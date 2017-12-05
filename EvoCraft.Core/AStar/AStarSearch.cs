@@ -115,7 +115,7 @@ namespace EvoCraft.Core
         /// Does what the name sais...
         /// </summary>
         /// <returns></returns>
-        private Direction GetDirectionFromTracingParentsOfLastNode()
+        public Direction GetDirectionFromTracingParentsOfLastNode()
         {
             Node tracingNode = GetNodeAt(EndLocation);
             Node prevNode = null;
@@ -206,7 +206,7 @@ namespace EvoCraft.Core
         /// </summary>
         /// <param name="fromNode"></param>
         /// <returns></returns>
-        private List<Node> GetAdjacentWalkableNonClosedNodes(Node fromNode)
+        public List<Node> GetAdjacentWalkableNonClosedNodes(Node fromNode)
         {
             List<Node> adjacentWalkableNodes = new List<Node>();
             IEnumerable<Point> nextLocations = GetAdjacentLocations(GetPosition(fromNode));
@@ -255,7 +255,7 @@ namespace EvoCraft.Core
         /// </summary>
         /// <param name="location"></param>
         /// <returns></returns>
-        private List<Point> GetAdjacentLocations(Point location)
+        public List<Point> GetAdjacentLocations(Point location)
         {
             List<Point> adjacents = new List<Point>();
 
@@ -277,7 +277,7 @@ namespace EvoCraft.Core
         /// </summary>
         /// <param name="position"></param>
         /// <returns></returns>
-        private int GetHeuristicDistanceFromEndPoint(Point position)
+        public int GetHeuristicDistanceFromEndPoint(Point position)
         {
             return Math.Abs(position.x - EndLocation.x) + Math.Abs(position.y - EndLocation.y);
         }
@@ -286,7 +286,7 @@ namespace EvoCraft.Core
         /// <summary>
         /// Prints the map with the path on it. Was used for debugging.
         /// </summary>
-        private void PrintMapWithPath()
+        public void PrintMapWithPath()
         {
             List<Point> path = new List<Point>();
 

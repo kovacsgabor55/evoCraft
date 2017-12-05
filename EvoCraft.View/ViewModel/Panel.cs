@@ -165,7 +165,7 @@ namespace View
             }
         }
 
-        public Command<Tile> ActionClickCommand { get; private set; }
+        public Command<Tile> ActionClickCommand { get; public set; }
         
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -175,14 +175,14 @@ namespace View
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
 
-        private MapObjectImage mySelectedMapObjectImage;
-        private string mySelectedMapObjectLabel;
-        private string mySelectedMapObjectInfo;
-        private string mySelectedMapObjectHealth;
-        private List<ActionOnPanel> myActions;
-        private GameState myCurrentGameState;
-        private int myWood;
-        private int myGold;
-        private int myFood;
+        public MapObjectImage mySelectedMapObjectImage;
+        public string mySelectedMapObjectLabel;
+        public string mySelectedMapObjectInfo;
+        public string mySelectedMapObjectHealth;
+        public List<ActionOnPanel> myActions;
+        public GameState myCurrentGameState;
+        public int myWood;
+        public int myGold;
+        public int myFood;
     }
 }

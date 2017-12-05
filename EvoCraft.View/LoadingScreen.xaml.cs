@@ -32,7 +32,7 @@ namespace View
             timer.Start();
         }
 
-        private void TimerTick(object sender, EventArgs e)
+        public void TimerTick(object sender, EventArgs e)
         {
             if (WpfAnimatedGif.ImageBehavior.GetAnimatedSource(ChupacabraImage) == ChupyImage1)
             {
@@ -67,7 +67,7 @@ namespace View
             }
         }
 
-        private void LoadingResources()
+        public void LoadingResources()
         {
             DispatcherTimer loadingTimer = new DispatcherTimer();
             loadingTimer.Interval = TimeSpan.FromMilliseconds(1000); //Eredetileg ez 1000, demóig legyen kevesebb
@@ -77,7 +77,7 @@ namespace View
             page = new RunningGame();
         }
 
-        private void LoadingTimer_Tick(object sender, EventArgs e)
+        public void LoadingTimer_Tick(object sender, EventArgs e)
         {
             //Ide kell írni amit kírjon a loadingScreen-en
             switch (loadingScreenIterationCounter)

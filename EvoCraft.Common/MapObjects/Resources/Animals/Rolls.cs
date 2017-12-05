@@ -1,4 +1,6 @@
-﻿namespace EvoCraft.Common.MapObjects.Resources.Animals
+﻿using EvoCraft.Common.Map;
+
+namespace EvoCraft.Common.MapObjects.Resources.Animals
 {
     public class Rolls : AggressiveAnimal
     {

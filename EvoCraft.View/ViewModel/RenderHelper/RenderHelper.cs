@@ -4,9 +4,9 @@ namespace View
 {
     public class RenderHelper
     {
-        private static RenderHelper instance;
-        private static RenderCell leftTopCorner;
-        private static RenderSize size;
+        public static RenderHelper instance;
+        public static RenderCell leftTopCorner;
+        public static RenderSize size;
 
         /// <summary>
         /// 1.Parameter is the top left corner of the render 
@@ -43,7 +43,7 @@ namespace View
                 }
                 return leftTopCorner;
             }
-            private set
+            public set
             {
                 if ((leftTopCorner.Row + value.Row >= 0) && (leftTopCorner.Column + value.Column >= 0) && ( leftTopCorner.Column + value.Column + Size.Width <= Engine.Map.Width) && ( leftTopCorner.Row + value.Row + Size.Height <= Engine.Map.Height))
                 {

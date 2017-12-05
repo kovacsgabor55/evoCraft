@@ -4,8 +4,8 @@
     {
         public Sloth() : base("Sloth", 200, 20) { }
 
-        private int slowNum = 0;
-        private int limit = 5;
+        public int slowNum = 0;
+        public int limit = 5;
 
         public override void Move()
         {

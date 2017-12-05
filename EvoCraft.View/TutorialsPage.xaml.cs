@@ -32,13 +32,13 @@ namespace View
             listOfTutorials.Add((BitmapImage)FindResource("TutorialSlide9BitmapImage"));
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        public void Page_Loaded(object sender, RoutedEventArgs e)
         {
             DoubleAnimation fadeInAnimation = new DoubleAnimation(0, 1, TimeSpan.FromSeconds(2));
             MainGrid.BeginAnimation(Image.OpacityProperty, fadeInAnimation);
         }
 
-        private void PrevButton_Click(object sender, RoutedEventArgs e)
+        public void PrevButton_Click(object sender, RoutedEventArgs e)
         {
             if (ActualTutorialCounter > 0)
             {
@@ -48,13 +48,13 @@ namespace View
             
         }
 
-        private void MenuButton_Click(object sender, RoutedEventArgs e)
+        public void MenuButton_Click(object sender, RoutedEventArgs e)
         {
             MainMenu page = new MainMenu();
             this.NavigationService.Navigate(page);
         }
 
-        private void NextButton_Click(object sender, RoutedEventArgs e)
+        public void NextButton_Click(object sender, RoutedEventArgs e)
         {
             if (ActualTutorialCounter < listOfTutorials.Count - 1)
             {

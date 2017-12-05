@@ -1,10 +1,12 @@
-﻿namespace EvoCraft.Common.MapObjects.Resources.Animals
+﻿using EvoCraft.Common.Map;
+
+namespace EvoCraft.Common.MapObjects.Resources.Animals
 {
     public class Chupacabra: AggressiveAnimal
     {
         public Chupacabra() : base("Chupacabra", 200, 300, 35) { }
 
-        private int slowNum = 0;
+        public int slowNum = 0;
 
         public override void MoveWithPathfinding(Point pos)
         {

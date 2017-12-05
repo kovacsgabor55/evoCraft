@@ -4,20 +4,20 @@ namespace EvoCraft.Core
 {
     public class Player : Profile
     {
-        private int myScore;
+        public int myScore;
 
         public ResourceSet Resources { get; set; }
 
         public int Score
         {
             get { return myScore; }
-            public set { myScore = value; }
+            set { myScore = value; }
         }
 
         public byte MyTeam
         {
             get;
-            public set;
+            set;
         }
 
         public Player(int food, int gold, int wood)

@@ -18,20 +18,20 @@ namespace View
             InitializeComponent();
         }
 
-        private void Page_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        public void Page_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {           
             fadeInAnimation.Completed += PresentsFadeIn;
             LizzardLogo.BeginAnimation(Image.OpacityProperty, fadeInAnimation);
         }
 
-        private void PresentsFadeIn(object sender, EventArgs e)
+        public void PresentsFadeIn(object sender, EventArgs e)
         {
             fadeInAnimation.Completed -= PresentsFadeIn;
             fadeInAnimation.Completed += LizzardAndPresentsFadeOut;
             PresentsTextBlock.BeginAnimation(Image.OpacityProperty, fadeInAnimation);
         }
 
-        private void LizzardAndPresentsFadeOut(object sender, EventArgs e)
+        public void LizzardAndPresentsFadeOut(object sender, EventArgs e)
         {
             fadeInAnimation.Completed -= LizzardAndPresentsFadeOut;
             fadeOutAnimation.Completed += EvoCraftLogoFadeIn;
@@ -39,21 +39,21 @@ namespace View
             PresentsTextBlock.BeginAnimation(Image.OpacityProperty, fadeOutAnimation);
         }
 
-        private void EvoCraftLogoFadeIn(object sender, EventArgs e)
+        public void EvoCraftLogoFadeIn(object sender, EventArgs e)
         {
             fadeOutAnimation.Completed -= EvoCraftLogoFadeIn;
             fadeOutAnimation.Completed += EvoCraftLogoFadeOut;
             EvoCraftLogo.BeginAnimation(Image.OpacityProperty, fadeInAnimation);
         }
 
-        private void EvoCraftLogoFadeOut(object sender, EventArgs e)
+        public void EvoCraftLogoFadeOut(object sender, EventArgs e)
         {
             fadeOutAnimation.Completed -= EvoCraftLogoFadeOut;
             fadeOutAnimation.Completed += NextPage;
             EvoCraftLogo.BeginAnimation(Image.OpacityProperty, fadeOutAnimation);
         }
     
-        private void NextPage(object sender, EventArgs e)
+        public void NextPage(object sender, EventArgs e)
         {
             fadeOutAnimation.Completed -= NextPage;
             MainMenu mainmenu = new MainMenu();

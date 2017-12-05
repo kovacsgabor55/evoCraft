@@ -5,7 +5,7 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled
     /// <summary>
     /// Common abstraction for all player controlled units.
     /// </summary>
-    public abstract class PlayerControlled : MapObject
+    public abstract class PlayerControlledClass : MapObject
     {
         /// <summary>
         /// The maximal Health Points of the building
@@ -42,7 +42,7 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled
             get; set;
         }
 
-        public PlayerControlled(
+        public PlayerControlledClass(
             int PlayerId, 
             int MaximalHealthPoints, 
             int ActualHealthPoints,

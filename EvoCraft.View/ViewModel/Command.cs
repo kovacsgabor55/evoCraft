@@ -22,7 +22,7 @@ namespace View
             return IsEnabled;
         }
 
-        private bool _isEnabled = true;
+        public bool _isEnabled = true;
         public bool IsEnabled
         {
             get { return _isEnabled; }

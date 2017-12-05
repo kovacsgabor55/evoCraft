@@ -14,54 +14,6 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Units
 
         }
 
-
-        private bool WasGoingAfterAUnit = false;
-
-        public override void Update()
-        {
-            bool found;
-            Point pos = Engine.GetMapObjectPosition(this, out found);
-            if (found)
-            {
-                if (AlertMode)
-                {
-                    Point p = Engine.GetClosestInjuredUnitInRange(pos, SightRange);
-                    if (p != null)
-                    {
-                        MoveTarget = p;
-                        WasGoingAfterAUnit = true;
-                    }
-                    else
-                    {
-                        if (WasGoingAfterAUnit)
-                        {
-                            MoveTarget = null;
-                            WasGoingAfterAUnit = false;
-                        }
-                    }
-                }
-                Heal(pos);
-                Move(pos);
-            }
-        }
-
-        /// <summary>
-        /// Heal the target if next to it.
-        /// </summary>
-        public void Heal(Point pos)
-        {
-            if (MoveTarget != null && pos.DistanceFrom(MoveTarget) == 1)
-            {
-                foreach (MapObject mo in Engine.Map.GetCellAt(MoveTarget).MapObjects)
-                {
-                    if (mo is Unit)))
-                    {
-                        Unit a = (Unit)mo;
-                        a.TakeHealing(Damage);
-                    }
-                }
-            }
-        }
-
+        public bool WasGoingAfterAUnit = false;
     }
 }

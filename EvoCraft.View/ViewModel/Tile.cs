@@ -164,13 +164,13 @@ namespace View
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
         }
         
-        private MapObjectImage myStoredMapObjectImage;
-        private MapObjectImage myStoredFylingImage;
-        private FieldImage myStoredFieldImage;
-        private SelectionImage mySelection;
-        private AllowBuildImage myAllowBuild;
-        private VisibilityType myVisibility;
-        private int row;
-        private int col;
+        public MapObjectImage myStoredMapObjectImage;
+        public MapObjectImage myStoredFylingImage;
+        public FieldImage myStoredFieldImage;
+        public SelectionImage mySelection;
+        public AllowBuildImage myAllowBuild;
+        public VisibilityType myVisibility;
+        public int row;
+        public int col;
     }
 }

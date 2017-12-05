@@ -8,8 +8,8 @@
             Column = column;
         }
 
-        private int row;
-        private int column;
+        public int row;
+        public int column;
 
         public int Row
         {

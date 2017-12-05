@@ -13,9 +13,9 @@ namespace View
         int _rows;
         int _columns;
         List<Tile> _tiles = new List<Tile>();
-        public Command<Tile> TileClickCommand { get; private set; }
-        public Command<Tile> TileRightClickCommand { get; private set; }
-        public Command<ActionOnPanel> ActionClickCommand { get; private set; }
+        public Command<Tile> TileClickCommand { get; public set; }
+        public Command<Tile> TileRightClickCommand { get; public set; }
+        public Command<ActionOnPanel> ActionClickCommand { get; public set; }
         Panel _panel = new Panel();
 
         public static bool BuildMode = false;
@@ -45,7 +45,7 @@ namespace View
         /// Ezzel lehet feladatot adni az egységeknek.
         /// </summary>
         /// <param name="tile"></param>
-        private void OnTileActionClick(Tile tile)
+        public void OnTileActionClick(Tile tile)
         {
             EvoCraft.Common.Point pointOnMap = new Point(tile.Row + RenderHelper.Instance.LeftTopCorner.Row, tile.Col + RenderHelper.Instance.LeftTopCorner.Column);
             Cell selectedCell = Engine.Map.GetCellAt(pointOnMap); // Innen lehet tudni, hova klikkeltek
@@ -149,7 +149,7 @@ namespace View
         ///  Ezzel lehet kiválasztani az egységeket
         /// </summary>
         /// <param name="tile"></param>
-        private void OnTileSelectionClick(Tile tile)
+        public void OnTileSelectionClick(Tile tile)
         {
             BuildMode = false;
             EvoCraft.Common.Point pointOnMap = new Point(tile.Row + RenderHelper.Instance.LeftTopCorner.Row, tile.Col + RenderHelper.Instance.LeftTopCorner.Column);
@@ -194,7 +194,7 @@ namespace View
         /// Click handler for all the panel actions
         /// </summary>
         /// <param name="actionOnPanel"></param>
-        private void OnActionClick(ActionOnPanel actionOnPanel)
+        public void OnActionClick(ActionOnPanel actionOnPanel)
         {
             if (Engine.SelectedMapObject != null)
             {

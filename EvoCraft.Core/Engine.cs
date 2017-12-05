@@ -95,9 +95,9 @@ namespace EvoCraft.Core
                 
                 if (found)
                 {
-                    if (mapObj is PlayerControlled)
+                    if (mapObj is PlayerControlledClass)
                     {
-                        PlayerControlled unit = (PlayerControlled)mapObj;
+                        PlayerControlledClass unit = (PlayerControlledClass)mapObj;
                         SetVisibilitiesToActiveInRange(pos, unit.SightRange);
                         thereArePlayerUnits = true;
                     }
@@ -342,7 +342,7 @@ namespace EvoCraft.Core
                     {
                         foreach (MapObject mo in Map.GetCellAt(i, j).MapObjects)
                         {
-                            if (mo is PlayerControlled)
+                            if (mo is PlayerControlledClass)
                             {
                                 bestRange = mapObjPos.DistanceFrom(p);
                                 nearbyUnitPos = p;

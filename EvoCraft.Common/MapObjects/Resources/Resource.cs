@@ -46,7 +46,7 @@
         /// <summary>
         /// The Z index of all resources. Helps the drawing engine determine which what order to draw the objects.
         /// </summary>
-        private static readonly int ResourceZIndex = 1;
+        public static readonly int ResourceZIndex = 1;
 
         /// <summary>
         /// 

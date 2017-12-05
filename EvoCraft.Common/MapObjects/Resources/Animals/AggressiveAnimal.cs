@@ -1,4 +1,7 @@
-﻿namespace EvoCraft.Common.MapObjects.Resources.Animals
+﻿using EvoCraft.Common.Map;
+using EvoCraft.Common.MapObjects.PlayerControlled;
+
+namespace EvoCraft.Common.MapObjects.Resources.Animals
 {
     public abstract class AggressiveAnimal : Animal
     {
@@ -18,12 +21,12 @@
         {
             if (MoveTarget != null && pos.DistanceFrom(MoveTarget) == 1)
             {
-                PlayerControlled playerctrl = null;
+                PlayerControlledClass playerctrl = null;
                 foreach (MapObject mo in Engine.Map.GetCellAt(MoveTarget).MapObjects)
                 {
-                    if (mo is PlayerControlled)))
+                    if (mo is PlayerControlledClass)
                     {
-                        playerctrl = (PlayerControlled)mo;
+                        playerctrl = (PlayerControlledClass)mo;
                         playerctrl.TakeDamage(Damage);
                         break;
                     }
