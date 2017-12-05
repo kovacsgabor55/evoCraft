@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EvoCraft.Common
+namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
 {
     /// <summary>
     /// Meant to represent buildings.

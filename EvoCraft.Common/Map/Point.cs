@@ -1,4 +1,4 @@
-﻿namespace EvoCraft.Common
+﻿namespace EvoCraft.Common.Map
 {
     /// <summary>
     /// Egy helyt jelölő osztály, aminek hasznos metódusai vannak a működéshez végzett számításokhoz.

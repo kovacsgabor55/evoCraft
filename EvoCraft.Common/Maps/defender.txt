@@ -1,0 +1,89 @@
+﻿
+# This is a comment line
+# Every property is set in the following way:
+# PropertyName: value
+# The values can be strings or numbers, the types need to correspond to the given property.
+# This file shows all the possible properties and their values.
+
+# General info
+Title: The Such Defence of the Much Royal Very Wow Fortress
+Author: Lévai Krisztián
+
+# Starting Resources
+Gold: 3000
+Wood: 3000
+Food: 3000
+
+# Map Size
+Width: 50
+Height: 40
+
+# Now let's see the map data. It is set in a very particular way.
+# The parser will look for the "Map:" keyword.
+# After that, no more comments can be made. The parser will expect every line to be as long as the width
+# and it will expect that there be height amount of lines.
+# Every character will have a meaning for it:
+# 
+# . means nothing, it is used for spacing the characters out.
+# 
+# H means MainHall
+# X means Wall
+# B means Barracs
+# E means Tower
+# N means MedicalTent
+
+# W means Worker
+# S means Soldier
+# P means Hero
+# D means Doctor
+
+# O means Rock (O like Ocean, not zero.)
+# T means Tree
+# M means Mine (Every mine starts with 500 gold.)
+# F means Farm
+# 1 means Sloth
+# 2 means Llama
+# 3 means Chupacabra
+# 4 means Boss
+
+Map:
+OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O..................333333333.....................O
+O...5.....3333333333333333333333333333333.....4..O
+O.......3333............................33.3.....O
+O.......333....XXXXXXXXSSXXXXXXXX.......3.3...5..O
+O...4..3333....XOXOXOXXSSXXOXOXOX.....33333......O
+O.......3333...XXE.E..SSSS..E.EXX........3.......O
+O......3.33....XO...N..DD..N...OX......333....5..O
+O...5...3.3....XXE..B..PP..B..EXX.....33333......O
+O......3..3....XO......WW......OX.......3........O
+O.......3.33...XXE....XXXX....EXX......3......4..O
+O...4...333....XOS....XEEX....SOX.....3333.......O
+O......3.33....SPSD...XEEX...DSPS......3.........O
+O...5..3..33...XOS....XEEX....SOX.....3333....5..O
+O.......33.3...XXE....XXXX....EXX.....33.........O
+O...4...3.3....XO......WW......OX......3333......O
+O.......33.33..XXE...DD..DD...EXX.........3...4..O
+O...5....33....XO......DD......OX......3333......O
+O.......333....XXE..B..PP..B..EXX..........3.....O
+O...4....333...XO...N..DD..N...OX.....33333...5..O
+O.........33...XXE.E..SSSS..E.EXX.......3333.....O
+O...5....3.3...XOXOXOXXSSXXOXOXOX......33333.....O
+O.........3.33.XXXXXXXXSSXXXXXXXX........33...4..O
+O...4..3..33............................33.......O
+O.......33.333333333333333333333333333333........O
+O..............3333333333333333333333333......5..O
+O............3.3........55.......................O
+O......................5445......................O
+O.......................55.......................O
+O................................................O
+O................................................O
+O......5555..........................555555......O
+O................................................O
+O................................................O
+O...4.....4....4.....4....4....4...4....4....4...O
+OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO

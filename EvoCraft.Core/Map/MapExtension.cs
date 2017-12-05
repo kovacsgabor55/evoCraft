@@ -1,4 +1,4 @@
-﻿using EvoCraft.Common;
+﻿using EvoCraft.Common.Map;
 
 namespace EvoCraft.Core
 {

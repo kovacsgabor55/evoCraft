@@ -1,6 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using EvoCraft.Common;
+﻿using System.Collections.Generic;
+using EvoCraft.Common.Map;
+using EvoCraft.Common.MapObjects;
+using EvoCraft.Common.MapObjects.PlayerControlled.Buildings;
+using EvoCraft.Common.MapObjects.PlayerControlled;
+using EvoCraft.Common.MapObjects.PlayerControlled.Units;
+using EvoCraft.Common.MapObjects.Resources.Animals;
+using System;
 
 namespace EvoCraft.Core
 {
@@ -58,7 +63,7 @@ namespace EvoCraft.Core
         public static Player ThePlayer
         {
             get { return myThePlayer; }
-            internal set { myThePlayer = value; }
+            set { myThePlayer = value; }
         }
         
         
@@ -82,9 +87,11 @@ namespace EvoCraft.Core
             }
             foreach (MapObject mapObj in updatingMapObjectList)
             {
-                mapObj.Update();
                 bool found;
                 Point pos = GetMapObjectPosition(mapObj, out found);
+
+                UnitUpdate(mapObj, pos);
+                
                 if (found)
                 {
                     if (mapObj.GetType().IsSubclassOf(typeof(PlayerControlled)))
@@ -113,7 +120,7 @@ namespace EvoCraft.Core
                 State = GameState.Defeat;
             }
         }
-        
+
         private static void ResetActiveVisiblitiesToExplored()
         {
             for (int i=0; i< Map.Height; i++)
@@ -149,7 +156,7 @@ namespace EvoCraft.Core
         /// <param name="building"></param>
         /// <param name="place"></param>
         /// <returns></returns>
-        internal static bool StartBuilding(Building building, Point place)
+        public static bool StartBuilding(Building building, Point place)
         {
             bool couldBuild = true;
             if (Map.GetCellAt(place).canMapObjectBePlaced(building))
@@ -167,7 +174,7 @@ namespace EvoCraft.Core
         /// <summary>
         /// Moves an object to the given direction if it can. If it can't it does nothing. Checks for collisions.
         /// </summary>
-        internal static void MoveMapObject(MapObject mapObj, Direction direction)
+        public static void MoveMapObject(MapObject mapObj, Direction direction)
         {
             if (direction != Direction.None)
             {
@@ -246,7 +253,7 @@ namespace EvoCraft.Core
         /// <summary>
         /// Moves an object to the given direction if it can. If it can't it does nothing. Checks for collisions.
         /// </summary>
-        internal static void MoveMapObject(MapObject mapObj, Direction direction, Point pos)
+        public static void MoveMapObject(MapObject mapObj, Direction direction, Point pos)
         {
             if (direction != Direction.None)
             {
@@ -288,7 +295,7 @@ namespace EvoCraft.Core
         /// <summary>
         /// Gets the position of a MapObject.
         /// </summary>
-        internal static Point GetMapObjectPosition(MapObject mapObj, out bool found)
+        public static Point GetMapObjectPosition(MapObject mapObj, out bool found)
         {
             
             int x = 0;
@@ -320,7 +327,7 @@ namespace EvoCraft.Core
         /// Used by the Agressive Animals.
         /// To find the closest target to attack.
         /// </summary>
-        internal static Point GetClosestUnitOrBuildingInRange(Point mapObjPos, int range, out bool foundNearbyUnit)
+        public static Point GetClosestUnitOrBuildingInRange(Point mapObjPos, int range, out bool foundNearbyUnit)
         {
             Point nearbyUnitPos = null;
             foundNearbyUnit = false;
@@ -348,7 +355,7 @@ namespace EvoCraft.Core
             return nearbyUnitPos;
         }
 
-        internal static Point SearchClosestMainHall(Point pos)
+        public static Point SearchClosestMainHall(Point pos)
         {
             int bestDistance = 10000;
             Point thePlace = null;
@@ -374,7 +381,7 @@ namespace EvoCraft.Core
             return thePlace;
         }
         
-        internal static Point SearchClosestResourceInRange(Point pos, ResourceType carriedResourceType, int sightRange)
+        public static Point SearchClosestResourceInRange(Point pos, ResourceType carriedResourceType, int sightRange)
         {
             int bestRange = sightRange;
             Point nearbyResourcePos = null;
@@ -404,7 +411,7 @@ namespace EvoCraft.Core
             return nearbyResourcePos;
         }
 
-        internal static Point SearchClosestPeacefulAnimalInRange(Point pos, int sightRange, out bool isDead)
+        public static Point SearchClosestPeacefulAnimalInRange(Point pos, int sightRange, out bool isDead)
         {
             int bestRange = sightRange;
             Point nearbyResourcePos = null;
@@ -442,7 +449,7 @@ namespace EvoCraft.Core
         /// <param name="mapObj"></param>
         /// <param name="range"></param>
         /// <returns>The position of the chupacabra</returns>
-        internal static Point GetClosestAggressiveAnimalInRange(Point mapObjPos, int range)
+        public static Point GetClosestAggressiveAnimalInRange(Point mapObjPos, int range)
         {
             Point nearbyEnemyPos = null;
             int bestRange = range;
@@ -478,7 +485,7 @@ namespace EvoCraft.Core
         /// <param name="mapObj"></param>
         /// <param name="range"></param>
         /// <returns>The position of the chupacabra</returns>
-        internal static Point GetClosestInjuredUnitInRange(Point mapObjPos, int range)
+        public static Point GetClosestInjuredUnitInRange(Point mapObjPos, int range)
         {
             Point nearbyInjuredFriendPos = null;
             int bestRange = range;
@@ -491,7 +498,7 @@ namespace EvoCraft.Core
                     {
                         foreach (MapObject mo in Map.GetCellAt(i, j).MapObjects)
                         {
-                            if (mo.GetType().IsSubclassOf(typeof(Unit)))
+                            if (mo is Unit)
                             {
                                 Unit unit = (Unit)mo;
                                 if (unit.ActualHealthPoints < unit.MaximalHealthPoints)
@@ -513,7 +520,7 @@ namespace EvoCraft.Core
         /// </summary>
         /// <param name="mapObj"></param>
         /// <param name="position"></param>
-        internal static Direction GetDirectionForPathToTargetPosition(Point pos, Point targetPosition)
+        public static Direction GetDirectionForPathToTargetPosition(Point pos, Point targetPosition)
         {
             Direction direction = Direction.None;
             AStarSearch search = new AStarSearch(Map, pos, targetPosition);
@@ -526,7 +533,7 @@ namespace EvoCraft.Core
         /// </summary>
         /// <param name="mapObj"></param>
         /// <param name="position"></param>
-        internal static Direction GetDirectionForPathToTargetPosition(Point pos, Point targetPosition, BlockType blockT)
+        public static Direction GetDirectionForPathToTargetPosition(Point pos, Point targetPosition, BlockType blockT)
         {
             Direction direction = Direction.None;
             AStarSearch search = new AStarSearch(Map, pos, targetPosition, blockT);
@@ -538,7 +545,7 @@ namespace EvoCraft.Core
         /// Removes the mapobject from the map entierly.
         /// </summary>
         /// <param name="mapObj"></param>
-        internal static void DestroyMapObject(MapObject mapObj)
+        public static void DestroyMapObject(MapObject mapObj)
         {
             if (mapObj != null)
             {
@@ -561,7 +568,7 @@ namespace EvoCraft.Core
         /// Removes the mapobject from the map entierly.
         /// </summary>
         /// <param name="mapObj"></param>
-        internal static void DestroyMapObject(MapObject mapObj, Point pos)
+        public static void DestroyMapObject(MapObject mapObj, Point pos)
         {
             if (mapObj != null)
             {
@@ -577,7 +584,7 @@ namespace EvoCraft.Core
         /// <summary>
         /// Puts the MapObject where the Building is.
         /// </summary>
-        internal static void SpawnUnitFromBuilding(Building building, MapObject mo)
+        public static void SpawnUnitFromBuilding(Building building, MapObject mo)
         {
             bool found;
             Point pos = GetMapObjectPosition(building, out found);
@@ -586,6 +593,11 @@ namespace EvoCraft.Core
             {
                 Map.GetCellAt(pos.x, pos.y).MapObjects.Add(mo);
             }
+        }
+
+        private static void UnitUpdate(MapObject mapObj, Point pos)
+        {
+            mapObj.Update(pos);
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace EvoCraft.Common
+﻿using EvoCraft.Common.Map;
+
+namespace EvoCraft.Common.MapObjects
 {
     /// <summary>
     /// Base class for all objects that will be displayed on the map.
@@ -53,6 +55,8 @@
             this.Label = Label;
         }
 
-        public abstract void Update();
+        public virtual void Update() { }
+
+        public virtual void Update(Point pos) { }
     }
 }

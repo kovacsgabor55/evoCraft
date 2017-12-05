@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EvoCraft.Common
+namespace EvoCraft.Common.MapObjects.PlayerControlled
 {
     /// <summary>
     /// Common abstraction for all player controlled units.
@@ -10,7 +10,7 @@ namespace EvoCraft.Common
         /// <summary>
         /// The maximal Health Points of the building
         /// </summary>
-        public int MaximalHealthPoints { get; protected internal set; }
+        public int MaximalHealthPoints { get; protected public set; }
 
         /// <summary>
         /// The actual Health Points of the building
@@ -20,12 +20,12 @@ namespace EvoCraft.Common
         /// <summary>
         /// The id of the player that owns the building.
         /// </summary>
-        public int PlayerId { get; protected internal set; }
+        public int PlayerId { get; protected public set; }
 
         /// <summary>
         /// The range of the sight of the given object.
         /// </summary>
-        public int SightRange { get; protected internal set; }
+        public int SightRange { get; protected public set; }
 
         /// <summary>
         /// The cost of the thing

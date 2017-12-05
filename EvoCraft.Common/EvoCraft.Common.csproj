@@ -37,11 +37,37 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="MapObjects\BlockTypeEnum.cs" />
+    <Compile Include="MapObjects\Bullet.cs" />
     <Compile Include="MapObjects\MapObject.cs" />
     <Compile Include="MapObjects\PlayerControlled\Actions.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Buildings\Barracks.cs" />
     <Compile Include="MapObjects\PlayerControlled\Buildings\Building.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Buildings\FarmBuilding.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Buildings\MainHall.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Buildings\MedicalTent.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Buildings\Tower.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Buildings\TrainerBuilding.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Buildings\Wall.cs" />
     <Compile Include="MapObjects\PlayerControlled\PlayerControlled.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Units\Unit.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Units\Doctor.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Units\GunMan.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Units\Hero.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Units\Order.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Units\Soldier.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Units\Worker.cs" />
+    <Compile Include="MapObjects\Resources\Animals\AggressiveAnimal.cs" />
+    <Compile Include="MapObjects\Resources\Animals\Animal.cs" />
+    <Compile Include="MapObjects\Resources\Animals\Boss.cs" />
+    <Compile Include="MapObjects\Resources\Animals\Chupacabra.cs" />
+    <Compile Include="MapObjects\Resources\Animals\Llama.cs" />
+    <Compile Include="MapObjects\Resources\Animals\Rolls.cs" />
+    <Compile Include="MapObjects\Resources\Animals\Sloth.cs" />
+    <Compile Include="MapObjects\Resources\Farm.cs" />
+    <Compile Include="MapObjects\Resources\Mine.cs" />
+    <Compile Include="MapObjects\Resources\Resource.cs" />
     <Compile Include="MapObjects\Resources\ResourceType.cs" />
+    <Compile Include="MapObjects\Resources\Tree.cs" />
     <Compile Include="MapObjects\Rock.cs" />
     <Compile Include="Map\Cell.cs" />
     <Compile Include="Map\Direction.cs" />
@@ -49,10 +75,48 @@
     <Compile Include="Map\Map.cs" />
     <Compile Include="Map\Point.cs" />
     <Compile Include="Map\VisibilityType.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Profile.cs" />
     <Compile Include="ResourceSet.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MapObjects\PlayerControlled\Units\" />
+    <Content Include="Maps\AMap.txt" />
+    <Content Include="Maps\battle.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Maps\defender.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Maps\epic.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Maps\first.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Maps\forever.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Maps\labyrinth.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Maps\run.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Maps\victory.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PersistedData\Sablonok\sablon.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PersistedData\Sablonok\sablon50-40.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PersistedData\Sablonok\Test.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PersistedData\Sablonok\victory.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

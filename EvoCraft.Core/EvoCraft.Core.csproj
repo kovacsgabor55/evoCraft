@@ -59,7 +59,6 @@
     <Compile Include="MapObjects\PlayerControlled\Buildings\TrainerBuilding.cs" />
     <Compile Include="MapObjects\PlayerControlled\PlayerControlledExtension.cs" />
     <Compile Include="MapObjects\PlayerControlled\Units\GunMan.cs" />
-    <Compile Include="MapObjects\PlayerControlled\Units\Unit.cs" />
     <Compile Include="MapObjects\Resources\Animals\AggressiveAnimal.cs" />
     <Compile Include="MapObjects\Resources\Animals\Boss.cs" />
     <Compile Include="MapObjects\Resources\Animals\Rolls.cs" />

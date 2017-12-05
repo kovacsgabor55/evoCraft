@@ -2,3 +2,4 @@ D:\prog\Git\evoCraft\EvoCraft.Common\bin\Debug\EvoCraft.Common.dll
 D:\prog\Git\evoCraft\EvoCraft.Common\bin\Debug\EvoCraft.Common.pdb
 D:\prog\Git\evoCraft\EvoCraft.Common\obj\Debug\EvoCraft.Common.dll
 D:\prog\Git\evoCraft\EvoCraft.Common\obj\Debug\EvoCraft.Common.pdb
+D:\prog\Git\evoCraft\EvoCraft.Common\obj\Debug\EvoCraft.Common.csprojResolveAssemblyReference.cache

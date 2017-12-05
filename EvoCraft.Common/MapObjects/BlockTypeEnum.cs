@@ -1,4 +1,4 @@
-﻿namespace EvoCraft.Common
+﻿namespace EvoCraft.Common.MapObjects
 {
     /// <summary>
     /// Tells wether an object can be on the same cell with other cells. <para/>

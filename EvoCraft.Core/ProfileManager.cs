@@ -10,29 +10,29 @@ namespace EvoCraft.Core
     {
         static List<Profile> profiles;
 
-        internal static void AddProfile(int id, string name)
+        public static void AddProfile(int id, string name)
         {
             Profile tempProfile = new Profile(id, name);
             profiles.Add(tempProfile);
         }
 
-        internal static void DeleteProfile(int id)
+        public static void DeleteProfile(int id)
         {
             var index = profiles.FindIndex(c => c.ID == id);
             profiles.RemoveAt(index);
         }
 
-        internal static void EditProfile(int id, string name)
+        public static void EditProfile(int id, string name)
         {
             profiles.FirstOrDefault(profile => profile.Name == name);
         }
 
-        internal static Profile GetProfileById(int id)
+        public static Profile GetProfileById(int id)
         {
             return profiles.Find(c => c.ID == id);
         }
 
-        internal static System.Collections.ObjectModel.ReadOnlyCollection<Profile> GetAllProfiles
+        public static System.Collections.ObjectModel.ReadOnlyCollection<Profile> GetAllProfiles
         {
             get { return profiles.AsReadOnly(); }
         }
