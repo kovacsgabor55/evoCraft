@@ -13,12 +13,5 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
         public Barracks(int PlayerId, bool UnderConstruction)
             : base("Barracks", 500, 20, PlayerId, null, UnderConstruction, 4, new ResourceSet(GoldCost, FoodCost, FoodCost))
         { }
-        
-
-        public override void FinishBuilding()
-        {
-            ActualHealthPoints = MaximalHealthPoints;
-            PossibleActions = new List<Actions> { Actions.TrainSoldier, Actions.TrainPozsiHero, Actions.TrainGunMan, Actions.Cancel };
-        }
     }
 }

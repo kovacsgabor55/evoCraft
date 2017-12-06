@@ -22,40 +22,5 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
         public int ShootCooldown = 8;
         public int ActualShootCooldown;
         public Point Target { get; set; }
-
-        public override void Update()
-        {
-            if (IsUnderConstruction && BuildTime == 0)
-            {
-                IsUnderConstruction = false;
-                FinishBuilding();
-            }
-            else
-            {
-                if (ShootCooldown <= ActualShootCooldown)
-                {
-                    ActualShootCooldown = 0;
-                    bool found;
-                    Point pos = Engine.GetMapObjectPosition(this, out found);
-                    Target = Engine.GetClosestAggressiveAnimalInRange(pos, SightRange-1);
-
-                    if (found && Target != null)
-                    {
-                        Engine.Map.GetCellAt(pos.x, pos.y).MapObjects.Add(new Bullet(pos, Target, 50, 10));
-                    }
-                }
-                else
-                {
-                    ActualShootCooldown++;
-                }
-                
-            }
-        }
-
-        public override void FinishBuilding()
-        {
-            ActualHealthPoints = MaximalHealthPoints;
-            SightRange = 11;
-        }
     }
 }

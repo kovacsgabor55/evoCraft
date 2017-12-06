@@ -15,19 +15,5 @@
                 FinishBuilding();
             }
         }
-
-        // it changes into a farm resource when it is finished.
-        public override void FinishBuilding()
-        {
-            bool found;
-            Point pos = Engine.GetMapObjectPosition(this, out found);
-
-            if (found)
-            {
-                Engine.Map.GetCellAt(pos).MapObjects.Add(new Farm());
-                Engine.DestroyMapObject(this);
-            }
-        
-        }
     }
 }

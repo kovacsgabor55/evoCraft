@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
+﻿namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
 {
     public class MedicalTent : TrainerBuilding
     {
@@ -12,12 +10,5 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
         public MedicalTent(int PlayerId, bool UnderConstruction)
             : base("Medical tent", 100, 10, PlayerId, null, UnderConstruction, 4, new ResourceSet(GoldCost, FoodCost, FoodCost))
         { }
-        
-        public override void FinishBuilding()
-        {
-            ActualHealthPoints = MaximalHealthPoints;
-            PossibleActions = new List<Actions> { Actions.TrainDoctor, Actions.Cancel };
-        }
-
     }
 }

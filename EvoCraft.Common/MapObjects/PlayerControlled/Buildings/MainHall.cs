@@ -12,12 +12,5 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
         public MainHall(int PlayerId, bool UnderConstruction)
             : base("Main Hall", 700, 30, PlayerId, null, UnderConstruction, 4, new ResourceSet(GoldCost, FoodCost, FoodCost))
         { }
-        
-
-        public override void FinishBuilding()
-        {
-            ActualHealthPoints = MaximalHealthPoints;
-            PossibleActions = new List<Actions> { Actions.TrainWorker, Actions.Cancel };
-        }
     }
 }
