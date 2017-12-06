@@ -5,7 +5,6 @@ using EvoCraft.Common.MapObjects.PlayerControlled.Buildings;
 using EvoCraft.Common.MapObjects.PlayerControlled;
 using EvoCraft.Common.MapObjects.PlayerControlled.Units;
 using EvoCraft.Common.MapObjects.Resources.Animals;
-using System;
 using EvoCraft.Common.MapObjects.Resources;
 
 namespace EvoCraft.Core
@@ -16,10 +15,10 @@ namespace EvoCraft.Core
     /// </summary>
     public class Engine
     {
-        private static Map myMap;
-        private static MapObject selectedMapObject = null;
-        private static Player myThePlayer = null;
-        private static GameState myState;
+        public static Map myMap;
+        public static MapObject selectedMapObject = null;
+        public static Player myThePlayer = null;
+        public static GameState myState;
 
         public static Map Map
         {
@@ -69,7 +68,7 @@ namespace EvoCraft.Core
         
         
 
-        private Engine() { }
+        public Engine() { }
 
         /// <summary>
         /// Updates the whole scene.
@@ -122,7 +121,7 @@ namespace EvoCraft.Core
             }
         }
 
-        private static void ResetActiveVisiblitiesToExplored()
+        public static void ResetActiveVisiblitiesToExplored()
         {
             for (int i=0; i< Map.Height; i++)
             {
@@ -136,7 +135,7 @@ namespace EvoCraft.Core
             }
         }
 
-        private static void SetVisibilitiesToActiveInRange(Point point, int range)
+        public static void SetVisibilitiesToActiveInRange(Point point, int range)
         {
             for (int i = 0; i < Map.Height; i++)
             {
@@ -426,7 +425,7 @@ namespace EvoCraft.Core
                     {
                         foreach (MapObject mo in Map.GetCellAt(i, j).MapObjects)
                         {
-                            if (mo is Animal && !mo is AggressiveAnimal)
+                            if (mo is Animal && !(mo is AggressiveAnimal))
                             {
                                 Animal animal = (Animal)mo;
                                 bestRange = pos.DistanceFrom(p);
@@ -596,7 +595,7 @@ namespace EvoCraft.Core
             }
         }
 
-        private static void UnitUpdate(MapObject mapObj, Point pos)
+        public static void UnitUpdate(MapObject mapObj, Point pos)
         {
             mapObj.Update(pos);
         }

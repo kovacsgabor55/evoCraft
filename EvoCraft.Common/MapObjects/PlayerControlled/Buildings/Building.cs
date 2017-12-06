@@ -14,7 +14,7 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
         /// </summary>
         public int BuildTime { get; set; }
         
-        public int InitialBuildTime { get; public set; }
+        public int InitialBuildTime { get; set; }
 
         /// <summary>
         /// The Z index of all ground textures.

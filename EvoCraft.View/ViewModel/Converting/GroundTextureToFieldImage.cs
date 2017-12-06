@@ -1,5 +1,4 @@
-﻿using EvoCraft.Common;
-using EvoCraft.Core;
+﻿using EvoCraft.Common.Map;
 
 namespace View
 {

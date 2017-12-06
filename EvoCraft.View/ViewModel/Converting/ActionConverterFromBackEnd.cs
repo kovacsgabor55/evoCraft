@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System;
 using EvoCraft.Common;
+using EvoCraft.Common.MapObjects.PlayerControlled;
+using EvoCraft.Common.MapObjects.PlayerControlled.Units;
+using EvoCraft.Common.MapObjects.PlayerControlled.Buildings;
 
 namespace View
 {
@@ -15,7 +18,7 @@ namespace View
         /// </summary>
         /// <param name="actionList"></param>
         /// <param name="unit"></param>
-        public static void RefreshActionList(List<ActionOnPanel> actionList, PlayerControlled playerCtrl)
+        public static void RefreshActionList(List<ActionOnPanel> actionList, PlayerControlledClass playerCtrl)
         {
             int i = 0;
             

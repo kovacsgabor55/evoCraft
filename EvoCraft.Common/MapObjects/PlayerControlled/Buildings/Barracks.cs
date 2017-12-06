@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-
-
-namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
+﻿namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
 {
     public class Barracks : TrainerBuilding
     {

@@ -1,6 +1,8 @@
-﻿using EvoCraft.Common;
-using EvoCraft.Core;
-using System;
+﻿using EvoCraft.Common.MapObjects;
+using EvoCraft.Common.MapObjects.PlayerControlled.Buildings;
+using EvoCraft.Common.MapObjects.PlayerControlled.Units;
+using EvoCraft.Common.MapObjects.Resources;
+using EvoCraft.Common.MapObjects.Resources.Animals;
 
 namespace View
 {
@@ -39,7 +41,7 @@ namespace View
                 return MapObjectImage.GunMan;
             }
             // Buildings
-            if (mapObj is Building)))
+            if (mapObj is Building)
             {
                 Building b = (Building)mapObj;
                 if (b.IsUnderConstruction)

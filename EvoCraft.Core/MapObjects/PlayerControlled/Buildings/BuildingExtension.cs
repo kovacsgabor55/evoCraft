@@ -1,4 +1,5 @@
 ﻿using EvoCraft.Common;
+using EvoCraft.Common.MapObjects.PlayerControlled.Buildings;
 
 namespace EvoCraft.Core
 {

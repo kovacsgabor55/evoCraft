@@ -1,5 +1,14 @@
 ﻿using EvoCraft.Common;
+using EvoCraft.Common.Map;
+using EvoCraft.Common.MapObjects;
+using EvoCraft.Common.MapObjects.PlayerControlled;
+using EvoCraft.Common.MapObjects.PlayerControlled.Buildings;
+using EvoCraft.Common.MapObjects.PlayerControlled.Units;
+using EvoCraft.Common.MapObjects.Resources;
+using EvoCraft.Common.MapObjects.Resources.Animals;
 using EvoCraft.Core;
+using EvoCraft.Core.MapObjects.PlayerControlled.Buildings;
+using EvoCraft.Core.MapObjects.PlayerControlled.Units;
 using System.Collections.Generic;
 
 namespace View
@@ -13,9 +22,9 @@ namespace View
         int _rows;
         int _columns;
         List<Tile> _tiles = new List<Tile>();
-        public Command<Tile> TileClickCommand { get; public set; }
-        public Command<Tile> TileRightClickCommand { get; public set; }
-        public Command<ActionOnPanel> ActionClickCommand { get; public set; }
+        public Command<Tile> TileClickCommand { get; set; }
+        public Command<Tile> TileRightClickCommand { get; set; }
+        public Command<ActionOnPanel> ActionClickCommand { get; set; }
         Panel _panel = new Panel();
 
         public static bool BuildMode = false;
@@ -47,12 +56,12 @@ namespace View
         /// <param name="tile"></param>
         public void OnTileActionClick(Tile tile)
         {
-            EvoCraft.Common.Point pointOnMap = new Point(tile.Row + RenderHelper.Instance.LeftTopCorner.Row, tile.Col + RenderHelper.Instance.LeftTopCorner.Column);
+            Point pointOnMap = new Point(tile.Row + RenderHelper.Instance.LeftTopCorner.Row, tile.Col + RenderHelper.Instance.LeftTopCorner.Column);
             Cell selectedCell = Engine.Map.GetCellAt(pointOnMap); // Innen lehet tudni, hova klikkeltek
 
             if (Engine.SelectedMapObject != null)
             {
-                if (Engine.SelectedMapObject is Unit)))
+                if (Engine.SelectedMapObject is Unit)
                 {
                     Unit unit = (Unit)Engine.SelectedMapObject;
                     unit.MoveTarget = pointOnMap;
@@ -80,7 +89,7 @@ namespace View
                             bool AutomaticWorkTriggered = false;
                             foreach (MapObject mo in selectedCell.MapObjects)
                             {
-                                if (mo is Resource)))
+                                if (mo is Resource)
                                 {
                                     AutomaticWorkTriggered = true;
                                     worker.RememberedGatherTarget = pointOnMap;
@@ -109,7 +118,7 @@ namespace View
                                         }
                                     }
                                 }
-                                if (mo is Building)))
+                                if (mo is Building)
                                 {
                                     Building b = (Building)mo;
                                     if (b.IsUnderConstruction)
@@ -128,7 +137,7 @@ namespace View
                     }
                     Sounds.PlayOrderGivenSound(Engine.SelectedMapObject);
                 }
-                if (Engine.SelectedMapObject is TrainerBuilding)))
+                if (Engine.SelectedMapObject is TrainerBuilding)
                 {
                     TrainerBuilding tb = (TrainerBuilding)Engine.SelectedMapObject;
                     tb.SpawnTarget = pointOnMap;
@@ -152,7 +161,7 @@ namespace View
         public void OnTileSelectionClick(Tile tile)
         {
             BuildMode = false;
-            EvoCraft.Common.Point pointOnMap = new Point(tile.Row + RenderHelper.Instance.LeftTopCorner.Row, tile.Col + RenderHelper.Instance.LeftTopCorner.Column);
+            Point pointOnMap = new Point(tile.Row + RenderHelper.Instance.LeftTopCorner.Row, tile.Col + RenderHelper.Instance.LeftTopCorner.Column);
             Cell selectedCell = Engine.Map.GetCellAt(pointOnMap); // Innen lehet tudni, hova klikkeltek
 
             MapObject mo = null;
@@ -175,7 +184,7 @@ namespace View
             }
             if (selectedCell.Visibility == VisibilityType.Explored)
             {
-                if (mo != null && mo is Animal)))
+                if (mo != null && mo is Animal)
                 {
                     Animal animal = (Animal)mo;
                     if (!animal.Dead)
@@ -201,7 +210,7 @@ namespace View
                 switch (actionOnPanel.Type)
                 {
                     case Actions.TrainWorker:
-                        if (Engine.SelectedMapObject is TrainerBuilding)))
+                        if (Engine.SelectedMapObject is TrainerBuilding)
                         {
                             TrainerBuilding mh = (TrainerBuilding)Engine.SelectedMapObject;
                             mh.StartMakingUnit(new Worker(mh.PlayerId));
@@ -210,7 +219,7 @@ namespace View
                         }
                         break;
                     case Actions.TrainSoldier:
-                        if (Engine.SelectedMapObject is TrainerBuilding)))
+                        if (Engine.SelectedMapObject is TrainerBuilding)
                         {
                             TrainerBuilding mh = (TrainerBuilding)Engine.SelectedMapObject;
                             mh.StartMakingUnit(new Soldier(mh.PlayerId));
@@ -219,7 +228,7 @@ namespace View
                         }
                         break;
                     case Actions.TrainPozsiHero:
-                        if (Engine.SelectedMapObject is TrainerBuilding)))
+                        if (Engine.SelectedMapObject is TrainerBuilding)
                         {
                             TrainerBuilding mh = (TrainerBuilding)Engine.SelectedMapObject;
                             mh.StartMakingUnit(new Hero(mh.PlayerId));
@@ -228,7 +237,7 @@ namespace View
                         }
                         break;
                     case Actions.TrainDoctor:
-                        if (Engine.SelectedMapObject is TrainerBuilding)))
+                        if (Engine.SelectedMapObject is TrainerBuilding)
                         {
                             TrainerBuilding mh = (TrainerBuilding)Engine.SelectedMapObject;
                             mh.StartMakingUnit(new Doctor(mh.PlayerId));
@@ -237,7 +246,7 @@ namespace View
                         }
                         break;
                     case Actions.TrainGunMan:
-                        if (Engine.SelectedMapObject is TrainerBuilding)))
+                        if (Engine.SelectedMapObject is TrainerBuilding)
                         {
                             TrainerBuilding mh = (TrainerBuilding)Engine.SelectedMapObject;
                             mh.StartMakingUnit(new GunMan(mh.PlayerId));
@@ -246,7 +255,7 @@ namespace View
                         }
                         break;
                     case Actions.Cancel:
-                        if (Engine.SelectedMapObject is TrainerBuilding)))
+                        if (Engine.SelectedMapObject is TrainerBuilding)
                         {
                             TrainerBuilding mh = (TrainerBuilding)Engine.SelectedMapObject;
                             mh.CancelTraining();
@@ -314,7 +323,7 @@ namespace View
                         break;
                     case Actions.AutoAttack:
                     case Actions.AutoHeal:
-                        if (Engine.SelectedMapObject is Unit)))
+                        if (Engine.SelectedMapObject is Unit)
                         {
                             Unit unit = (Unit)Engine.SelectedMapObject;
                             if (unit.AlertMode)

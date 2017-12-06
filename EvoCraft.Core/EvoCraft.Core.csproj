@@ -50,8 +50,20 @@
     <Compile Include="AStar\Node.cs" />
     <Compile Include="AStar\AStarSearch.cs" />
     <Compile Include="GameState.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Buildings\BarracksExtension.cs" />
     <Compile Include="MapObjects\PlayerControlled\Buildings\BuildingExtension.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Buildings\FarmBuildingExtension.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Buildings\MainHallExtension.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Buildings\MedicalTentExtension.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Buildings\TowerExtension.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Buildings\TrainerBuildingExtension.cs" />
     <Compile Include="MapObjects\PlayerControlled\PlayerControlledExtension.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Units\DoctorExtension.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Units\GunManExtension.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Units\HeroExtension.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Units\SoldierExtension.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Units\UnitExtension.cs" />
+    <Compile Include="MapObjects\PlayerControlled\Units\WorkerExtension.cs" />
     <Compile Include="Map\CellExtension.cs" />
     <Compile Include="Map\MapExtension.cs" />
     <Compile Include="Map\PointExtension.cs" />
@@ -70,7 +82,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MapObjects\PlayerControlled\Units\" />
     <Folder Include="MapObjects\Resources\Animals\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

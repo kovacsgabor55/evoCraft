@@ -1,4 +1,9 @@
 ﻿using EvoCraft.Common;
+using EvoCraft.Common.MapObjects;
+using EvoCraft.Common.MapObjects.PlayerControlled.Buildings;
+using EvoCraft.Common.MapObjects.PlayerControlled.Units;
+using EvoCraft.Common.MapObjects.Resources;
+using EvoCraft.Common.MapObjects.Resources.Animals;
 using EvoCraft.Core;
 using System;
 using System.ComponentModel;
@@ -32,7 +37,7 @@ namespace View
         {
             if (mo != null)
             {
-                if (mo.GetType() == typeof(Worker))
+                if (mo is Worker)
                 {
                     int tmp = rnd.Next(0, 5);
 
@@ -45,7 +50,7 @@ namespace View
                         case 4: Play(path + "AtLeastIHaveJob.wav"); break;
                     }
                 }
-                else if (mo.GetType() == typeof(Soldier))
+                else if (mo is Soldier)
                 {
                     int tmp = rnd.Next(0,5);
 
@@ -58,29 +63,29 @@ namespace View
                         case 4: Play(path + "AtLeastIHaveJob.wav"); break;
                     }
                 }
-                else if (mo.GetType() == typeof(Doctor))
+                else if (mo is Doctor)
                 {
                     Play(path + "Medic.wav");
                 }
 
-                else if (mo.GetType() == typeof(Hero))
+                else if (mo is Hero)
                 {
                     Play(path + "SpaceUnicorn.wav");
                 }
 
-                else if (mo.GetType() == typeof(MainHall))
+                else if (mo is MainHall)
                 {
                     Play(path + "MainHall.wav");
                 }
-                else if (mo.GetType() == typeof(Barracks))
+                else if (mo is Barracks)
                 {
                     Play(path + "ShortReveille.wav");
                 }
-                else if (mo.GetType() == typeof(Mine))
+                else if (mo is Mine)
                 {
                     Play(path + "Mine.wav");
                 }
-                else if (mo.GetType() == typeof(Sloth))
+                else if (mo is Sloth)
                 {
                     Animal animal = (Animal)mo;
                     if (animal.Dead)
@@ -92,7 +97,7 @@ namespace View
                         Play(path + "Sloth.wav");
                     }
                 }
-                else if (mo.GetType() == typeof(Chupacabra))
+                else if (mo is Chupacabra)
                 {
                     Animal animal = (Animal)mo;
                     if (animal.Dead)
@@ -104,7 +109,7 @@ namespace View
                         Play(path + "Chupy.wav");
                     }
                 }
-                else if (mo.GetType() == typeof(Llama))
+                else if (mo is Llama)
                 {
                     Animal animal = (Animal)mo;
                     if (animal.Dead)
@@ -116,7 +121,7 @@ namespace View
                         Play(path + "Llama.wav");
                     }
                 }
-                else if (mo.GetType() == typeof(Boss))
+                else if (mo is Boss)
                 {
                     Animal animal = (Animal)mo;
                     if (animal.Dead)
@@ -135,7 +140,7 @@ namespace View
         {
             if (mo != null)
             {
-                if (mo.GetType() == typeof(Worker))
+                if (mo is Worker)
                 {
                     int tmp = rnd.Next(0, 6);
 
@@ -149,7 +154,7 @@ namespace View
                         case 5: Play(path + "ChangingPosition.wav"); break;
                     }
                 }
-                else if (mo.GetType() == typeof(Soldier))
+                else if (mo is Soldier)
                 {
                     int tmp = rnd.Next(0, 6);
 
@@ -163,7 +168,7 @@ namespace View
                         case 5: Play(path + "ChangingPosition.wav"); break;
                     }
                 }
-                else if (mo.GetType() == typeof(MainHall))
+                else if (mo is MainHall)
                 {
                     int tmp = rnd.Next(0, 3);
 
@@ -174,7 +179,7 @@ namespace View
                         case 2: Play(path + "ChangingPosition.wav"); break;
                     }
                 }
-                else if (mo.GetType() == typeof(Barracks))
+                else if (mo is Barracks)
                 {
                     int tmp = rnd.Next(0, 3);
 
