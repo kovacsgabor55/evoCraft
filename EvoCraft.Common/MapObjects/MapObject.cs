@@ -57,6 +57,6 @@ namespace EvoCraft.Common.MapObjects
 
         public virtual void Update() { }
 
-        public virtual void Update(Point pos) { }
+        public virtual void Update(MapObject mapObject, Point pos) { }
     }
 }

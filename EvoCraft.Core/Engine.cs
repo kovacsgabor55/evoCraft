@@ -597,7 +597,7 @@ namespace EvoCraft.Core
 
         public static void UnitUpdate(MapObject mapObj, Point pos)
         {
-            mapObj.Update(pos);
+            mapObj.Update(mapObj, pos);
         }
     }
 }
