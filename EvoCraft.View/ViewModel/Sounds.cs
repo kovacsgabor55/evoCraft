@@ -1,12 +1,10 @@
-﻿using EvoCraft.Common;
-using EvoCraft.Common.MapObjects;
+﻿using EvoCraft.Common.MapObjects;
 using EvoCraft.Common.MapObjects.PlayerControlled.Buildings;
 using EvoCraft.Common.MapObjects.PlayerControlled.Units;
 using EvoCraft.Common.MapObjects.Resources;
 using EvoCraft.Common.MapObjects.Resources.Animals;
 using EvoCraft.Core;
 using System;
-using System.ComponentModel;
 using System.IO;
 using System.Media;
 using System.Windows.Media;

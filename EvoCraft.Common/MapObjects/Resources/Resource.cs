@@ -41,7 +41,7 @@
         /// <summary>
         /// The maximum storage capacity for this resource
         /// </summary>
-         int MaxCapacity { get; set; }
+        public int MaxCapacity { get; set; }
 
         /// <summary>
         /// The Z index of all resources. Helps the drawing engine determine which what order to draw the objects.

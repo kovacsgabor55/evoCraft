@@ -1,5 +1,4 @@
-﻿using EvoCraft.Common;
-using EvoCraft.Common.Map;
+﻿using EvoCraft.Common.Map;
 using EvoCraft.Common.MapObjects;
 using EvoCraft.Common.MapObjects.PlayerControlled;
 using EvoCraft.Common.MapObjects.PlayerControlled.Buildings;

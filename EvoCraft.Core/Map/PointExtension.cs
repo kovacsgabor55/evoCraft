@@ -1,5 +1,4 @@
-﻿using EvoCraft.Common;
-using EvoCraft.Common.Map;
+﻿using EvoCraft.Common.Map;
 using System;
 using System.Collections.Generic;
 

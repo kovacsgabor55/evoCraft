@@ -43,7 +43,7 @@ namespace View
                 }
                 return leftTopCorner;
             }
-            public set
+            set
             {
                 if ((leftTopCorner.Row + value.Row >= 0) && (leftTopCorner.Column + value.Column >= 0) && ( leftTopCorner.Column + value.Column + Size.Width <= Engine.Map.Width) && ( leftTopCorner.Row + value.Row + Size.Height <= Engine.Map.Height))
                 {

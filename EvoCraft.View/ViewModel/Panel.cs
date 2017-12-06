@@ -1,7 +1,7 @@
 ﻿using EvoCraft.Core;
-using EvoCraft.Common;
 using System.Collections.Generic;
 using System.ComponentModel;
+using EvoCraft.Common.MapObjects.PlayerControlled;
 
 namespace View
 {
@@ -15,7 +15,7 @@ namespace View
             myActions = new List<ActionOnPanel>();
             for (int i=0; i< 8; i++)
             {
-                myActions.Add(new ActionOnPanel(EvoCraft.Common.Actions.None));
+                myActions.Add(new ActionOnPanel(EvoCraft.Common.MapObjects.PlayerControlled.Actions.None));
             }
             myFood = 100;
             myGold = 200;
@@ -165,7 +165,7 @@ namespace View
             }
         }
 
-        public Command<Tile> ActionClickCommand { get; public set; }
+        public Command<Tile> ActionClickCommand { get; set; }
         
         public event PropertyChangedEventHandler PropertyChanged;
 

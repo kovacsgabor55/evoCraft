@@ -16,7 +16,6 @@ namespace EvoCraft.Common.MapObjects.Resources.Animals
         /// The actual Health Points
         /// </summary>
         public int ActualHealthPoints { get; set; }
-        public static Random randomNum = new Random();
         public bool Dead;
 
         public Animal(string Label, int maxCapacity, int maximalHealthPoints) : base(Label, maxCapacity, BlockType.BlockOtherBlock)
@@ -27,60 +26,6 @@ namespace EvoCraft.Common.MapObjects.Resources.Animals
             ActualHealthPoints = maximalHealthPoints;
         }
 
-        public override void Update()
-        {
-            if (!Dead)
-            {
-                Move();
-            }
-            else
-            {
-                Decay();
-                if (Capacity <= 0)
-                {
-                    Engine.DestroyMapObject(this);
-                }
-            }
-        }
-
-
-        public int deccayDelay = 0;
-        public void Decay()
-        {
-            Capacity--;
-        }
-
-        public virtual void Move()
-        {
-            int direction = randomNum.Next(4);
-            switch (direction)
-            {
-                case 0:
-                    Engine.MoveMapObject(this, Direction.Up);  
-                    break;
-                case 1:
-                    Engine.MoveMapObject(this, Direction.Down); 
-                    break;
-                case 2:
-                    Engine.MoveMapObject(this, Direction.Left);
-                    break;
-                case 3:
-                    Engine.MoveMapObject(this, Direction.Right);
-                    break;
-            }
-        }
-        
-        public void TakeDamage(int damage)
-        {
-            if (!Dead)
-            {
-                ActualHealthPoints -= damage;
-                if (ActualHealthPoints <= 0)
-                {
-                    ActualHealthPoints = 0;
-                    Dead = true;
-                }
-            }
-        }
+        public int deccayDelay = 0;        
     }
 }
