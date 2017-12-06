@@ -1,7 +1,6 @@
 ﻿using EvoCraft.Core;
 using System.Collections.Generic;
 using System.ComponentModel;
-using EvoCraft.Common.MapObjects.PlayerControlled;
 
 namespace View
 {

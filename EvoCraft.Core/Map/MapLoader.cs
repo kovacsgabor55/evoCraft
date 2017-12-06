@@ -1,4 +1,10 @@
 ﻿using EvoCraft.Common;
+using EvoCraft.Common.Map;
+using EvoCraft.Common.MapObjects;
+using EvoCraft.Common.MapObjects.PlayerControlled.Buildings;
+using EvoCraft.Common.MapObjects.PlayerControlled.Units;
+using EvoCraft.Common.MapObjects.Resources;
+using EvoCraft.Common.MapObjects.Resources.Animals;
 using System;
 using System.Collections.Generic;
 using System.IO;

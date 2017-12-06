@@ -1,5 +1,4 @@
-﻿using EvoCraft.Common;
-using EvoCraft.Common.MapObjects.PlayerControlled;
+﻿using EvoCraft.Common.MapObjects.PlayerControlled;
 
 namespace EvoCraft.Core
 {

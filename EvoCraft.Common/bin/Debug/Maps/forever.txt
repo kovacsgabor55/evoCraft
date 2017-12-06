@@ -1,0 +1,61 @@
+﻿
+# This is a comment line
+# Every property is set in the following way:
+# PropertyName: value
+# The values can be strings or numbers, the types need to correspond to the given property.
+# This file shows all the possible properties and their values.
+
+# General info
+Title: Forever battle Pozsi
+Author: Gábor Kovács
+
+# Starting Resources
+Gold: 0
+Wood: 0
+Food: 0
+
+# Map Size
+Width: 50
+Height: 40
+
+Map:
+OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+OPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPO
+OPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPO
+OPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPO
+OPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPO
+OPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPO
+OPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPO
+OPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPO
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O..............DDDDDDDDDDDDDDD...................O
+O..............DDDDDDDDDDDDDDD...................O
+O..............DDDDDDDDDDDDDDD...................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O................................................O
+O444444444444444444444444444444444444444444444444O
+O444444444444444444444444444444444444444444444444O
+O444444444444444444444444444444444444444444444444O
+O444444444444444444444444444444444444444444444444O
+O444444444444444444444444444444444444444444444444O
+O444444444444444444444444444444444444444444444444O
+O444444444444444444444444444444444444444444444444O
+O444444444444444444444444444444444444444444444444O
+O444444444444444444444444444444444444444444444444O
+O444444444444444444444444444444444444444444444444O
+O444444444444444444444444444444444444444444444444O
+OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO

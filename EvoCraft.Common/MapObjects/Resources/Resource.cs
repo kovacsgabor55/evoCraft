@@ -27,13 +27,6 @@
 
         public ResourceType Type;
 
-        public override void Update()
-        {
-            if (Capacity <= 0)
-            {
-                Engine.DestroyMapObject(this);
-            }
-        }
         /// <summary>
         /// The amount that stores this resource
         /// </summary>

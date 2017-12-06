@@ -50,6 +50,7 @@
     <Compile Include="AStar\Node.cs" />
     <Compile Include="AStar\AStarSearch.cs" />
     <Compile Include="GameState.cs" />
+    <Compile Include="MapObjects\BulletExtension.cs" />
     <Compile Include="MapObjects\PlayerControlled\Buildings\BarracksExtension.cs" />
     <Compile Include="MapObjects\PlayerControlled\Buildings\BuildingExtension.cs" />
     <Compile Include="MapObjects\PlayerControlled\Buildings\FarmBuildingExtension.cs" />
@@ -64,6 +65,13 @@
     <Compile Include="MapObjects\PlayerControlled\Units\SoldierExtension.cs" />
     <Compile Include="MapObjects\PlayerControlled\Units\UnitExtension.cs" />
     <Compile Include="MapObjects\PlayerControlled\Units\WorkerExtension.cs" />
+    <Compile Include="MapObjects\Resources\Animals\AggressiveAnimalExtension.cs" />
+    <Compile Include="MapObjects\Resources\Animals\AnimalExtension.cs" />
+    <Compile Include="MapObjects\Resources\Animals\BossExtension.cs" />
+    <Compile Include="MapObjects\Resources\Animals\ChupacabraExtension.cs" />
+    <Compile Include="MapObjects\Resources\Animals\RollsExtension.cs" />
+    <Compile Include="MapObjects\Resources\Animals\SlothExtension.cs" />
+    <Compile Include="MapObjects\Resources\ResourceExtension.cs" />
     <Compile Include="Map\CellExtension.cs" />
     <Compile Include="Map\MapExtension.cs" />
     <Compile Include="Map\PointExtension.cs" />
@@ -81,9 +89,7 @@
       <Name>EvoCraft.Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MapObjects\Resources\Animals\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
