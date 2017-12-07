@@ -54,9 +54,5 @@ namespace EvoCraft.Common.MapObjects
             idCoutner++;
             this.Label = Label;
         }
-
-        public virtual void Update() { }
-
-        public virtual void Update(MapObject mapObject, Point pos) { }
     }
 }

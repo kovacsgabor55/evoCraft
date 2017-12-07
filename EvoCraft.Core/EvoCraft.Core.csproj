@@ -51,6 +51,7 @@
     <Compile Include="AStar\AStarSearch.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="MapObjects\BulletExtension.cs" />
+    <Compile Include="MapObjects\MapObjectExtension.cs" />
     <Compile Include="MapObjects\PlayerControlled\Buildings\BarracksExtension.cs" />
     <Compile Include="MapObjects\PlayerControlled\Buildings\BuildingExtension.cs" />
     <Compile Include="MapObjects\PlayerControlled\Buildings\FarmBuildingExtension.cs" />

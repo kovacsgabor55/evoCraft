@@ -6,6 +6,8 @@ using EvoCraft.Common.MapObjects.PlayerControlled;
 using EvoCraft.Common.MapObjects.PlayerControlled.Units;
 using EvoCraft.Common.MapObjects.Resources.Animals;
 using EvoCraft.Common.MapObjects.Resources;
+using EvoCraft.Core.MapObjects;
+using EvoCraft.Core.MapObjects.PlayerControlled.Units;
 
 namespace EvoCraft.Core
 {
@@ -597,7 +599,13 @@ namespace EvoCraft.Core
 
         public static void UnitUpdate(MapObject mapObj, Point pos)
         {
-            mapObj.Update(mapObj, pos);
+            if (mapObj is Soldier)
+            {
+                Soldier s = mapObj as Soldier;
+                s.Update(pos);
+            }
+
+            //mapObj.Update(pos);
         }
     }
 }

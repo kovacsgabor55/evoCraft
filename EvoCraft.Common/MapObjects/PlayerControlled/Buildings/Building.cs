@@ -49,14 +49,5 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
         {
             ActualHealthPoints = MaximalHealthPoints;
         }
-
-        public override void Update()
-        {
-            if (IsUnderConstruction && BuildTime == 0)
-            {
-                IsUnderConstruction = false;
-                FinishBuilding();
-            }
-        }
     }
 }
