@@ -2,6 +2,7 @@
 using EvoCraft.Common.MapObjects;
 using EvoCraft.Common.MapObjects.PlayerControlled;
 using EvoCraft.Common.MapObjects.Resources.Animals;
+using EvoCraft.Core.MapObjects.PlayerControlled;
 
 namespace EvoCraft.Core.MapObjects.Resources.Animals
 {

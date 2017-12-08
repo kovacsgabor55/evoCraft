@@ -1,6 +1,6 @@
 ﻿using EvoCraft.Common.MapObjects.PlayerControlled;
 
-namespace EvoCraft.Core
+namespace EvoCraft.Core.MapObjects.PlayerControlled
 {
     public static class PlayerControlledExtension
     {

@@ -8,6 +8,11 @@ using EvoCraft.Common.MapObjects.Resources.Animals;
 using EvoCraft.Common.MapObjects.Resources;
 using EvoCraft.Core.MapObjects;
 using EvoCraft.Core.MapObjects.PlayerControlled.Units;
+using EvoCraft.Core.MapObjects.Resources.Animals;
+using EvoCraft.Core.MapObjects.PlayerControlled.Buildings;
+using EvoCraft.Core.MapObjects.PlayerControlled;
+using EvoCraft.Core.MapObjects.Resources;
+
 
 namespace EvoCraft.Core
 {
@@ -599,11 +604,104 @@ namespace EvoCraft.Core
 
         public static void UnitUpdate(MapObject mapObj, Point pos)
         {
+            if (mapObj is Doctor)
+            {
+                Doctor s = mapObj as Doctor;
+                s.Update(pos);
+            }
+            if (mapObj is GunMan)
+            {
+                GunMan s = mapObj as GunMan;
+                s.Update(pos);
+            }
+            if (mapObj is Hero)
+            {
+                Hero s = mapObj as Hero;
+                s.Update(pos);
+            }
             if (mapObj is Soldier)
             {
                 Soldier s = mapObj as Soldier;
                 s.Update(pos);
             }
+            if (mapObj is Worker)
+            {
+                Worker s = mapObj as Worker;
+                s.Update(pos);
+            }
+            if (mapObj is Barracks)
+            {
+                Barracks s = mapObj as Barracks;
+                s.Update(pos);
+            }
+            if (mapObj is FarmBuilding)
+            {
+                FarmBuilding s = mapObj as FarmBuilding;
+                s.Update(pos);
+            }
+            if (mapObj is MainHall)
+            {
+                MainHall s = mapObj as MainHall;
+                s.Update(pos);
+            }
+            if (mapObj is MedicalTent)
+            {
+                MedicalTent s = mapObj as MedicalTent;
+                s.Update(pos);
+            }
+            if (mapObj is Tower)
+            {
+                Tower s = mapObj as Tower;
+                s.Update(pos);
+            }
+            if (mapObj is Wall)
+            {
+                Wall s = mapObj as Wall;
+                s.Update(pos);
+            }
+            if (mapObj is Boss)
+            {
+                Boss s = mapObj as Boss;
+                s.Update(pos);
+            }
+            if (mapObj is Chupacabra)
+            {
+                Chupacabra s = mapObj as Chupacabra;
+                s.Update(pos);
+            }
+            if (mapObj is Llama)
+            {
+                Llama s = mapObj as Llama;
+                s.Update(pos);
+            }
+            if (mapObj is Rolls)
+            {
+                Rolls s = mapObj as Rolls;
+                s.Update(pos);
+            }
+            if (mapObj is Sloth)
+            {
+                Sloth s = mapObj as Sloth;
+                s.Update(pos);
+            }
+            if (mapObj is Farm)
+            {
+                Farm s = mapObj as Farm;
+                s.Update(pos);
+            }
+            if (mapObj is Mine)
+            {
+                Mine s = mapObj as Mine;
+                s.Update(pos);
+            }
+            if (mapObj is Tree)
+            {
+                Tree s = mapObj as Tree;
+                s.Update(pos);
+            }
+
+
+
 
             //mapObj.Update(pos);
         }
