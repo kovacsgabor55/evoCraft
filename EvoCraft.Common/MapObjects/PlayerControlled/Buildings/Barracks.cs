@@ -6,7 +6,6 @@
         public static int GoldCost = 200;
         public static int WoodCost = 400;
 
-        public Barracks(int PlayerId) : this(PlayerId, true) { }
         public Barracks(int PlayerId, bool UnderConstruction)
             : base("Barracks", 500, 20, PlayerId, null, UnderConstruction, 4, new ResourceSet(GoldCost, FoodCost, FoodCost))
         { }

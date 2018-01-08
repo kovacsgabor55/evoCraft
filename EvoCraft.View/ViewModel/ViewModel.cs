@@ -75,7 +75,7 @@ namespace View
                                 {
                                     case Actions.BuildMainHall: worker.OrderABuild(new MainHall(worker.PlayerId), pointOnMap); break;
                                     case Actions.BuildWall: worker.OrderABuild(new Wall(worker.PlayerId), pointOnMap); break;
-                                    case Actions.BuildBarracs: worker.OrderABuild(new Barracks(worker.PlayerId), pointOnMap); break;
+                                    case Actions.BuildBarracs: worker.OrderABuild(new BarracksExtension(worker.PlayerId), pointOnMap); break;
                                     case Actions.BuildTower: worker.OrderABuild(new Tower(worker.PlayerId), pointOnMap); break;
                                     case Actions.BuildMedicalTent: worker.OrderABuild(new MedicalTent(worker.PlayerId), pointOnMap); break;
                                     case Actions.BuildFarm: worker.OrderABuild(new FarmBuilding(worker.PlayerId), pointOnMap); break;
@@ -195,7 +195,6 @@ namespace View
             
             Sounds.PlaySelectionSound(mo);
             Engine.SelectedMapObject = mo;
-            
         }
 
         /// <summary>
@@ -271,7 +270,7 @@ namespace View
 
                         break;
                     case Actions.BuildBarracs:
-                        if (Engine.SelectedMapObject.GetType() == typeof(Worker) && Engine.ThePlayer.Resources.HasEnoughToReduceBy(new Barracks(0).Costs))
+                        if (Engine.SelectedMapObject.GetType() == typeof(Worker) && Engine.ThePlayer.Resources.HasEnoughToReduceBy(new BarracksExtension(0).Costs))
                         {
                             BuildMode = true;
                             SelectedAction = Actions.BuildBarracs;
@@ -338,11 +337,8 @@ namespace View
 
                         break;
                 }
-            }
-            
+            }       
         }
-
-        
 
         public int Rows
         {
@@ -366,7 +362,6 @@ namespace View
         {
             get { return _panel; }
             set { _panel = value; }
-        }
-        
+        } 
     }
 }

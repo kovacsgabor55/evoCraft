@@ -4,15 +4,6 @@ namespace EvoCraft.Core
 {
     public static class BuildingExtension
     {
-        public static void Update(this Building building)
-        {
-            if (building.IsUnderConstruction && building.BuildTime == 0)
-            {
-                building.IsUnderConstruction = false;
-                building.FinishBuilding();
-            }
-        }
-
         public static void beBuilt(this Building building)
         {
             if (building.IsUnderConstruction && building.BuildTime > 0)
@@ -20,6 +11,11 @@ namespace EvoCraft.Core
                 building.BuildTime--;
                 building.ActualHealthPoints += building.MaximalHealthPoints / building.InitialBuildTime;
             }
+            else
+            {
+                building.IsUnderConstruction = false;
+                building.FinishBuilding();
+            }       
         }
     }
 }

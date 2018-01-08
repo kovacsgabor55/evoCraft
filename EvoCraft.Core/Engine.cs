@@ -97,7 +97,7 @@ namespace EvoCraft.Core
                 bool found;
                 Point pos = GetMapObjectPosition(mapObj, out found);
 
-                UnitUpdate(mapObj, pos);
+                MapObjectUpdate(mapObj, pos);
                 
                 if (found)
                 {
@@ -602,7 +602,7 @@ namespace EvoCraft.Core
             }
         }
 
-        public static void UnitUpdate(MapObject mapObj, Point pos)
+        public static void MapObjectUpdate(MapObject mapObj, Point pos)
         {
             if (mapObj is Doctor)
             {
@@ -629,9 +629,9 @@ namespace EvoCraft.Core
                 Worker s = mapObj as Worker;
                 s.Update(pos);
             }
-            if (mapObj is Barracks)
+            if (mapObj is BarracksExtension)
             {
-                Barracks s = mapObj as Barracks;
+                BarracksExtension s = mapObj as BarracksExtension;
                 s.Update(pos);
             }
             if (mapObj is FarmBuilding)
