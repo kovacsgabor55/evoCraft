@@ -6,7 +6,7 @@ namespace EvoCraft.Core.MapObjects.Resources.Animals
 {
     public static class AnimalExtension
     {
-        public static void Update(this Animal animal)
+        public static void Update(this Animal animal, Point pos)
         {
             if (!animal.Dead)
             {

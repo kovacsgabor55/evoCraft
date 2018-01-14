@@ -4,6 +4,8 @@ using EvoCraft.Common.MapObjects.PlayerControlled.Buildings;
 using EvoCraft.Common.MapObjects.PlayerControlled.Units;
 using EvoCraft.Common.MapObjects.Resources;
 using EvoCraft.Common.MapObjects.Resources.Animals;
+using System.Linq;
+using System.Reflection;
 
 namespace EvoCraft.Core.MapObjects.PlayerControlled.Units
 {
@@ -263,7 +265,12 @@ namespace EvoCraft.Core.MapObjects.PlayerControlled.Units
                         Building b = (Building)mo;
                         if (b.IsUnderConstruction)
                         {
-                            b.beBuilt();
+                            MethodInfo method = typeof(BuildingExtension).GetMethods(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static).First(m => m.IsGenericMethod && m.Name == nameof(BuildingExtension.beBuilt));
+                            MethodInfo genericMethod = method.MakeGenericMethod(b.GetType());
+                            genericMethod.Invoke(null, new object[] {b });
+
+                            //BuildingExtension.beBuilt(b);
+                            //b.beBuilt();
                         }
                         else
                         {

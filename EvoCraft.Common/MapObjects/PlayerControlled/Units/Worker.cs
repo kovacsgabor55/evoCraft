@@ -18,7 +18,7 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Units
         public static readonly int WoodCost = 50;
         public static readonly int GoldCost = 0;
         public static int WorkerTrainingTime = 20;
-        public static List<Actions> WorkerPossibleActions = new List<Actions> { Actions.Stop, Actions.BuildBarracs, Actions.BuildWall, Actions.BuildMainHall, Actions.BuildTower, Actions.BuildMedicalTent, Actions.BuildFarm};
+        public static List<Actions> WorkerPossibleActions = new List<Actions> { Actions.Stop, Actions.BuildBarracs, Actions.BuildWall, Actions.BuildMainHall, Actions.BuildFarm};
 
         /// <summary>
         /// A munkás maximális tárolási kapacitása
@@ -84,6 +84,7 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Units
             myNextOrder = Order.None;
             myCapacity = WorkerCapacity;
             myAmount = 0;
+            ActionsAvailable = true;
         }
         
         /// <summary>

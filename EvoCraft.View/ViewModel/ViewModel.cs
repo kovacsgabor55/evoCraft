@@ -75,9 +75,7 @@ namespace View
                                 {
                                     case Actions.BuildMainHall: worker.OrderABuild(new MainHall(worker.PlayerId), pointOnMap); break;
                                     case Actions.BuildWall: worker.OrderABuild(new Wall(worker.PlayerId), pointOnMap); break;
-                                    case Actions.BuildBarracs: worker.OrderABuild(new BarracksExtension(worker.PlayerId), pointOnMap); break;
-                                    case Actions.BuildTower: worker.OrderABuild(new Tower(worker.PlayerId), pointOnMap); break;
-                                    case Actions.BuildMedicalTent: worker.OrderABuild(new MedicalTent(worker.PlayerId), pointOnMap); break;
+                                    case Actions.BuildBarracs: worker.OrderABuild(new Barracks(worker.PlayerId), pointOnMap); break;
                                     case Actions.BuildFarm: worker.OrderABuild(new FarmBuilding(worker.PlayerId), pointOnMap); break;
                                 }
                             }
@@ -142,12 +140,6 @@ namespace View
                     tb.SpawnTarget = pointOnMap;
                     Sounds.PlayOrderGivenSound(Engine.SelectedMapObject);
                 }
-                if (Engine.SelectedMapObject.GetType() == typeof(Tower))
-                {
-                    Tower tb = (Tower)Engine.SelectedMapObject;
-                    tb.Target = pointOnMap;
-                }
-
             }
 
         }
@@ -243,15 +235,6 @@ namespace View
                             SelectedAction = Actions.None;
                         }
                         break;
-                    case Actions.TrainGunMan:
-                        if (Engine.SelectedMapObject is TrainerBuilding)
-                        {
-                            TrainerBuilding mh = (TrainerBuilding)Engine.SelectedMapObject;
-                            mh.StartMakingUnit(new GunMan(mh.PlayerId));
-                            BuildMode = false;
-                            SelectedAction = Actions.None;
-                        }
-                        break;
                     case Actions.Cancel:
                         if (Engine.SelectedMapObject is TrainerBuilding)
                         {
@@ -270,7 +253,7 @@ namespace View
 
                         break;
                     case Actions.BuildBarracs:
-                        if (Engine.SelectedMapObject.GetType() == typeof(Worker) && Engine.ThePlayer.Resources.HasEnoughToReduceBy(new BarracksExtension(0).Costs))
+                        if (Engine.SelectedMapObject.GetType() == typeof(Worker) && Engine.ThePlayer.Resources.HasEnoughToReduceBy(new Barracks(0).Costs))
                         {
                             BuildMode = true;
                             SelectedAction = Actions.BuildBarracs;
@@ -282,22 +265,6 @@ namespace View
                         {
                             BuildMode = true;
                             SelectedAction = Actions.BuildMainHall;
-                        }
-
-                        break;
-                    case Actions.BuildMedicalTent:
-                        if (Engine.SelectedMapObject.GetType() == typeof(Worker) && Engine.ThePlayer.Resources.HasEnoughToReduceBy(new MedicalTent(0).Costs))
-                        {
-                            BuildMode = true;
-                            SelectedAction = Actions.BuildMedicalTent;
-                        }
-
-                        break;
-                    case Actions.BuildTower:
-                        if (Engine.SelectedMapObject.GetType() == typeof(Worker) && Engine.ThePlayer.Resources.HasEnoughToReduceBy(new Tower(0).Costs))
-                        {
-                            BuildMode = true;
-                            SelectedAction = Actions.BuildTower;
                         }
 
                         break;

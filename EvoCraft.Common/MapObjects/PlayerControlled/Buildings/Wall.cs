@@ -1,4 +1,6 @@
-﻿namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
+﻿using System.Collections.Generic;
+
+namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
 {
     /// <summary>
     /// Basic building that blocks people.
@@ -8,6 +10,9 @@
         public static int FoodCost = 0;
         public static int GoldCost = 0;
         public static int WoodCost = 100;
+        private List<Actions> list;
+        private int v1;
+        private bool v2;
 
         /// <summary>
         /// Make new wall
@@ -18,8 +23,13 @@
         {
             if (!UnderConstruction)
             {
-                FinishBuilding();
+                //FinishBuilding();
             }
+        }
+
+        public Wall(int PlayerId, bool UnderConstruction, List<Actions> list)
+            : base("Wall", 300, 10, PlayerId, list, UnderConstruction, 3, new ResourceSet(GoldCost, FoodCost, WoodCost))
+        {
         }
     }
 }

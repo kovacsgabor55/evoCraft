@@ -45,9 +45,9 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
             this.InitialBuildTime = BuildTime;
         }
 
-        public virtual void FinishBuilding()
-        {
-            ActualHealthPoints = MaximalHealthPoints;
-        }
+        //public virtual void FinishBuilding()
+        //{
+        //    ActualHealthPoints = MaximalHealthPoints;
+        //}
     }
 }

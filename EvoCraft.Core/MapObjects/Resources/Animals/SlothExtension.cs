@@ -6,7 +6,7 @@ namespace EvoCraft.Core.MapObjects.Resources.Animals
 {
     public static class SlothExtension
     {
-        public static void Move(this Sloth sloth)
+        public static void Move(this Sloth sloth, Point pos)
         {
             if (sloth.slowNum > sloth.limit)
             {

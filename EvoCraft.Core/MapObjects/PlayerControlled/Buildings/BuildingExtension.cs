@@ -4,7 +4,7 @@ namespace EvoCraft.Core
 {
     public static class BuildingExtension
     {
-        public static void beBuilt(this Building building)
+        public static void beBuilt<T>(this T building) where T : Building
         {
             if (building.IsUnderConstruction && building.BuildTime > 0)
             {
@@ -14,7 +14,9 @@ namespace EvoCraft.Core
             else
             {
                 building.IsUnderConstruction = false;
-                building.FinishBuilding();
+
+                building.ActualHealthPoints = building.MaximalHealthPoints;
+                building.ActionsAvailable = true;
             }       
         }
     }

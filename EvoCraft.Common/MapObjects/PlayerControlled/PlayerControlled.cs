@@ -7,6 +7,8 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled
     /// </summary>
     public abstract class PlayerControlledClass : MapObject
     {
+        private List<Actions> myPossibleActions;
+
         /// <summary>
         /// The maximal Health Points of the building
         /// </summary>
@@ -34,8 +36,24 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled
 
         public List<Actions> PossibleActions
         {
-            get; set;
+            get
+            {
+                if (ActionsAvailable)
+                {
+                    return myPossibleActions;
+                }
+
+                return new List<Actions>();
+            }
+            set
+            {
+                myPossibleActions = value;
+            }
         }
+
+        public bool ActionsAvailable { get; set; }
+
+
 
         public Actions NextAxtion
         {
@@ -60,8 +78,14 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled
             this.ActualHealthPoints = ActualHealthPoints;
             this.SightRange = SightRange;
             this.Costs = Costs;
-            this.PossibleActions = PossibleActions;
             this.NextAxtion = NextAxtion;
+
+            if (PossibleActions != null)
+            {
+                ActionsAvailable = true;
+                this.PossibleActions = PossibleActions;
+                this.ActualHealthPoints = this.MaximalHealthPoints;
+            }
         }
     }
 }

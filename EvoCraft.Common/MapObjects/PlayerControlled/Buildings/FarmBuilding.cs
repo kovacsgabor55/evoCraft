@@ -12,7 +12,7 @@
         {
             if (!UnderConstruction)
             {
-                FinishBuilding();
+                //FinishBuilding();
             }
         }
     }

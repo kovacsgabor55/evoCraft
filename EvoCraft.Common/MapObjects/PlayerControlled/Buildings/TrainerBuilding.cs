@@ -25,7 +25,7 @@ namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
             SpawnTarget = null;
             if (!IsUnderConstruction)
             {
-                FinishBuilding();
+                //FinishBuilding();
             }
         }
     }

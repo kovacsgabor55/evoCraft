@@ -68,12 +68,9 @@ namespace View
                 case Actions.TrainSoldier: return "Gold: " + Soldier.GoldCost + "\nFood: " + Soldier.FoodCost + "\nWood: " + Soldier.WoodCost;
                 case Actions.TrainPozsiHero: return "Gold: " + Hero.GoldCost + "\nFood: " + Hero.FoodCost + "\nWood: " + Hero.WoodCost;
                 case Actions.TrainDoctor: return "Gold: " + Doctor.GoldCost + "\nFood: " + Doctor.FoodCost + "\nWood: " + Doctor.WoodCost;
-                case Actions.TrainGunMan: return "Gold: " + GunMan.GoldCost + "\nFood: " + GunMan.FoodCost + "\nWood: " + GunMan.WoodCost;
                 case Actions.BuildBarracs: return "Gold: " + Barracks.GoldCost + "\nFood: " + Barracks.FoodCost + "\nWood: " + Barracks.WoodCost;
                 case Actions.BuildMainHall: return "Gold: " + MainHall.GoldCost + "\nFood: " + MainHall.FoodCost + "\nWood: " + MainHall.WoodCost;
                 case Actions.BuildWall: return "Gold: " + Wall.GoldCost + "\nFood: " + Wall.FoodCost + "\nWood: " + Wall.WoodCost;
-                case Actions.BuildTower: return "Gold: " + Tower.GoldCost + "\nFood: " + Tower.FoodCost + "\nWood: " + Tower.WoodCost;
-                case Actions.BuildMedicalTent: return "Gold: " + MedicalTent.GoldCost + "\nFood: " + MedicalTent.FoodCost + "\nWood: " + MedicalTent.WoodCost;
                 case Actions.BuildFarm: return "Gold: " + FarmBuilding.GoldCost + "\nFood: " + FarmBuilding.FoodCost + "\nWood: " + FarmBuilding.WoodCost;
                 default: return "";
             }

@@ -1,21 +1,21 @@
-﻿using EvoCraft.Common;
+﻿using EvoCraft.Common.Map;
 using EvoCraft.Common.MapObjects.PlayerControlled;
 using EvoCraft.Common.MapObjects.PlayerControlled.Buildings;
 using System.Collections.Generic;
 
 namespace EvoCraft.Core.MapObjects.PlayerControlled.Buildings
 {
-    public class BarracksExtension : Barracks
+    public static class BarracksExtension
     {
-        public BarracksExtension(int PlayerId) : this(PlayerId, true) { }
-        public BarracksExtension(int PlayerId, bool UnderConstruction)
-            : base(PlayerId, UnderConstruction)
-        { }
-
-        public override void FinishBuilding()
+        public static void FinishBuilding(this Barracks barracks)
         {
-            this.ActualHealthPoints = this.MaximalHealthPoints;
-            this.PossibleActions = new List<Actions> { Actions.TrainSoldier, Actions.TrainPozsiHero, Actions.TrainGunMan, Actions.Cancel };
+            barracks.ActualHealthPoints = barracks.MaximalHealthPoints;
+            //barracks.PossibleActions = new List<Actions> { Actions.TrainSoldier, Actions.TrainPozsiHero, Actions.TrainGunMan, Actions.Cancel };
+        }
+
+        public static void Update(this Barracks trainerBuilding, Point pos)
+        {
+            TrainerBuildingExtension.Update(trainerBuilding, pos);
         }
     }
 }

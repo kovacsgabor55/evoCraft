@@ -1,6 +1,7 @@
 ﻿using EvoCraft.Common;
 using EvoCraft.Common.Map;
 using EvoCraft.Common.MapObjects;
+using EvoCraft.Common.MapObjects.PlayerControlled;
 using EvoCraft.Common.MapObjects.PlayerControlled.Buildings;
 using EvoCraft.Common.MapObjects.PlayerControlled.Units;
 using EvoCraft.Common.MapObjects.Resources;
@@ -106,19 +107,18 @@ namespace EvoCraft.Core
                             // Itt dől el, hogy milyen karakterre mit tölt be
                             foreach (char c in line)
                             {
+                                //TODO
+
                                 switch (c)
                                 {
                                     case 'O': loadedMap.GetCellAt(currentLineInMapData, currentCharInMapData).MapObjects.Add(new Rock()); break;
-                                    case 'X': loadedMap.GetCellAt(currentLineInMapData, currentCharInMapData).MapObjects.Add(new Wall(0,false)); break;
-                                    case 'H': loadedMap.GetCellAt(currentLineInMapData, currentCharInMapData).MapObjects.Add(new MainHall(0, false)); break;
-                                    case 'B': loadedMap.GetCellAt(currentLineInMapData, currentCharInMapData).MapObjects.Add(new Barracks(0, false)); break;
-                                    case 'N': loadedMap.GetCellAt(currentLineInMapData, currentCharInMapData).MapObjects.Add(new MedicalTent(0, false)); break;
-                                    case 'E': loadedMap.GetCellAt(currentLineInMapData, currentCharInMapData).MapObjects.Add(new Tower(0, false)); break;
+                                    case 'X': loadedMap.GetCellAt(currentLineInMapData, currentCharInMapData).MapObjects.Add(new Wall(0,false, new List<Actions> {})); break;
+                                    case 'H': loadedMap.GetCellAt(currentLineInMapData, currentCharInMapData).MapObjects.Add(new MainHall(0, false, new List<Actions> { Actions.TrainWorker, Actions.Cancel })); break;
+                                    case 'B': loadedMap.GetCellAt(currentLineInMapData, currentCharInMapData).MapObjects.Add(new Barracks(0, false, new List<Actions> { Actions.TrainDoctor, Actions.TrainPozsiHero, Actions.TrainSoldier, Actions.Cancel })); break;
                                     case 'W': loadedMap.GetCellAt(currentLineInMapData, currentCharInMapData).MapObjects.Add(new Worker(0)); break;
                                     case 'S': loadedMap.GetCellAt(currentLineInMapData, currentCharInMapData).MapObjects.Add(new Soldier(0)); break;
                                     case 'D': loadedMap.GetCellAt(currentLineInMapData, currentCharInMapData).MapObjects.Add(new Doctor(0)); break;
                                     case 'P': loadedMap.GetCellAt(currentLineInMapData, currentCharInMapData).MapObjects.Add(new Hero(0)); break;
-                                    case 'G': loadedMap.GetCellAt(currentLineInMapData, currentCharInMapData).MapObjects.Add(new GunMan(0)); break;
                                     case 'T': loadedMap.GetCellAt(currentLineInMapData, currentCharInMapData).MapObjects.Add(new Tree()); break;
                                     case 'M': loadedMap.GetCellAt(currentLineInMapData, currentCharInMapData).MapObjects.Add(new Mine(500)); break;
                                     case 'F': loadedMap.GetCellAt(currentLineInMapData, currentCharInMapData).MapObjects.Add(new Farm()); break;
@@ -126,7 +126,6 @@ namespace EvoCraft.Core
                                     case '2': loadedMap.GetCellAt(currentLineInMapData, currentCharInMapData).MapObjects.Add(new Llama()); break;
                                     case '3': loadedMap.GetCellAt(currentLineInMapData, currentCharInMapData).MapObjects.Add(new Chupacabra()); break;
                                     case '4': loadedMap.GetCellAt(currentLineInMapData, currentCharInMapData).MapObjects.Add(new Boss()); break;
-                                    case '5': loadedMap.GetCellAt(currentLineInMapData, currentCharInMapData).MapObjects.Add(new Rolls()); break;
                                 }
                                 currentCharInMapData++;
                             }

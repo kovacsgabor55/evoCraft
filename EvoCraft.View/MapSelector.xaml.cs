@@ -61,6 +61,8 @@ namespace View
             {
                 Engine.Map = selectedMap;
                 Sounds.StopMenuMusic();
+                maps.Clear();//TODO
+                GC.Collect();
                 LoadingScreen page = new LoadingScreen();
                 this.NavigationService.Navigate(page);
             }

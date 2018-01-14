@@ -1,4 +1,5 @@
-﻿using EvoCraft.Common.MapObjects.PlayerControlled.Buildings;
+﻿using EvoCraft.Common.Map;
+using EvoCraft.Common.MapObjects.PlayerControlled.Buildings;
 using EvoCraft.Common.MapObjects.PlayerControlled.Units;
 using System.Linq;
 
@@ -6,8 +7,9 @@ namespace EvoCraft.Core.MapObjects.PlayerControlled.Buildings
 {
     public static class TrainerBuildingExtension
     {
-        public static void Update(this TrainerBuilding trainerBuilding)
+        public static void Update(this TrainerBuilding trainerBuilding, Point pos)
         {
+            //MapObjectExtension.Update(trainerBuilding, pos);
             if (trainerBuilding.TrainingQueue.Count > 0)
             {
                 if (trainerBuilding.TrainingQueue.ElementAt(0).TrainingTime > 0)
@@ -24,9 +26,14 @@ namespace EvoCraft.Core.MapObjects.PlayerControlled.Buildings
             }
             if (trainerBuilding.IsUnderConstruction && trainerBuilding.BuildTime == 0)
             {
-                trainerBuilding.IsUnderConstruction = false;
-                trainerBuilding.FinishBuilding();
+                //trainerBuilding.IsUnderConstruction = false;
+                //trainerBuilding.FinishBuilding();
             }
+        }
+
+        public static void Update(this TrainerBuilding trainerBuilding)
+        {
+            Update(trainerBuilding, new Point(0, 0));
         }
 
         /// <summary>

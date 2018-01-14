@@ -56,12 +56,9 @@
     <Compile Include="MapObjects\PlayerControlled\Buildings\BuildingExtension.cs" />
     <Compile Include="MapObjects\PlayerControlled\Buildings\FarmBuildingExtension.cs" />
     <Compile Include="MapObjects\PlayerControlled\Buildings\MainHallExtension.cs" />
-    <Compile Include="MapObjects\PlayerControlled\Buildings\MedicalTentExtension.cs" />
-    <Compile Include="MapObjects\PlayerControlled\Buildings\TowerExtension.cs" />
     <Compile Include="MapObjects\PlayerControlled\Buildings\TrainerBuildingExtension.cs" />
     <Compile Include="MapObjects\PlayerControlled\PlayerControlledExtension.cs" />
     <Compile Include="MapObjects\PlayerControlled\Units\DoctorExtension.cs" />
-    <Compile Include="MapObjects\PlayerControlled\Units\GunManExtension.cs" />
     <Compile Include="MapObjects\PlayerControlled\Units\HeroExtension.cs" />
     <Compile Include="MapObjects\PlayerControlled\Units\SoldierExtension.cs" />
     <Compile Include="MapObjects\PlayerControlled\Units\UnitExtension.cs" />
@@ -70,7 +67,6 @@
     <Compile Include="MapObjects\Resources\Animals\AnimalExtension.cs" />
     <Compile Include="MapObjects\Resources\Animals\BossExtension.cs" />
     <Compile Include="MapObjects\Resources\Animals\ChupacabraExtension.cs" />
-    <Compile Include="MapObjects\Resources\Animals\RollsExtension.cs" />
     <Compile Include="MapObjects\Resources\Animals\SlothExtension.cs" />
     <Compile Include="MapObjects\Resources\ResourceExtension.cs" />
     <Compile Include="Map\CellExtension.cs" />

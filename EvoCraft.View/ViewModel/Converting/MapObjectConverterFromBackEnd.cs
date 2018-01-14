@@ -36,10 +36,6 @@ namespace View
             {
                 return MapObjectImage.Doctor;
             }
-            if (mapObj.GetType() == typeof(GunMan))
-            {
-                return MapObjectImage.GunMan;
-            }
             // Buildings
             if (mapObj is Building)
             {
@@ -61,14 +57,6 @@ namespace View
                     if (mapObj.GetType() == typeof(Barracks))
                     {
                         return MapObjectImage.Barrack;
-                    }
-                    if (mapObj.GetType() == typeof(Tower))
-                    {
-                        return MapObjectImage.Tower;
-                    }
-                    if (mapObj.GetType() == typeof(MedicalTent))
-                    {
-                        return MapObjectImage.MedicalTent;
                     }
                     if (mapObj.GetType() == typeof(FarmBuilding))
                     {
@@ -125,18 +113,6 @@ namespace View
                 else
                 {
                     return MapObjectImage.Boss;
-                }
-            }
-            else if (mapObj.GetType() == typeof(Rolls))
-            {
-                Animal animal = (Animal)mapObj;
-                if (animal.Dead)
-                {
-                    return MapObjectImage.DeadRolls;
-                }
-                else
-                {
-                    return MapObjectImage.Rolls;
                 }
             }
             else if (mapObj.GetType() == typeof(Tree))

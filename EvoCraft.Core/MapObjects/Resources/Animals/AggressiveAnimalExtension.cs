@@ -3,22 +3,42 @@ using EvoCraft.Common.MapObjects;
 using EvoCraft.Common.MapObjects.PlayerControlled;
 using EvoCraft.Common.MapObjects.Resources.Animals;
 using EvoCraft.Core.MapObjects.PlayerControlled;
+using System;
+using System.Linq;
+using System.Reflection;
 
 namespace EvoCraft.Core.MapObjects.Resources.Animals
 {
     public static class AggressiveAnimalExtension
     {
-        public static void Update(this AggressiveAnimal aggressiveAnimal)
+        public static void Update(this AggressiveAnimal aggressiveAnimal, Point pos)
         {
-            bool found;
-            Point pos = Engine.GetMapObjectPosition(aggressiveAnimal, out found);
-            if (found)
-            {
                 if (!aggressiveAnimal.Dead)
                 {
                     Attack(aggressiveAnimal, pos);
-                    MoveWithPathfinding(aggressiveAnimal, pos);
+
+                //TODO
+
+                //Type myTypeObj = aggressiveAnimal.GetType();
+
+                //MethodInfo myMethodInfo = typeof(AggressiveAnimalExtension).GetMethods(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static).First(m => m.IsGenericMethod && m.Name == nameof(AggressiveAnimalExtension.MoveWithPathfinding));
+
+
+                //MethodInfo myMethodInfo = myTypeObj.GetMethod("MoveWithPathfinding");
+                //myMethodInfo.Invoke(aggressiveAnimal, new object[] { pos });
+
+
+                if (aggressiveAnimal is Chupacabra)
+                {
+                    ChupacabraExtension.MoveWithPathfinding((Chupacabra)aggressiveAnimal, pos);
                 }
+                if (aggressiveAnimal is Boss)
+                {
+                    BossExtension.MoveWithPathfinding((Boss)aggressiveAnimal, pos);
+                }
+
+                //MoveWithPathfinding(aggressiveAnimal, pos);
+            }
                 else
                 {
                     aggressiveAnimal.Decay();
@@ -27,7 +47,6 @@ namespace EvoCraft.Core.MapObjects.Resources.Animals
                         Engine.DestroyMapObject(aggressiveAnimal);
                     }
                 }
-            }
         }
 
         /// <summary>
