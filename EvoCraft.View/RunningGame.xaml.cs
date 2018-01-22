@@ -183,19 +183,6 @@ namespace View
         
         }
 
-        public void EndGame()
-        {
-            /*EndGameWindow modalWindow = new EndGameWindow(Engine.State);
-            modalWindow.ShowDialog();
-
-            if (modalWindow.response == GameState.Defeat)
-            {
-                MainMenu page = new MainMenu();
-                this.NavigationService.Navigate(page);
-            }*/
-        }
-
-
         /// <summary>
         /// Updates the back-end's state. Every object's update will be called in the process.
         /// </summary>
@@ -222,59 +209,10 @@ namespace View
             }
         }
 
-        public void Tile_MouseRightButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            Console.WriteLine(sender.GetType());
-        }
-
-
         public void Page_onClose()
         {
             soundPlayer.Stop();
             global::View.Properties.Settings.Default.RunningGameSoundPlayerActive = false;
-        }
-        
-
-        //// Stuffs for chat
-        //public void DisplayMessage(ChatBackend.CompositeType composite)
-        //{
-        //    if (File.Exists("options.xml"))
-        //    {
-        //        XmlSerializer xs = new XmlSerializer(typeof(Information));
-        //        FileStream read = new FileStream("options.xml", FileMode.Open, FileAccess.Read, FileShare.Read);
-        //        Information info = (Information)xs.Deserialize(read);
-
-        //        string username = info.UserName;
-
-        //        string message = composite.Message == null ? "" : composite.Message;
-        //        textBoxChatPane.Text += (username + ": " + message + Environment.NewLine);
-                
-        //    }
-        //}
-
-        //public void textBoxEntryField_KeyDown(object sender, KeyEventArgs e)
-        //{
-        //    if (e.Key == Key.Return || e.Key == Key.Enter)
-        //    {
-        //        backend.SendMessage(textBoxEntryField.Text);
-        //        textBoxEntryField.Clear();
-        //        e.Handled = true;
-        //    }
-        //    else 
-        //    {
-        //        try
-        //        {
-        //            textBoxEntryField.Text += (char)e.Key;
-        //            e.Handled = true;
-        //        }
-        //        catch (Exception) { }          
-                
-        //    }
-        //}
-
-        public void textBoxEntryField_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
 
         /// <summary>
