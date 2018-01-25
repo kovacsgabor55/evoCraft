@@ -11,6 +11,7 @@ using EvoCraft.Core.MapObjects.PlayerControlled.Units;
 using EvoCraft.Core.MapObjects.Resources.Animals;
 using EvoCraft.Core.MapObjects.PlayerControlled.Buildings;
 using EvoCraft.Core.MapObjects.Resources;
+using System.ComponentModel;
 
 namespace EvoCraft.Core
 {
@@ -24,6 +25,7 @@ namespace EvoCraft.Core
         public static MapObject selectedMapObject = null;
         public static Player myThePlayer = null;
         public static GameState myState;
+        public static BackgroundWorker EngineTimer;
 
         public static Map Map
         {
@@ -70,8 +72,23 @@ namespace EvoCraft.Core
             get { return myThePlayer; }
             set { myThePlayer = value; }
         }
-        
-        
+
+        public static int[] AmountOfResources
+        {
+            get
+            {
+                int[] values = new int[3];
+                values[0] = myThePlayer.Resources.Gold;
+                values[1] = myThePlayer.Resources.Wood;
+                values[2] = myThePlayer.Resources.Food;
+                return values;
+            }
+            set
+            {
+            }
+        }
+
+
 
         public Engine() { }
 

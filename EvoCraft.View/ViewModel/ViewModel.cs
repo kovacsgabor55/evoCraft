@@ -8,7 +8,11 @@ using EvoCraft.Common.MapObjects.Resources.Animals;
 using EvoCraft.Core;
 using EvoCraft.Core.MapObjects.PlayerControlled.Buildings;
 using EvoCraft.Core.MapObjects.PlayerControlled.Units;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace View
 {
@@ -330,5 +334,312 @@ namespace View
             get { return _panel; }
             set { _panel = value; }
         } 
+
+        public void UpdateResourcesOnView()
+        {
+            int[] resources = Engine.AmountOfResources;
+            this.Panel.Gold = resources[0];
+            this.Panel.Wood = resources[1];
+            this.Panel.Food = resources[2];
+        }
+
+        public void KeyDown(KeyEventArgs e)
+        {
+            if (e.Key == Key.W)
+            {
+                RenderHelper.Instance.MoveUp();
+            }
+            else if (e.Key == Key.S)
+            {
+                RenderHelper.Instance.MoveDown();
+            }
+            else if (e.Key == Key.A)
+            {
+                RenderHelper.Instance.MoveLeft();
+            }
+            else if (e.Key == Key.D)
+            {
+                RenderHelper.Instance.MoveRight();
+            }
+        }
+
+        public void StartTimer()
+        {
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromMilliseconds(100);
+            timer.Tick += timerCycle;
+            timer.Start();
+
+            Engine.EngineTimer = new BackgroundWorker();
+            Engine.EngineTimer.DoWork += UpdateBackEnd;
+            Engine.EngineTimer.RunWorkerCompleted += Render;
+        }
+
+        /// <summary>
+        /// The fired method by the DispatcherTimer. It will only run the updating background thread if it is done with the previous update.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void timerCycle(object sender, EventArgs e)
+        {
+            if (!Engine.EngineTimer.IsBusy)
+            {
+                Engine.EngineTimer.RunWorkerAsync();
+            }
+        }
+
+        /// <summary>
+        /// Updates the back-end's state. Every object's update will be called in the process.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void UpdateBackEnd(object sender, DoWorkEventArgs e)
+        {
+            if (Engine.State == GameState.Running || Engine.State == GameState.PostVictory)
+            {
+                Engine.Update();
+            }
+        }
+
+        /// <summary>
+        /// Renders the screen with the updated state of the objects on the map. This controls the main display of the running game.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void Render(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (Engine.State == GameState.Running || Engine.State == GameState.PostVictory)
+            {
+                for (int i = 0; i < this.Rows; i++)
+                {
+                    for (int j = 0; j < this.Columns; j++)
+                    {
+                        // Clearing
+                        this.Tiles[j + i * this.Columns].StoredMapObjectImage = MapObjectImage.None;
+                        this.Tiles[j + i * this.Columns].StoredBulletImage = MapObjectImage.None;
+                        this.Tiles[j + i * this.Columns].Selection = SelectionImage.None;
+
+                        // Setting Ground texture
+                        this.Tiles[j + i * this.Columns].StoredFieldImage = GroundTextureToFieldImage.Convert(Engine.Map.GetCellAt(i + RenderHelper.Instance.LeftTopCorner.Row, j + RenderHelper.Instance.LeftTopCorner.Column).Ground);
+
+                        // Setting Visiblity
+                        this.Tiles[j + i * this.Columns].Visibility = Engine.Map.GetCellAt(i + RenderHelper.Instance.LeftTopCorner.Row, j + RenderHelper.Instance.LeftTopCorner.Column).Visibility;
+
+                        // Setting target
+                        if (Engine.SelectedMapObject != null)
+                        {
+                            if (Engine.SelectedMapObject is Unit)
+                            {
+                                Unit unit = (Unit)Engine.SelectedMapObject;
+                                if (unit.MoveTarget != null && (unit.MoveTarget.x - RenderHelper.Instance.LeftTopCorner.Row) == i && (unit.MoveTarget.y - RenderHelper.Instance.LeftTopCorner.Column) == j)
+                                {
+                                    this.Tiles[j + i * this.Columns].Selection = SelectionImage.MoveTarget;
+                                }
+                            }
+                            if (Engine.SelectedMapObject is TrainerBuilding)
+                            {
+                                TrainerBuilding b = (TrainerBuilding)Engine.SelectedMapObject;
+                                if (b.SpawnTarget != null && (b.SpawnTarget.x - RenderHelper.Instance.LeftTopCorner.Row) == i && (b.SpawnTarget.y - RenderHelper.Instance.LeftTopCorner.Column) == j)
+                                {
+                                    this.Tiles[j + i * this.Columns].Selection = SelectionImage.SpawnFlag;
+                                }
+                            }
+                        }
+
+                        foreach (MapObject mapObj in Engine.Map.GetCellAt(i + RenderHelper.Instance.LeftTopCorner.Row, j + RenderHelper.Instance.LeftTopCorner.Column).MapObjects)
+                        {
+
+                            // Set the mapobject image
+
+                            if (mapObj.GetType() == typeof(Bullet))
+                            {
+                                this.Tiles[j + i * this.Columns].StoredBulletImage =
+                                        MapObjectConverterFromBackEnd.Convert(mapObj);
+                            }
+                            else
+                            {
+                                if (mapObj is Animal)
+                                {
+                                    Animal animal = (Animal)mapObj;
+                                    if (animal.Dead || this.Tiles[j + i * this.Columns].Visibility == VisibilityType.Active)
+                                    {
+                                        this.Tiles[j + i * this.Columns].StoredMapObjectImage =
+                                            MapObjectConverterFromBackEnd.Convert(mapObj);
+                                    }
+                                }
+                                else
+                                {
+                                    this.Tiles[j + i * this.Columns].StoredMapObjectImage =
+                                        MapObjectConverterFromBackEnd.Convert(mapObj);
+                                }
+                            }
+                            // Setting selection
+
+                            if (Engine.SelectedMapObject != null)
+                            {
+                                if (mapObj.Id == Engine.SelectedMapObject.Id && this.Tiles[j + i * this.Columns].Visibility == VisibilityType.Active)
+                                {
+                                    this.Tiles[j + i * this.Columns].Selection = SelectionImage.Selected;
+                                }
+                            }
+                        }
+
+                        // Setting building allowances
+                        if (BuildMode)
+                        {
+                            if (Engine.Map.GetCellAt(i + RenderHelper.Instance.LeftTopCorner.Row, j + RenderHelper.Instance.LeftTopCorner.Column).canBlockTypeBePlaced(BlockType.BlockOtherBlock))
+                            {
+                                this.Tiles[j + i * this.Columns].AllowBuild = AllowBuildImage.Allow;
+                            }
+                            else
+                            {
+                                this.Tiles[j + i * this.Columns].AllowBuild = AllowBuildImage.Block;
+                            }
+                        }
+                        else
+                        {
+                            this.Tiles[j + i * this.Columns].AllowBuild = AllowBuildImage.None;
+                        }
+                    }
+                }
+                RenderPanel();
+            }
+            else
+            {
+                this.Panel.CurrentGameState = Engine.State;
+                switch (this.Panel.CurrentGameState)
+                {
+                    case GameState.Victory:
+                        global::View.Properties.Settings.Default.RunningGameSoundPlayerActive = false;
+                        Sounds.PlayVictorySong();
+                        break;
+                    case GameState.Defeat:
+                        global::View.Properties.Settings.Default.RunningGameSoundPlayerActive = false;
+                        Sounds.PlayDefeatSong();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Renders the panel.
+        /// </summary>
+        public void RenderPanel()
+        {
+            if (Engine.SelectedMapObject == null)
+            {
+                this.Panel.SelectedMapObjectImage = MapObjectImage.None;
+                this.Panel.SelectedMapObjectLabel = "";
+                this.Panel.SelectedMapObjectInfo = "";
+                this.Panel.SelectedMapObjectHealth = "";
+                if (Engine.SelectedMapObject == null)
+                {
+                    ActionConverterFromBackEnd.RefreshActionListToNone(this.Panel.Actions);
+                }
+            }
+            else
+            {
+                this.Panel.SelectedMapObjectHealth = "";
+                this.Panel.SelectedMapObjectInfo = "";
+                this.Panel.SelectedMapObjectImage = MapObjectConverterFromBackEnd.Convert(Engine.SelectedMapObject);
+                this.Panel.SelectedMapObjectLabel = Engine.SelectedMapObject.Label;
+                if (Engine.SelectedMapObject is Unit)
+                {
+                    ActionConverterFromBackEnd.RefreshActionList(this.Panel.Actions, (Unit)Engine.SelectedMapObject);
+
+                    Unit unit = (Unit)Engine.SelectedMapObject;
+                    this.Panel.SelectedMapObjectHealth = "Health: " + unit.ActualHealthPoints + "/" + unit.MaximalHealthPoints;
+
+                    if (Engine.SelectedMapObject.GetType() == typeof(Worker))
+                    {
+                        Worker worker = (Worker)Engine.SelectedMapObject;
+                        string info = "";
+                        if (worker.Amount > 0)
+                        {
+                            switch (worker.CarriedResourceType)
+                            {
+                                case ResourceType.Food: info = "Carrying " + worker.Amount + " food"; break;
+                                case ResourceType.Wood: info = "Carrying " + worker.Amount + " wood"; break;
+                                case ResourceType.Gold: info = "Carrying " + worker.Amount + " gold"; break;
+                            }
+                        }
+                        this.Panel.SelectedMapObjectInfo = info;
+                    }
+                    if (Engine.SelectedMapObject.GetType() == typeof(Soldier) || Engine.SelectedMapObject.GetType() == typeof(Hero))
+                    {
+                        Unit u = (Unit)Engine.SelectedMapObject;
+                        string info;
+                        if (u.AlertMode)
+                        {
+                            info = "Auto Attack ON";
+                        }
+                        else
+                        {
+                            info = "Idle";
+                        }
+                        this.Panel.SelectedMapObjectInfo = info;
+                    }
+                    if (Engine.SelectedMapObject is Doctor)
+                    {
+                        Unit u = (Unit)Engine.SelectedMapObject;
+                        string info;
+                        if (u.AlertMode)
+                        {
+                            info = "Auto Heal ON";
+                        }
+                        else
+                        {
+                            info = "Idle";
+                        }
+                        this.Panel.SelectedMapObjectInfo = info;
+                    }
+                }
+                else if (Engine.SelectedMapObject is Building)
+                {
+                    Building building = (Building)Engine.SelectedMapObject;
+                    this.Panel.SelectedMapObjectHealth = "Health: " + building.ActualHealthPoints + "/" + building.MaximalHealthPoints;
+                    ActionConverterFromBackEnd.RefreshActionList(this.Panel.Actions, (Building)Engine.SelectedMapObject);
+                    if (Engine.SelectedMapObject is TrainerBuilding)
+                    {
+                        TrainerBuilding tb = (TrainerBuilding)Engine.SelectedMapObject;
+                        if (tb.GetNumberOfUnitsInTheQueue() > 0)
+                        {
+                            this.Panel.SelectedMapObjectInfo = "Training " + tb.GetNumberOfUnitsInTheQueue() + " unit(s).";
+                        }
+                        else
+                        {
+                            this.Panel.SelectedMapObjectInfo = "No training";
+                        }
+                    }
+                }
+                else if (Engine.SelectedMapObject is Resource)
+                {
+                    ActionConverterFromBackEnd.RefreshActionListToNone(this.Panel.Actions);
+
+                    Resource resource = (Resource)Engine.SelectedMapObject;
+                    string info = "";
+                    switch (resource.Type)
+                    {
+                        case ResourceType.Food: info = "Contains: " + resource.Capacity + " food"; break;
+                        case ResourceType.Wood: info = "Contains: " + resource.Capacity + " wood"; break;
+                        case ResourceType.Gold: info = "Contains: " + resource.Capacity + " gold"; break;
+                    }
+                    this.Panel.SelectedMapObjectInfo = info;
+                    if (Engine.SelectedMapObject is Animal)
+                    {
+                        Animal animal = (Animal)Engine.SelectedMapObject;
+                        this.Panel.SelectedMapObjectHealth = "Health: " + animal.ActualHealthPoints + "/" + animal.MaximalHealthPoints;
+                    }
+                }
+                else
+                {
+                    ActionConverterFromBackEnd.RefreshActionListToNone(this.Panel.Actions);
+                    this.Panel.SelectedMapObjectInfo = "";
+                }
+            }
+            this.UpdateResourcesOnView();
+        }
     }
 }
