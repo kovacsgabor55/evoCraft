@@ -1,4 +1,4 @@
-﻿namespace EvoCraft.Common
+﻿namespace EvoCraft.Common.MapObjects.Resources.Animals
 {
     public class Llama: Animal
     {

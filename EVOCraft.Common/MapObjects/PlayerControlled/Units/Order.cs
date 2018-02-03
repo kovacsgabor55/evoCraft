@@ -1,4 +1,4 @@
-﻿namespace EvoCraft.Common
+﻿namespace EvoCraft.Common.MapObjects.PlayerControlled.Units
 {
     public enum Order
     {

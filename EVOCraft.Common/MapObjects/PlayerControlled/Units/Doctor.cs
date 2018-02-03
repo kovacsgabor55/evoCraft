@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using EvoCraft.Common.Map;
+using System.Collections.Generic;
 
-namespace EvoCraft.Common
+namespace EvoCraft.Common.MapObjects.PlayerControlled.Units
 {
     public class Doctor: Unit
     {
@@ -13,54 +14,6 @@ namespace EvoCraft.Common
 
         }
 
-
-        private bool WasGoingAfterAUnit = false;
-
-        public override void Update()
-        {
-            bool found;
-            Point pos = Engine.GetMapObjectPosition(this, out found);
-            if (found)
-            {
-                if (AlertMode)
-                {
-                    Point p = Engine.GetClosestInjuredUnitInRange(pos, SightRange);
-                    if (p != null)
-                    {
-                        MoveTarget = p;
-                        WasGoingAfterAUnit = true;
-                    }
-                    else
-                    {
-                        if (WasGoingAfterAUnit)
-                        {
-                            MoveTarget = null;
-                            WasGoingAfterAUnit = false;
-                        }
-                    }
-                }
-                Heal(pos);
-                Move(pos);
-            }
-        }
-
-        /// <summary>
-        /// Heal the target if next to it.
-        /// </summary>
-        internal void Heal(Point pos)
-        {
-            if (MoveTarget != null && pos.DistanceFrom(MoveTarget) == 1)
-            {
-                foreach (MapObject mo in Engine.Map.GetCellAt(MoveTarget).MapObjects)
-                {
-                    if (mo.GetType().IsSubclassOf(typeof(Unit)))
-                    {
-                        Unit a = (Unit)mo;
-                        a.TakeHealing(Damage);
-                    }
-                }
-            }
-        }
-
+        public bool WasGoingAfterAUnit = false;
     }
 }

@@ -1,24 +1,26 @@
-﻿namespace EvoCraft.Common
+﻿using EvoCraft.Common;
+
+namespace EvoCraft.Core
 {
     public class Player : Profile
     {
-        private int myScore;
+        public int myScore;
 
         public ResourceSet Resources { get; set; }
 
         public int Score
         {
             get { return myScore; }
-            internal set { myScore = value; }
+            set { myScore = value; }
         }
 
         public byte MyTeam
         {
             get;
-            internal set;
+            set;
         }
 
-        internal Player(int food, int gold, int wood)
+        public Player(int food, int gold, int wood)
         {
             Resources = new ResourceSet(gold, food, wood);
             myScore = 0;

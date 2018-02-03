@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using EvoCraft.Common.MapObjects;
+using System.Collections.Generic;
 
-namespace EvoCraft.Common
+namespace EvoCraft.Common.Map
 {
     /// <summary>
     /// A cell is a cell of the map's 2d array. It can contain many Mapobjects.
@@ -47,81 +48,6 @@ namespace EvoCraft.Common
             Visibility = VisibilityType.Unexplored;
         }
 
-        /// <summary>
-        /// Based on the object to be moved it tells if you can move the object there.
-        /// </summary>
-        /// <returns>Wether a block object can move to the cell.</returns>
-        public bool canMapObjectBePlaced(MapObject givenMapObj)
-        {
-            bool cantPlace = false;
-            foreach (MapObject mo in MapObjects)
-            {
-                switch (mo.BlockType)
-                {
-                    case BlockType.BlockAll:
-                        cantPlace = true;
-                        break;
-                    case BlockType.BlockOtherBlock:
-                        switch (givenMapObj.BlockType)
-                        {
-                            case BlockType.BlockAll:
-                            case BlockType.BlockOtherBlock:
-                                cantPlace = true;
-                                break;
-                        }
-                        break;
-                    case BlockType.NoBlock:
-                        switch (givenMapObj.BlockType)
-                        {
-                            case BlockType.BlockAll:
-                                cantPlace = true;
-                                break;
-                        }
-                        break;
-
-                }
-            }
-            return !cantPlace;
-        }
-
-        /// <summary>
-        /// Based on the object to be moved it tells if you can move the object there bro.
-        /// </summary>
-        /// <returns>Wether a block object can move to the cell.</returns>
-        public bool canBlockTypeBePlaced(BlockType blockType)
-        {
-            bool cantPlace = false;
-            foreach (MapObject mo in MapObjects)
-            {
-                switch (mo.BlockType)
-                {
-                    case BlockType.BlockAll:
-                        cantPlace = true;
-                        break;
-                    case BlockType.BlockOtherBlock:
-                        switch (blockType)
-                        {
-                            case BlockType.BlockAll:
-                            case BlockType.BlockOtherBlock:
-                                cantPlace = true;
-                                break;
-                        }
-                        break;
-                    case BlockType.NoBlock:
-                        switch (blockType)
-                        {
-                            case BlockType.BlockAll:
-                                cantPlace = true;
-                                break;
-                        }
-                        break;
-
-                }
-            }
-            return !cantPlace;
-        }
-
-
-        private VisibilityType myVisiblitly;
+        public VisibilityType myVisiblitly;
     }
 }

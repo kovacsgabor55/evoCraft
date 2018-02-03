@@ -1,31 +1,33 @@
 ﻿using System.Collections.Generic;
 
-namespace EvoCraft.Common
+namespace EvoCraft.Common.MapObjects.PlayerControlled
 {
     /// <summary>
     /// Common abstraction for all player controlled units.
     /// </summary>
-    public abstract class PlayerControlled : MapObject
+    public abstract class PlayerControlledClass : MapObject
     {
+        private List<Actions> myPossibleActions;
+
         /// <summary>
         /// The maximal Health Points of the building
         /// </summary>
-        public int MaximalHealthPoints { get; protected internal set; }
+        public int MaximalHealthPoints { get; set; }
 
         /// <summary>
         /// The actual Health Points of the building
         /// </summary>
-        public int ActualHealthPoints { get; protected internal set; }
+        public int ActualHealthPoints { get; set; }
 
         /// <summary>
         /// The id of the player that owns the building.
         /// </summary>
-        public int PlayerId { get; protected internal set; }
+        public int PlayerId { get;  set; }
 
         /// <summary>
         /// The range of the sight of the given object.
         /// </summary>
-        public int SightRange { get; protected internal set; }
+        public int SightRange { get;  set; }
 
         /// <summary>
         /// The cost of the thing
@@ -34,15 +36,31 @@ namespace EvoCraft.Common
 
         public List<Actions> PossibleActions
         {
-            get; set;
+            get
+            {
+                if (ActionsAvailable)
+                {
+                    return myPossibleActions;
+                }
+
+                return new List<Actions>();
+            }
+            set
+            {
+                myPossibleActions = value;
+            }
         }
+
+        public bool ActionsAvailable { get; set; }
+
+
 
         public Actions NextAxtion
         {
             get; set;
         }
 
-        public PlayerControlled(
+        public PlayerControlledClass(
             int PlayerId, 
             int MaximalHealthPoints, 
             int ActualHealthPoints,
@@ -60,21 +78,13 @@ namespace EvoCraft.Common
             this.ActualHealthPoints = ActualHealthPoints;
             this.SightRange = SightRange;
             this.Costs = Costs;
-            this.PossibleActions = PossibleActions;
             this.NextAxtion = NextAxtion;
-        }
 
-        internal void TakeDamage(int damage)
-        {
-            ActualHealthPoints -= damage;
-        }
-
-        internal void TakeHealing(int points)
-        {
-            ActualHealthPoints += points;
-            if (ActualHealthPoints > MaximalHealthPoints)
+            if (PossibleActions != null)
             {
-                ActualHealthPoints = MaximalHealthPoints;
+                ActionsAvailable = true;
+                this.PossibleActions = PossibleActions;
+                this.ActualHealthPoints = this.MaximalHealthPoints;
             }
         }
     }

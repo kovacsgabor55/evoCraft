@@ -1,0 +1,92 @@
+﻿
+# This is a comment line
+# Every property is set in the following way:
+# PropertyName: value
+# The values can be strings or numbers, they need to correspond to the given property.
+# This file shows all the possible properties and their values.
+
+# General info
+Title: Epic Adventures In Dogeland
+Author: Lévai Krisztián
+
+# Starting Resources
+Gold: 200
+Wood: 200
+Food: 200
+
+# Map Size
+Width: 70
+Height: 50
+
+# Now let's see the map data. It is set in a very particular way.
+# The parser will look for the "Map:" keyword.
+# After that, no more comments can be made. The parser will expect every line to be as long as the width
+# and it will expect that there be height amount of lines.
+# Every character will have a meaning for it:
+# 
+# . means nothing, it is used for spacing the characters out.
+# 
+# H means MainHall
+# B means Barracs
+# W means Worker
+# S means Soldier
+# O means Wall (O like Ocean, not zero.)
+#
+# T means Tree
+# M means Mine (Every mine starts with 400 gold.)
+# 1 means Sloth
+# 2 means Llama
+# 3 means Chupacabra
+# 4 means Boss
+
+Map:
+OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+O......T.TTT...........TTTT.T.........TT.T...........................O
+O..TTTTTTT.....1...OO....T.T...1...O...T...1...T.....1....1....1.....O
+O...........T.......MO.......T..........T.........T....3.....1..1.1..O
+OT...H..W...............T.....2....OO..3..O.....T....................O
+O.................1..............O...M.................1.....1.......O
+O...T.......T.EX............1....O......O.........OO..............T..O
+O......T......X..................OOOOOOOOOOOOOOOO......1.............O
+O...T...TT..................T...................O..............T...T.O
+O.....T............................TT....O......O..T.T........T...1.TO
+O..T..T.............T...........................O..T.TT.........T....O
+O.......1.T..............3.........TT...........OT...T............T..O
+O......T.T..........T............T...T..........O.T...TT......T......O
+O.....T.........1.1..T.....T.........T..........O.................TT.O
+O....1..2T............TT...T..TT......T.........OT.T.33T....33..T..T.O
+O.....1....................T...........T........O....M.....M.....M...O
+OOOOOOOOOOOO..OOOOOOOOOOO...T.........T.........O..T........T......T.O
+O.T........O..O.........O......T................OOOOOOOOOOOOOOOOOOOOOO
+O....TT..3.O..O.3.......O.......TT........1................T.........O
+O..1.T.....O............O.T.........T.T...........OOOO...........F...O
+O...T..T.....M..........O.TT............TT........OTM....T......F....O
+O.......T...............O.T.....TT.T...1...TT.....OOOO...........F...O
+O................T......OT..................T.......T...........F.T..O
+O....2........2.........O..T......T...................T..T.....F..T..O
+O......T................O.1.........O...3..............T..T........TTO
+O...............T..............................1...........T.........O
+O.......................O.........O5M.O......T..........TTT..........O
+O........OO..O.....O.OO.O..........OOO.............TTTTTT...TT.......O
+O.................................OTOTO...T.T.T.....11........T......O
+O........T.T..T....T..T.T..T....T....T........1.T..............T.....O
+O.................................T....T.............................O
+O........3.......3........3......3.......3.....1..3..T...............O
+O..............................................................T.....O
+O.........T.....T.....1....T....T.T.T..........T...........T.T.......O
+O...........T.T.............T..T....T.....................T..........O
+O...............OOOOOOOOOOOOOOOOTTOOOO................1..............O
+O.T.............O...............3....O..............T.T.T.....1......O
+O.........1.....O..........O.........O............O....T.............O
+O...............O..........O....3....O......1.....O.................TO
+OT.T...5......1.O..........O...333...O............OT........5......TTO
+OTT.............O..........O.M3M4M3M.O............O.TT.............TTO
+O.T..........TTTO..........O...333...O............OTT.............TTTO
+OTT..T.......1.TO..........O....3....O............O.T...T........TTTTO
+OT..T.........TTO..........O.........O............OT....1...........TO
+OT......3.......O..........O.........O............O..T......3.......TO
+O.TTT......1...............O....3.................O.....T..........TTO
+OTTTT......................OOOOOTTOOOOOOOOOOOOOOOOO.....1.........TTTO
+OTTTT......TTT................TTTT.T..................T..........TTT.O
+OTTTT.M.T.TTTTTT..........................T.........TTTTTTTTTTMTTTTT.O
+OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO

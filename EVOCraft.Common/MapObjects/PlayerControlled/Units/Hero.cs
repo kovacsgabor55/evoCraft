@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace EvoCraft.Common
+namespace EvoCraft.Common.MapObjects.PlayerControlled.Units
 {
     public class Hero: Unit
     {
@@ -17,34 +13,6 @@ namespace EvoCraft.Common
 
         }
 
-        private bool WasChasingEnemy = false;
-
-        public override void Update()
-        {
-            bool found;
-            Point pos = Engine.GetMapObjectPosition(this, out found);
-            if (found)
-            {
-                if (AlertMode)
-                {
-                    Point p = Engine.GetClosestAggressiveAnimalInRange(pos, 5);
-                    if (p != null)
-                    {
-                        MoveTarget = p;
-                        WasChasingEnemy = true;
-                    }
-                    else
-                    {
-                        if (WasChasingEnemy)
-                        {
-                            MoveTarget = null;
-                            WasChasingEnemy = false;
-                        }
-                    }
-                }
-                Attack(pos);
-                Move(pos);
-            }
-        }
+        public bool WasChasingEnemy = false;
     }
 }

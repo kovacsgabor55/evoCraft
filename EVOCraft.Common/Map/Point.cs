@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace EvoCraft.Common
+﻿namespace EvoCraft.Common.Map
 {
     /// <summary>
     /// Egy helyt jelölő osztály, aminek hasznos metódusai vannak a működéshez végzett számításokhoz.
@@ -31,42 +28,10 @@ namespace EvoCraft.Common
             Point p = (Point)obj;
             return (x == p.x) && (y == p.y);
         }
-
-        /// <summary>
-        /// Checks if a Point is in the List based on equality.
-        /// </summary>
-        /// <param name="points"></param>
-        /// <returns></returns>
-        internal bool IsInList(List<Point> points)
-        {
-            foreach(Point p in points)
-            {
-                if (p.Equals(this))
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
         
         public override string ToString()
         {
             return "Point: x = " + x + " y = " + y;
-        }
-        /// <summary>
-        /// Mennyi a távolsága egy másik ponttól.
-        /// </summary>
-        public int DistanceFrom(Point other)
-        {
-            return Math.Abs(this.x - other.x) + Math.Abs(this.y - other.y);
-        }
-
-        /// <summary>
-        /// Meegyezik e az x vagy az y koordinátája.
-        /// </summary>
-        public bool IsOnTheSameAxisParallelLine(Point p)
-        {
-            return this.x == p.x || this.y == p.y;
         }
     }
 }

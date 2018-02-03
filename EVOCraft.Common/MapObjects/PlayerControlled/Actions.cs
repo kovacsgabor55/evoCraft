@@ -1,4 +1,4 @@
-﻿namespace EvoCraft.Common
+﻿namespace EvoCraft.Common.MapObjects.PlayerControlled
 {
     public enum Actions
     {

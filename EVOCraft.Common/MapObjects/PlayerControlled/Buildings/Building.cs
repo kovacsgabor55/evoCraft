@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace EvoCraft.Common
+namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
 {
     /// <summary>
     /// Meant to represent buildings.
     /// </summary>
-    public abstract class Building : PlayerControlled
+    public abstract class Building : PlayerControlledClass
     {
         public bool IsUnderConstruction { get; set; }
         
@@ -15,12 +14,12 @@ namespace EvoCraft.Common
         /// </summary>
         public int BuildTime { get; set; }
         
-        public int InitialBuildTime { get; private set; }
+        public int InitialBuildTime { get; set; }
 
         /// <summary>
         /// The Z index of all ground textures.
         /// </summary>
-        private static readonly int BuildingZIndex = 3;
+        public static readonly int BuildingZIndex = 3;
 
         public Building(
             string Label, 
@@ -46,27 +45,9 @@ namespace EvoCraft.Common
             this.InitialBuildTime = BuildTime;
         }
 
-        internal void beBuilt()
-        {
-            if (IsUnderConstruction && BuildTime > 0)
-            {
-                BuildTime--;
-                ActualHealthPoints += MaximalHealthPoints / InitialBuildTime;
-            }
-        }
-
-        internal virtual void FinishBuilding()
-        {
-            ActualHealthPoints = MaximalHealthPoints;
-        }
-
-        public override void Update()
-        {
-            if (IsUnderConstruction && BuildTime == 0)
-            {
-                IsUnderConstruction = false;
-                FinishBuilding();
-            }
-        }
+        //public virtual void FinishBuilding()
+        //{
+        //    ActualHealthPoints = MaximalHealthPoints;
+        //}
     }
 }

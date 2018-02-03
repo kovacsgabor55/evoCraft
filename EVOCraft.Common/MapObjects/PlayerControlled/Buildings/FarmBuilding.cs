@@ -1,4 +1,4 @@
-﻿namespace EvoCraft.Common
+﻿namespace EvoCraft.Common.MapObjects.PlayerControlled.Buildings
 {
     public class FarmBuilding : Building
     {
@@ -12,22 +12,8 @@
         {
             if (!UnderConstruction)
             {
-                FinishBuilding();
+                //FinishBuilding();
             }
-        }
-
-        // it changes into a farm resource when it is finished.
-        internal override void FinishBuilding()
-        {
-            bool found;
-            Point pos = Engine.GetMapObjectPosition(this, out found);
-
-            if (found)
-            {
-                Engine.Map.GetCellAt(pos).MapObjects.Add(new Farm());
-                Engine.DestroyMapObject(this);
-            }
-        
         }
     }
 }

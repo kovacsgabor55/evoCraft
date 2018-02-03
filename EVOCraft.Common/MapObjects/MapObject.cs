@@ -1,4 +1,6 @@
-﻿namespace EvoCraft.Common
+﻿using EvoCraft.Common.Map;
+
+namespace EvoCraft.Common.MapObjects
 {
     /// <summary>
     /// Base class for all objects that will be displayed on the map.
@@ -42,7 +44,7 @@
         /// <summary>
         /// Helps the id setting process.
         /// </summary>
-        private static int idCoutner = 0;
+        public static int idCoutner = 0;
 
         public MapObject(BlockType BlockType, int ZIndex, string Label)
         {
@@ -52,7 +54,5 @@
             idCoutner++;
             this.Label = Label;
         }
-
-        public abstract void Update();
     }
 }

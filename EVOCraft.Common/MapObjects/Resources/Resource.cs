@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace EvoCraft.Common
+﻿namespace EvoCraft.Common.MapObjects.Resources
 {
     /// <summary>
     /// Base class of all resources, abstract class.
@@ -30,33 +27,26 @@ namespace EvoCraft.Common
 
         public ResourceType Type;
 
-        public override void Update()
-        {
-            if (Capacity <= 0)
-            {
-                Engine.DestroyMapObject(this);
-            }
-        }
         /// <summary>
         /// The amount that stores this resource
         /// </summary>
-        public int Capacity { get; protected internal set; }
+        public int Capacity { get;  set; }
         /// <summary>
         /// The maximum storage capacity for this resource
         /// </summary>
-        protected internal int MaxCapacity { get; set; }
+        public int MaxCapacity { get; set; }
 
         /// <summary>
         /// The Z index of all resources. Helps the drawing engine determine which what order to draw the objects.
         /// </summary>
-        private static readonly int ResourceZIndex = 1;
+        public static readonly int ResourceZIndex = 1;
 
         /// <summary>
         /// 
         /// </summaryemert>
         /// <param name="maxCapacity"></param>
         /// <param name="capacity"></param>
-        internal Resource(string Label, int maxCapacity, BlockType BlockType) : base(BlockType, ResourceZIndex, Label)
+        public Resource(string Label, int maxCapacity, BlockType BlockType) : base(BlockType, ResourceZIndex, Label)
         {
             MaxCapacity = maxCapacity;
             Capacity = maxCapacity;

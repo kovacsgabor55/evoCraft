@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace EvoCraft.Common
+﻿namespace EvoCraft.Common.MapObjects.Resources
 {
     /// <summary>
     /// Meant to represent trees  
