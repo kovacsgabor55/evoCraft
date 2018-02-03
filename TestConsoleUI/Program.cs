@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using EvoCraft2.Core;
 using EvoCraft2.Common;
 
@@ -18,11 +15,11 @@ namespace TestConsoleUI
             Engine.StartEngine();      
         }
 
-        private static void Engine_OnUpdateFinished(Dictionary<int, Unit> map)
+        private static void Engine_OnUpdateFinished(List<Unit> map)
         {
             foreach (var item in map)
             {
-                Console.WriteLine(item.Value);
+                Console.WriteLine(item);
             }
 
             Engine.AddCommand(new MoveCommand(map[1], map[0]));

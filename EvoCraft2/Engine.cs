@@ -7,20 +7,20 @@ namespace EvoCraft2.Core
     {
         public static bool isEngineRunning = false;
         public static List<Command> CommandList = new List<Command>();
-        public static Dictionary<int, Unit> Map = new Dictionary<int, Unit>();
+        public static List<Unit> Map = new List<Unit>();
         public static Coordinate MapSize;
 
-        public delegate void SendMap(Dictionary<int, Unit> map);
+        public delegate void SendMap(List<Unit> map);
         public static event SendMap OnUpdateFinished;
 
         public static void CreateMap()
         {
             MapSize = new Coordinate(20, 20);
-            Unit unit = new Unit(new Coordinate(1, 1), 100, 0);
-            Unit unit2 = new Unit(new Coordinate(19, 19), 100, 1);
+            Unit unit = new Unit(0, new Coordinate(1, 1), 100, 10);
+            Unit unit2 = new Unit(1, new Coordinate(19, 19), 100, 10);
 
-            Map.Add(unit.UnitID, unit);
-            Map.Add(unit2.UnitID, unit2);
+            Map.Add(unit);
+            Map.Add(unit2);
         }
 
         public static void StartEngine()
@@ -51,10 +51,15 @@ namespace EvoCraft2.Core
                     item.Execute();
                 }
 
+                commands.Clear();
+
                 foreach (var item in Map)
                 {
-                    MoveUnits(item.Value);
+                    UnitUpdate(item);
                 }
+
+                //Remove "dead" units
+                Map.RemoveAll(item => item.HP <= 0);
 
                 //TODO
                 //Send Map
@@ -70,8 +75,13 @@ namespace EvoCraft2.Core
             }
         }
 
-        private static void MoveUnits(Unit unit)
+        private static void UnitUpdate(Unit unit)
         {
+            Directions direction = Directions.NoMove;
+            Coordinate checkCoordinate = null;
+
+            #region SetDirection
+
             if (unit.Target != null)
             {
                 if (unit.Position != unit.Target)
@@ -83,54 +93,136 @@ namespace EvoCraft2.Core
                     {
                         if (deltaY > 0) //UpLeft
                         {
-                            unit.Position.X -= 1;
-                            unit.Position.Y -= 1;
+                            direction = Directions.UpLeft;
+                            checkCoordinate = new Coordinate(unit.Position.X - 1, unit.Position.Y - 1);
                         }
                         else if (deltaY < 0) //DownLeft
                         {
-                            unit.Position.X -= 1;
-                            unit.Position.Y += 1;
+                            direction = Directions.DownLeft;
+                            checkCoordinate = new Coordinate(unit.Position.X - 1, unit.Position.Y + 1);
                         }
                         else //Left
                         {
-                            unit.Position.X -= 1;
+                            direction = Directions.Left;
+                            checkCoordinate = new Coordinate(unit.Position.X - 1, unit.Position.Y);
                         }
                     }
                     else if (deltaX < 0) //Right
                     {
                         if (deltaY > 0) //UpRight
                         {
-                            unit.Position.X += 1;
-                            unit.Position.Y -= 1;
+                            direction = Directions.UpRight;
+                            checkCoordinate = new Coordinate(unit.Position.X + 1, unit.Position.Y - 1);
                         }
                         else if (deltaY < 0) //DownRight
                         {
-                            unit.Position.X += 1;
-                            unit.Position.Y += 1;
+                            direction = Directions.DownRight;
+                            checkCoordinate = new Coordinate(unit.Position.X + 1, unit.Position.Y + 1);
                         }
                         else //Right
                         {
-                            unit.Position.X += 1;
+                            direction = Directions.Right;
+                            checkCoordinate = new Coordinate(unit.Position.X + 1, unit.Position.Y);
                         }
                     }
                     else //deltaX == 0
                     {
-                        if (deltaY > 0)
-                        {
-                            //UP
-                            unit.Position.Y -= 1;
+                        if (deltaY > 0) //UP
+                        {   
+                            direction = Directions.Up;
+                            checkCoordinate = new Coordinate(unit.Position.X, unit.Position.Y - 1);
                         }
-                        else if (deltaY < 0)
+                        else if (deltaY < 0) //Down
                         {
-                            //Down
-                            unit.Position.Y += 1;
+                            direction = Directions.Down;
+                            checkCoordinate = new Coordinate(unit.Position.X, unit.Position.Y + 1);
                         }
-                        else
+                        else //No Movement
                         {
-                            //No Movement
+                            direction = Directions.NoMove;
+                            checkCoordinate = new Coordinate(unit.Position.X, unit.Position.Y);
                         }
                     }
                 }
+            }
+
+            #endregion
+
+            #region CheckCoordinate
+
+            bool matchFound = false;
+            Unit matchUnit = null;
+
+            foreach (var item in Map)
+            {
+                if (checkCoordinate != null)
+                {
+                    if (item.Position.X == checkCoordinate.X && item.Position.Y == checkCoordinate.Y)
+                    {
+                        matchFound = true;
+                        matchUnit = item;
+                    }
+                }
+            }
+            #endregion
+
+            #region DoAction
+
+            if (matchFound)
+            {
+                Attack(unit, matchUnit);
+            }
+            else
+            {
+                Move(unit, direction);
+            }
+
+            #endregion
+        }
+
+        private static void Attack(Unit Attacker, Unit Defender)
+        {
+            //CounterAttack
+            AddCommand(new MoveCommand(Defender, Attacker));
+
+            //TakeDamage
+            Defender.HP -= Attacker.Damage;
+        }
+
+        private static void Move(Unit unit, Directions direction)
+        {
+            switch (direction)
+            {
+                case Directions.Up:
+                    unit.Position.Y -= 1;
+                    break;
+                case Directions.UpRight:
+                    unit.Position.X += 1;
+                    unit.Position.Y -= 1;
+                    break;
+                case Directions.Right:
+                    unit.Position.X += 1;
+                    break;
+                case Directions.DownRight:
+                    unit.Position.X += 1;
+                    unit.Position.Y += 1;
+                    break;
+                case Directions.Down:
+                    unit.Position.Y += 1;
+                    break;
+                case Directions.DownLeft:
+                    unit.Position.X -= 1;
+                    unit.Position.Y += 1;
+                    break;
+                case Directions.Left:
+                    unit.Position.X -= 1;
+                    break;
+                case Directions.UpLeft:
+                    unit.Position.X -= 1;
+                    unit.Position.Y -= 1;
+                    break;
+                default:
+                    break;
             }
         }
     }

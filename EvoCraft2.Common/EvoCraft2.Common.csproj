@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Command.cs" />
     <Compile Include="Coordinate.cs" />
+    <Compile Include="Directions.cs" />
     <Compile Include="ICoordinate.cs" />
     <Compile Include="MapObject.cs" />
     <Compile Include="MoveCommand.cs" />
