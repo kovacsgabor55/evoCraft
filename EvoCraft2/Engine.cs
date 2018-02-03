@@ -51,6 +51,11 @@ namespace EvoCraft2.Core
                     item.Execute();
                 }
 
+                foreach (var item in Map)
+                {
+                    MoveUnits(item.Value);
+                }
+
                 //TODO
                 //Send Map
                 OnUpdateFinished.Invoke(Map);
@@ -62,6 +67,70 @@ namespace EvoCraft2.Core
             if (command != null)
             {
                 CommandList.Add(command);               
+            }
+        }
+
+        private static void MoveUnits(Unit unit)
+        {
+            if (unit.Target != null)
+            {
+                if (unit.Position != unit.Target)
+                {
+                    int deltaX = unit.Position.X - unit.Target.X;
+                    int deltaY = unit.Position.Y - unit.Target.Y;
+
+                    if (deltaX > 0) //Left
+                    {
+                        if (deltaY > 0) //UpLeft
+                        {
+                            unit.Position.X -= 1;
+                            unit.Position.Y -= 1;
+                        }
+                        else if (deltaY < 0) //DownLeft
+                        {
+                            unit.Position.X -= 1;
+                            unit.Position.Y += 1;
+                        }
+                        else //Left
+                        {
+                            unit.Position.X -= 1;
+                        }
+                    }
+                    else if (deltaX < 0) //Right
+                    {
+                        if (deltaY > 0) //UpRight
+                        {
+                            unit.Position.X += 1;
+                            unit.Position.Y -= 1;
+                        }
+                        else if (deltaY < 0) //DownRight
+                        {
+                            unit.Position.X += 1;
+                            unit.Position.Y += 1;
+                        }
+                        else //Right
+                        {
+                            unit.Position.X += 1;
+                        }
+                    }
+                    else //deltaX == 0
+                    {
+                        if (deltaY > 0)
+                        {
+                            //UP
+                            unit.Position.Y -= 1;
+                        }
+                        else if (deltaY < 0)
+                        {
+                            //Down
+                            unit.Position.Y += 1;
+                        }
+                        else
+                        {
+                            //No Movement
+                        }
+                    }
+                }
             }
         }
     }
