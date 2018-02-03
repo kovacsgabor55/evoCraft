@@ -1,0 +1,13 @@
+C:\_VS2017_Map\EvoCraft2\TestConsoleUI\obj\Debug\TestConsoleUI.csproj.CoreCompileInputs.cache
+C:\_VS2017_Map\EvoCraft2\TestConsoleUI\bin\Debug\TestConsoleUI.exe.config
+C:\_VS2017_Map\EvoCraft2\TestConsoleUI\bin\Debug\TestConsoleUI.exe
+C:\_VS2017_Map\EvoCraft2\TestConsoleUI\bin\Debug\TestConsoleUI.pdb
+C:\_VS2017_Map\EvoCraft2\TestConsoleUI\bin\Debug\EvoCraft2.Common.dll
+C:\_VS2017_Map\EvoCraft2\TestConsoleUI\bin\Debug\EvoCraft2.Core.dll
+C:\_VS2017_Map\EvoCraft2\TestConsoleUI\bin\Debug\EvoCraft2.Common.pdb
+C:\_VS2017_Map\EvoCraft2\TestConsoleUI\bin\Debug\EvoCraft2.Common.dll.config
+C:\_VS2017_Map\EvoCraft2\TestConsoleUI\bin\Debug\EvoCraft2.Core.pdb
+C:\_VS2017_Map\EvoCraft2\TestConsoleUI\bin\Debug\EvoCraft2.Core.dll.config
+C:\_VS2017_Map\EvoCraft2\TestConsoleUI\obj\Debug\TestConsoleUI.csprojResolveAssemblyReference.cache
+C:\_VS2017_Map\EvoCraft2\TestConsoleUI\obj\Debug\TestConsoleUI.exe
+C:\_VS2017_Map\EvoCraft2\TestConsoleUI\obj\Debug\TestConsoleUI.pdb

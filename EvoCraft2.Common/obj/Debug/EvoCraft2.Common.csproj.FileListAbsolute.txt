@@ -1,0 +1,7 @@
+C:\_VS2017_Map\EvoCraft2\EvoCraft2.Common\obj\Debug\EvoCraft2.Common.csprojResolveAssemblyReference.cache
+C:\_VS2017_Map\EvoCraft2\EvoCraft2.Common\obj\Debug\EvoCraft2.Common.csproj.CoreCompileInputs.cache
+C:\_VS2017_Map\EvoCraft2\EvoCraft2.Common\bin\Debug\EvoCraft2.Common.dll.config
+C:\_VS2017_Map\EvoCraft2\EvoCraft2.Common\bin\Debug\EvoCraft2.Common.dll
+C:\_VS2017_Map\EvoCraft2\EvoCraft2.Common\bin\Debug\EvoCraft2.Common.pdb
+C:\_VS2017_Map\EvoCraft2\EvoCraft2.Common\obj\Debug\EvoCraft2.Common.dll
+C:\_VS2017_Map\EvoCraft2\EvoCraft2.Common\obj\Debug\EvoCraft2.Common.pdb
