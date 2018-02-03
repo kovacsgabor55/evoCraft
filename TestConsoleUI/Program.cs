@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EvoCraft2.Core;
+using EvoCraft2.Common;
 
 namespace TestConsoleUI
 {
@@ -11,15 +12,20 @@ namespace TestConsoleUI
     {
         static void Main(string[] args)
         {
-            Engine.StartEngine();
+            var engine = new Engine();
+            Engine.OnUpdateFinished += Engine_OnUpdateFinished;
 
-            while (Engine.isEngineRunning)
+            Engine.StartEngine();      
+        }
+
+        private static void Engine_OnUpdateFinished(Dictionary<int, Unit> map)
+        {
+            foreach (var item in map)
             {
-                foreach (var item in Engine.Map)
-                {
-                    Console.WriteLine("Id: " + item.Value.UnitID + ", Team: " + item.Value.Team + ", Pos: " + item.Value.Position + ", Target:" + item.Value.Target + ", HP: " + item.Value.HP);
-                }
+                Console.WriteLine(item.Value);
             }
+
+            Engine.AddCommand(new MoveCommand(map[1], map[0]));
         }
     }
 }

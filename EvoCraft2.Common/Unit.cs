@@ -9,8 +9,8 @@ namespace EvoCraft2.Common
     public class Unit : MapObject
     {
         private static int LastID = 0;
-        private static int unitID; 
-        public Coordinate Position;
+        private int unitID; 
+
         public Coordinate Target;
         public int HP;
         public int MaxHP;
@@ -21,19 +21,22 @@ namespace EvoCraft2.Common
             get { return unitID; }
         }
 
-        private static void GenerateUnitID()
+        private static int GenerateUnitID()
         {
-            unitID = LastID++;
+            return LastID++;
         }
 
         public Unit(Coordinate position, int maxHP, int team)
         {
-            GenerateUnitID();
+            unitID = GenerateUnitID();
             Position = position;
             MaxHP = maxHP;
             Team = team;
         }
 
-        
+        public override string ToString()
+        {
+            return "ID: " + UnitID + ", Team: " + Team + ", Pos: " + Position + ", Target: " + Target + "HP: " + HP;
+        }
     }
 }

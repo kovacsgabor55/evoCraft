@@ -10,6 +10,9 @@ namespace EvoCraft2.Core
         public static Dictionary<int, Unit> Map = new Dictionary<int, Unit>();
         public static Coordinate MapSize;
 
+        public delegate void SendMap(Dictionary<int, Unit> map);
+        public static event SendMap OnUpdateFinished;
+
         public static void CreateMap()
         {
             MapSize = new Coordinate(20, 20);
@@ -22,6 +25,7 @@ namespace EvoCraft2.Core
 
         public static void StartEngine()
         {
+            CreateMap();
             if (!isEngineRunning)
             {
                 isEngineRunning = true;
@@ -39,9 +43,8 @@ namespace EvoCraft2.Core
             while (isEngineRunning)
             {
                 //GetCommands
-                List<Command> commands = new List<Command>(); //TODO
+                List<Command> commands = CommandList; 
 
-                //TODO
                 //CalcMovement/Attack
                 foreach (var item in commands)
                 {
@@ -50,6 +53,7 @@ namespace EvoCraft2.Core
 
                 //TODO
                 //Send Map
+                OnUpdateFinished.Invoke(Map);
             }
         }
 
@@ -57,9 +61,7 @@ namespace EvoCraft2.Core
         {
             if (command != null)
             {
-                CommandList.Add(command);
-
-                
+                CommandList.Add(command);               
             }
         }
     }

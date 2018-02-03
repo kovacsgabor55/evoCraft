@@ -2,10 +2,10 @@
 {
     public class MapObject : ICoordinate
     {
-        public Coordinate CoordinateVal { get; set; }
-        public Coordinate GetCoordinate()
+        public Coordinate Position { get; set; }
+        public Coordinate GetPosition()
         {
-            return CoordinateVal;
+            return Position;
         }
     }
 }

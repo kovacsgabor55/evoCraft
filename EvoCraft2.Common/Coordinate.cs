@@ -17,22 +17,11 @@ namespace EvoCraft2.Common
             Y = y;
         }
 
-        
-
-        //public int[] Coordinates
-        //{
-        //    get
-        //    {
-        //        int[] result = { X, Y };
-        //        return result;
-        //    }
-        //    set
-        //    {
-        //        X = value[0];
-        //        Y = value[1];
-        //    }
-        //}
-    }
+        public override string ToString()
+        {
+            return "X: " + X + ", Y: " + Y;
+        }
+    }    
 
     public class DummyCoordinate : ICoordinate
     {
@@ -42,7 +31,7 @@ namespace EvoCraft2.Common
         }
 
         public Coordinate Coord { get; set; }
-        public Coordinate GetCoordinate()
+        public Coordinate GetPosition()
         {
             return Coord;
         }
