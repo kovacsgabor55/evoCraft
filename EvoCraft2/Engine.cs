@@ -1,4 +1,5 @@
-﻿using EvoCraft2.Common;
+﻿using System;
+using EvoCraft2.Common;
 using System.Collections.Generic;
 
 namespace EvoCraft2.Core
@@ -9,9 +10,9 @@ namespace EvoCraft2.Core
         public static List<Command> CommandList = new List<Command>();
         public static List<Unit> Map = new List<Unit>();
         public static Coordinate MapSize;
-
-        public delegate void SendMap(List<Unit> map);
-        public static event SendMap OnUpdateFinished;
+        private static List<Unit> DeadUnits; 
+        
+        public static event EventHandler<List<Unit>> OnUpdateFinished;
 
         public static void CreateMap()
         {
@@ -59,11 +60,28 @@ namespace EvoCraft2.Core
                 }
 
                 //Remove "dead" units
+                if (DeadUnits != null && DeadUnits.Count > 0)
+                {
+                    foreach (var item in Map)
+                    {
+                        foreach (var item2 in DeadUnits)
+                        {
+                            if (item.Target == item2.Position)
+                            {
+                                item.Target = null;
+                            }
+                        }
+                    }
+                    DeadUnits.Clear();
+                }
+
                 Map.RemoveAll(item => item.HP <= 0);
+                
 
                 //TODO
                 //Send Map
-                OnUpdateFinished.Invoke(Map);
+                OnUpdateFinished?.Invoke(null, Map);
+
             }
         }
 
@@ -187,6 +205,11 @@ namespace EvoCraft2.Core
 
             //TakeDamage
             Defender.HP -= Attacker.Damage;
+
+            if (Defender.HP <= 0)
+            {
+                DeadUnits.Add(Defender);
+            }
         }
 
         private static void Move(Unit unit, Directions direction)

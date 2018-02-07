@@ -1,0 +1,275 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:EvoCraft2.UI">
+    
+    <LinearGradientBrush x:Key="menuBackground" EndPoint="1,1" StartPoint="1,0">
+        <GradientStop Color="#FF1E3C50" Offset="0" />
+        <GradientStop Color="#FF3C7896" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="letterheadBackground">
+        <SolidColorBrush.Color>
+            <Color A="255" R="46" G="46" B="46" />
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+
+    <Color x:Key="BorderBrush">#FF464646</Color>
+    <Color x:Key="Background">#FF2E2E2E</Color>
+    <Color x:Key="Foreground">#FFD2D2D2</Color>
+
+    <Style TargetType="Button" x:Key="Button" >
+        <Setter Property="Foreground" Value="#FFD2D2D2" />
+        <Setter Property="Background" Value="#FF2E2E2E" />
+        <Setter Property="BorderBrush" Value="#FF464646" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="NameLabelMentor">
+        <Setter Property="Foreground" Value="Gold" />
+        <Setter Property="FontSize" Value="35" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="TaskLabelMentor">
+        <Setter Property="Foreground" Value="Gold" />
+        <Setter Property="FontSize" Value="30" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="NameLabel">
+        <Setter Property="Foreground" Value="#FFDEDEDE" />
+        <Setter Property="FontSize" Value="32" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="TaskLabel">
+        <Setter Property="Foreground" Value="LightGray" />
+        <Setter Property="FontSize" Value="30" />
+    </Style>
+
+    <Style TargetType="Button" x:Key="mainMenuButton" >
+        <Setter Property="FontSize" Value="48" />
+        <Setter Property="Width" Value="500" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="Images\onHover.png" />
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="TextBox" x:Key="TextBox">
+        <Setter Property="FontSize" Value="38" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="White" />
+        <Setter Property="Foreground" Value="White" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="Label">
+        <Setter Property="FontSize" Value="38" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Margin" Value="10,10,0,0" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="pageName" >
+        <Setter Property="Foreground" Value="#d2d2d2" />
+        <Setter Property="Margin" Value="10,10,0,0" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style TargetType="Page" x:Key="screenResolution">
+        <Setter Property="Height" Value="1080" />
+        <Setter Property="Width" Value="1920" />
+    </Style>
+
+    <Style TargetType="Grid" x:Key="menuResolution">
+        <Setter Property="Height" Value="500" />
+        <Setter Property="Width" Value="500" />
+    </Style>
+
+    <Style TargetType="Grid" x:Key="resourcesBackground">
+        <Setter Property="Background" Value="DarkGray" />
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="resourcesText">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="Black" />
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="lightText">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="heavyText">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
+
+    <Style TargetType="ListView" x:Key="ListView">
+        <Setter Property="Background" Value="#f5f5f5" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Opacity" Value="0.5" />
+    </Style>
+
+    <Style x:Name="asd" TargetType="{x:Type ListViewItem}" >
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Border x:Name="Border" BorderThickness="1">
+                        <GridViewRowPresenter VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter TargetName="Border" Property="Background">
+                                <Setter.Value>
+                                    <SolidColorBrush Color="Orange" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="White" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="DarkOrange"/>
+                            <Setter TargetName="Border" Property="Background">
+                                <Setter.Value>
+                                    <SolidColorBrush Color="Orange" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Units -->
+    <BitmapImage x:Key="DogeBitmapImage" UriSource="Images/Worker.png"/>
+    <BitmapImage x:Key="SoldierBitmapImage" UriSource="Images/Soldier.png"/>
+    <BitmapImage x:Key="DoctorDogeBitmapImage" UriSource="Images/DoctorDoge.png"/>
+    <BitmapImage x:Key="PozsiHeroBitmapImage" UriSource="Images/PozsiHero.png"/>
+    <BitmapImage x:Key="GunmanBitmapImage" UriSource="Images/gunman.png"/>
+
+    <!-- Resources -->
+    <BitmapImage x:Key="MineBitmapImage" UriSource="Images/Mine.png"/>
+    <BitmapImage x:Key="FarmBitmapImage" UriSource="Images/Farm.png"/>
+    <BitmapImage x:Key="TreeBitmapImage" UriSource="Images/Tree.png"/>
+    <BitmapImage x:Key="TreeCutBitmapImage" UriSource="Images/TreeCut.png"/>
+
+    <!-- Animals -->
+    <BitmapImage x:Key="LlamaBitmapImage" UriSource="Images/Llama.png"/>
+    <BitmapImage x:Key="SlothBitmapImage" UriSource="Images/SlothHead.png"/>
+    <BitmapImage x:Key="ChupacabraBitmapImage" UriSource="Images/Chupacabra.png"/>
+    <BitmapImage x:Key="BossBitmapImage" UriSource="Images/grumpycat.png"/>
+    <BitmapImage x:Key="RollsBitmapImage" UriSource="Images/Rolls.png"/>
+
+    <!-- DeadAnimals -->
+    <BitmapImage x:Key="DeadSlothBitmapImage" UriSource="Images/DeadSloth.png"/>
+    <BitmapImage x:Key="DeadChupyBitmapImage" UriSource="Images/DeadChupy.png"/>
+    <BitmapImage x:Key="DeadLlamaBitmapImage" UriSource="Images/DeadLlama.png"/>
+    <BitmapImage x:Key="BossDeadBitmapImage" UriSource="Images/grumpydead.png"/>
+    <BitmapImage x:Key="DeadRollsBitmapImage" UriSource="Images/DeadRolls.png"/>
+
+    <!-- Buildings -->
+    <BitmapImage x:Key="WallBitmapImage" UriSource="Images/wall.png"/>
+    <BitmapImage x:Key="BarrackBitmapImage" UriSource="Images/Barracs.png"/>
+    <BitmapImage x:Key="TownHallRedBitmapImage" UriSource="Images/TownHall.png"/>
+    <BitmapImage x:Key="TowerBitmapImage" UriSource="Images/Babayag_Tower.png"/>
+    <BitmapImage x:Key="MedicalTentBitmapImage" UriSource="Images/MedicalTent.png"/>
+
+    <!-- Other MapObjects -->
+    <BitmapImage x:Key="GrassBitmapImage" UriSource="Images/grass.png"/>
+    <BitmapImage x:Key="Grass1BitmapImage" UriSource="Images/Grass1.jpg"/>
+    <BitmapImage x:Key="Grass2BitmapImage" UriSource="Images/Grass2.jpg"/>
+    <BitmapImage x:Key="Grass3BitmapImage" UriSource="Images/Grass3.jpg"/>
+    <BitmapImage x:Key="Grass4BitmapImage" UriSource="Images/Grass4.jpg"/>
+    <BitmapImage x:Key="Grass5BitmapImage" UriSource="Images/Grass5.jpg"/>
+    <BitmapImage x:Key="SelectionBitmapImage" UriSource="Images/selection.png"/>
+    <BitmapImage x:Key="TargetBitmapImage" UriSource="Images/target.png"/>
+    <BitmapImage x:Key="RockBitmapImage" UriSource="Images/rock.png"/>
+    <BitmapImage x:Key="BulletBitmapImage" UriSource="Images/Bullet.png"/>
+    <BitmapImage x:Key="FlagBitmapImage" UriSource="Images/Flag.png"/>
+    <BitmapImage x:Key="AllowFieldBitmapImage" UriSource="Images/AllowField.png"/>
+    <BitmapImage x:Key="BlockFieldBitmapImage" UriSource="Images/BlockField.png"/>
+    <BitmapImage x:Key="ConstructionBitmapImage" UriSource="Images/Construction.png"/>
+    <BitmapImage x:Key="BlackSquareBitmapImage" UriSource="Images/BlackSquare.png"/>
+    <BitmapImage x:Key="BlackSquareTransparentBitmapImage" UriSource="Images/BlackSquareTransparent.png"/>
+
+    <!-- Converters -->
+    <!--<local:MapObjectToImageSource x:Key="MapObjectImageConverter"/>
+    <local:SelectionImageToImageSource x:Key="SelectionImageConverter"/>
+    <local:ActionTypeToImageSource x:Key="ActionImageConverter"/>
+    <local:AllowBuildImageToImageSource x:Key="AllowBuildImageConverter"/>
+    <local:FieldImageToImageSource x:Key="FieldImageConverter"/>
+    <local:VisiblityTypeToImageSource x:Key="VisibilityImageConverter"/>
+    <local:GameStateToImageSource x:Key="GameStateConverter"/>-->
+
+    <!-- ButtonImages for actions -->
+    <BitmapImage x:Key="MoveBitmapImage" UriSource="Images/Move.png"/>
+    <BitmapImage x:Key="BuildWallBitmapImage" UriSource="Images/BuildWall.png"/>
+    <BitmapImage x:Key="BuildBarracsBitmapImage" UriSource="Images/BuildBarracs.png"/>
+    <BitmapImage x:Key="BuildTownhallBitmapImage" UriSource="Images/BuildTownhall.png"/>
+    <BitmapImage x:Key="StopBitmapImage" UriSource="Images/Stop.png"/>
+    <BitmapImage x:Key="TrainWorkerBitmapImage" UriSource="Images/TrainWorker.png"/>
+    <BitmapImage x:Key="TrainSoldierBitmapImage" UriSource="Images/TrainSoldier.png"/>
+    <BitmapImage x:Key="CancelBitmapImage" UriSource="Images/Cancel.png"/>
+    <BitmapImage x:Key="TrainDoctorBitmapImage" UriSource="Images/TrainDoctor.png"/>
+    <BitmapImage x:Key="TrainGunmanBitmapImage" UriSource="Images/TrainGunman.png"/>
+    <BitmapImage x:Key="TrainPozsiHeroBitmapImage" UriSource="Images/TrainPozsiHero.png"/>
+    <BitmapImage x:Key="BuildMedicalTentBitmapImage" UriSource="Images/BuildMedicalTent.png"/>
+    <BitmapImage x:Key="BuildTowerBitmapImage" UriSource="Images/BuildTower.png"/>
+    <BitmapImage x:Key="AutoHealBitmapImage" UriSource="Images/AutoHeal.png"/>
+    <BitmapImage x:Key="AutoAttackBitmapImage" UriSource="Images/AutoAttack.png"/>
+    <BitmapImage x:Key="BuildFarmBitmapImage" UriSource="Images/BuildFarm.png"/>
+
+    <!-- GIFs -->
+    <BitmapImage x:Key="ChupyGif1" UriSource="Images/Chupacabra1.gif"/>
+    <BitmapImage x:Key="ChupyGif2" UriSource="Images/Chupacabra2.gif"/>
+    <BitmapImage x:Key="LogoGif" UriSource="Images/Logo.gif"/>
+    <BitmapImage x:Key="WorkerGif" UriSource="Images/Worker.gif"/>
+
+    <!-- Other Images -->
+    <BitmapImage x:Key="SplashScreenBackgroundBitmapImage" UriSource="Images/SplashScreenBackground.jpg"/>
+    <BitmapImage x:Key="WatermelonBitmapImage" UriSource="Images/Watermelon.png"/>
+    <BitmapImage x:Key="BGBitmapImage" UriSource="Images/BG.png"/>
+    <BitmapImage x:Key="VictoryBitmapImage" UriSource="Images/Victory.png"/>
+    <BitmapImage x:Key="DefeatBitmapImage" UriSource="Images/Defeat.png"/>
+
+    <!-- Logo/Icon -->
+    <BitmapImage x:Key="EvoCraftIcon" UriSource="Images/EvoCraft.ico"/>
+    <BitmapImage x:Key="LizzardLogoBitmapImage" UriSource="Images/LizzardLogo.png"/>
+    <BitmapImage x:Key="EvoCraftLogoBitmapImage" UriSource="Images/EvoCraft_Logo.png"/>
+
+    <!--Tutorialok-->
+    <BitmapImage x:Key="TutorialSlide0BitmapImage" UriSource="Images/TutorialSlide0.png"/>
+    <BitmapImage x:Key="TutorialSlide1BitmapImage" UriSource="Images/TutorialSlide1.png"/>
+    <BitmapImage x:Key="TutorialSlide2BitmapImage" UriSource="Images/TutorialSlide2.png"/>
+    <BitmapImage x:Key="TutorialSlide3BitmapImage" UriSource="Images/TutorialSlide3.png"/>
+    <BitmapImage x:Key="TutorialSlide4BitmapImage" UriSource="Images/TutorialSlide4.png"/>
+    <BitmapImage x:Key="TutorialSlide5BitmapImage" UriSource="Images/TutorialSlide5.png"/>
+    <BitmapImage x:Key="TutorialSlide6BitmapImage" UriSource="Images/TutorialSlide6.png"/>
+    <BitmapImage x:Key="TutorialSlide7BitmapImage" UriSource="Images/TutorialSlide7.png"/>
+    <BitmapImage x:Key="TutorialSlide8BitmapImage" UriSource="Images/TutorialSlide8.png"/>
+    <BitmapImage x:Key="TutorialSlide9BitmapImage" UriSource="Images/TutorialSlide9.png"/>
+</ResourceDictionary>

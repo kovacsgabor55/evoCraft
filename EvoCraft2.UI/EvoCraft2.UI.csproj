@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DFF54325-1D13-4DE1-A772-CD287E048076}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EvoCraft2.UI</RootNamespace>
+    <AssemblyName>EvoCraft2.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="LogoScreen.xaml.cs">
+      <DependentUpon>LogoScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OlyanNincsen.xaml.cs">
+      <DependentUpon>OlyanNincsen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SaveXML.cs" />
+    <Compile Include="StaticClass.cs" />
+    <Compile Include="TutorialsPage.xaml.cs">
+      <DependentUpon>TutorialsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WaitingRoom.xaml.cs">
+      <DependentUpon>WaitingRoom.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Create.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Credits.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Join.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LogoScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Create.xaml.cs">
+      <DependentUpon>Create.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Credits.xaml.cs">
+      <DependentUpon>Credits.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Join.xaml.cs">
+      <DependentUpon>Join.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MapSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Multiplayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OlyanNincsen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Options.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TutorialsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WaitingRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MapSelector.xaml.cs">
+      <DependentUpon>MapSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Multiplayer.xaml.cs">
+      <DependentUpon>Multiplayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Options.xaml.cs">
+      <DependentUpon>Options.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Images\Credits\Kredic.psd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AllowField.png" />
+    <Resource Include="Images\AutoAttack.png" />
+    <Resource Include="Images\AutoHeal.png" />
+    <Resource Include="Images\Babayag_Tower.png" />
+    <Resource Include="Images\Barracs.png" />
+    <Resource Include="Images\BG.png" />
+    <Resource Include="Images\BlackSquare.png" />
+    <Resource Include="Images\BlackSquareTransparent.png" />
+    <Resource Include="Images\BlockField.png" />
+    <Resource Include="Images\BuildBarracs.png" />
+    <Resource Include="Images\BuildFarm.png" />
+    <Resource Include="Images\BuildMedicalTent.png" />
+    <Resource Include="Images\BuildTower.png" />
+    <Resource Include="Images\BuildTownhall.png" />
+    <Resource Include="Images\BuildWall.png" />
+    <Resource Include="Images\Bullet.png" />
+    <Resource Include="Images\Cancel.png" />
+    <Resource Include="Images\Chupacabra.png" />
+    <Resource Include="Images\Chupacabra1.gif" />
+    <Resource Include="Images\Chupacabra2.gif" />
+    <Resource Include="Images\ChupacabraASD.png" />
+    <Resource Include="Images\Construction.png" />
+    <Resource Include="Images\DeadChupy.png" />
+    <Resource Include="Images\DeadLlama.png" />
+    <Resource Include="Images\DeadRolls.png" />
+    <Resource Include="Images\DeadSloth.png" />
+    <Resource Include="Images\Defeat.png" />
+    <Resource Include="Images\DoctorDoge.png" />
+    <Resource Include="Images\EvoCraft.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\EvoCraftIcon.png" />
+    <Resource Include="Images\evocraftLogo.jpg" />
+    <Resource Include="Images\evocraftLogo.png" />
+    <Resource Include="Images\EvoCraft_Logo.png" />
+    <Resource Include="Images\Farm.png" />
+    <Resource Include="Images\Flag.png" />
+    <Resource Include="Images\food.png" />
+    <Resource Include="Images\Gold.png" />
+    <Resource Include="Images\grass.png" />
+    <Resource Include="Images\Grass1.jpg" />
+    <Resource Include="Images\Grass2.jpg" />
+    <Resource Include="Images\Grass3.jpg" />
+    <Resource Include="Images\Grass4.jpg" />
+    <Resource Include="Images\Grass5.jpg" />
+    <Resource Include="Images\grumpycat.png" />
+    <Resource Include="Images\grumpydead.png" />
+    <Resource Include="Images\gunman.png" />
+    <Resource Include="Images\inGame.png" />
+    <Resource Include="Images\inGame_Action.png" />
+    <Resource Include="Images\inGame_Food.png" />
+    <Resource Include="Images\inGame_Gold.png" />
+    <Resource Include="Images\inGame_Image.png" />
+    <Resource Include="Images\inGame_Map.png" />
+    <Resource Include="Images\inGame_SelectedInfo.png" />
+    <Resource Include="Images\inGame_Unit.png" />
+    <Resource Include="Images\inGame_Wood.png" />
+    <Resource Include="Images\LizzardLogo.png" />
+    <Resource Include="Images\Llama.png" />
+    <Resource Include="Images\Logo.gif" />
+    <Resource Include="Images\lose.png" />
+    <Resource Include="Images\MedicalTent.png" />
+    <Resource Include="Images\menuBackGround.jpg" />
+    <Resource Include="Images\menuBackGround2.jpg" />
+    <Resource Include="Images\menuBG.png" />
+    <Resource Include="Images\Mine.png" />
+    <Resource Include="Images\Move.png" />
+    <Resource Include="Images\onHover.png" />
+    <Resource Include="Images\onHoverRight.png" />
+    <Resource Include="Images\onHoverTop.png" />
+    <Resource Include="Images\PozsiHero.png" />
+    <Resource Include="Images\rock.png" />
+    <Resource Include="Images\Rolls.png" />
+    <Resource Include="Images\selection.png" />
+    <Resource Include="Images\SlothHead.png" />
+    <Resource Include="Images\Soldier.png" />
+    <Resource Include="Images\SplashScreen.gif" />
+    <Resource Include="Images\SplashScreenBackground.jpg" />
+    <Resource Include="Images\Stop.png" />
+    <Resource Include="Images\target.png" />
+    <Resource Include="Images\TownHall.png" />
+    <Resource Include="Images\TrainDoctor.png" />
+    <Resource Include="Images\TrainGunman.png" />
+    <Resource Include="Images\TrainPozsiHero.png" />
+    <Resource Include="Images\TrainSoldier.png" />
+    <Resource Include="Images\TrainWorker.png" />
+    <Resource Include="Images\Tree.png" />
+    <Resource Include="Images\TreeCut.png" />
+    <Resource Include="Images\TutorialDemo0.png" />
+    <Resource Include="Images\TutorialDemo1.png" />
+    <Resource Include="Images\TutorialSlide0.png" />
+    <Resource Include="Images\TutorialSlide1.png" />
+    <Resource Include="Images\TutorialSlide2.png" />
+    <Resource Include="Images\TutorialSlide3.png" />
+    <Resource Include="Images\TutorialSlide4.png" />
+    <Resource Include="Images\TutorialSlide5.png" />
+    <Resource Include="Images\TutorialSlide6.png" />
+    <Resource Include="Images\TutorialSlide7.png" />
+    <Resource Include="Images\TutorialSlide8.png" />
+    <Resource Include="Images\TutorialSlide9.png" />
+    <Resource Include="Images\Victory.png" />
+    <Resource Include="Images\wall.png" />
+    <Resource Include="Images\warrior.png" />
+    <Resource Include="Images\Watermelon.png" />
+    <Resource Include="Images\wood.png" />
+    <Resource Include="Images\Worker.gif" />
+    <Resource Include="Images\Worker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Credits\DB.jpg" />
+    <Resource Include="Images\Credits\KG.jpg" />
+    <Resource Include="Images\Credits\KK.jpg" />
+    <Resource Include="Images\Credits\Kredic.png" />
+    <Resource Include="Images\Credits\LK.jpg" />
+    <Resource Include="Images\Credits\PT.jpg" />
+    <Resource Include="Images\Credits\SB.jpg" />
+    <Resource Include="Images\Credits\ST.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sounds\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EvoCraft2.Common\EvoCraft2.Common.csproj">
+      <Project>{ccffa322-ddf5-46fe-8e93-ea3168165c91}</Project>
+      <Name>EvoCraft2.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EvoCraft2\EvoCraft2.Core.csproj">
+      <Project>{50988242-14c4-4ff8-9abe-5aafa3208027}</Project>
+      <Name>EvoCraft2.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

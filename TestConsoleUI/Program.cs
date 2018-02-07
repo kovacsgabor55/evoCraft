@@ -15,7 +15,7 @@ namespace TestConsoleUI
             Engine.StartEngine();      
         }
 
-        private static void Engine_OnUpdateFinished(List<Unit> map)
+        private static void Engine_OnUpdateFinished(object sender, List<Unit> map)
         {
             foreach (var item in map)
             {

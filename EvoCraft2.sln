@@ -1,13 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvoCraft2.Core", "EvoCraft2\EvoCraft2.Core.csproj", "{50988242-14C4-4FF8-9ABE-5AAFA3208027}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvoCraft2.Common", "EvoCraft2.Common\EvoCraft2.Common.csproj", "{CCFFA322-DDF5-46FE-8E93-EA3168165C91}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsoleUI", "TestConsoleUI\TestConsoleUI.csproj", "{69795FA2-4362-4D3E-B002-65B7CD4208A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvoCraft2.Hoster", "EvoCraft2.Hoster\EvoCraft2.Hoster.csproj", "{061F157C-1C84-4AAA-A3CA-7F9FF62B6B92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvoCraft2.UI", "EvoCraft2.UI\EvoCraft2.UI.csproj", "{DFF54325-1D13-4DE1-A772-CD287E048076}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{69795FA2-4362-4D3E-B002-65B7CD4208A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69795FA2-4362-4D3E-B002-65B7CD4208A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69795FA2-4362-4D3E-B002-65B7CD4208A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{061F157C-1C84-4AAA-A3CA-7F9FF62B6B92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{061F157C-1C84-4AAA-A3CA-7F9FF62B6B92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{061F157C-1C84-4AAA-A3CA-7F9FF62B6B92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{061F157C-1C84-4AAA-A3CA-7F9FF62B6B92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFF54325-1D13-4DE1-A772-CD287E048076}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFF54325-1D13-4DE1-A772-CD287E048076}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFF54325-1D13-4DE1-A772-CD287E048076}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFF54325-1D13-4DE1-A772-CD287E048076}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

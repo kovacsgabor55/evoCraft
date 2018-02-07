@@ -13,3 +13,7 @@ EvoCraft2.Common/bin/Debug/EvoCraft2.Common.dll
 *.dll
 *.pdb
 *.cache
+*.config
+*.dll
+EvoCraft2.Common/bin/Debug/EvoCraft2.Common.dll
+EvoCraft2.Common/bin/Debug/EvoCraft2.Common.pdb
