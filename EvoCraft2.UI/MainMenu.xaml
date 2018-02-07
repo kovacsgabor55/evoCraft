@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:EvoCraft2.UI"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="1080" d:DesignWidth="1920"
       Title="MainMenu" Loaded="Page_Loaded">
 
     <Page.Background>
@@ -14,6 +14,8 @@
 
     <Grid Name="MainGrid">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="300"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
@@ -29,12 +31,14 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Button x:Name="exitButton" Content=" Exit" Grid.Column="0" Margin="0,0,0,0" Grid.Row="7" Click="exitButton_Click" Style="{StaticResource mainMenuButton}" />
-        <Button x:Name="creditsButton" Content=" Credits" Grid.Column="0" Grid.Row="6" Click="creditsButton_Click" Style="{StaticResource mainMenuButton}"/>
-        <Button x:Name="tutorialButton" Content=" Tutorials" Grid.Column="0" Grid.Row="5" Click="tutorialButton_Click" Style="{StaticResource mainMenuButton}"/>
-        <Button x:Name="optionsButton" Content=" Options" Grid.Column="0" Grid.Row="4" Click="optionsButton_Click" Style="{StaticResource mainMenuButton}"/>
-        <Button x:Name="multiplayerButton" Content=" Multiplayer" Grid.Column="0" Grid.Row="3" Click="multiplayerButton_Click" Style="{StaticResource mainMenuButton}"/>
-        <Button x:Name="singleplayerButton" Content=" Singleplayer" Grid.Column="0" Grid.Row="2" Click="singleplayerButton_Click" Style="{StaticResource mainMenuButton}"/>
+        <Button x:Name="exitButton" Content=" Exit" Grid.Column="1" Margin="0,0,0,0" Grid.Row="7" Click="exitButton_Click" Style="{StaticResource mainMenuButton}" />
+        <Button x:Name="creditsButton" Content=" Credits" Grid.Column="1" Grid.Row="6" Click="creditsButton_Click" Style="{StaticResource mainMenuButton}"/>
+        <Button x:Name="tutorialButton" Content=" Tutorials" Grid.Column="1" Grid.Row="5" Click="tutorialButton_Click" Style="{StaticResource mainMenuButton}"/>
+        <Button x:Name="optionsButton" Content=" Options" Grid.Column="1" Grid.Row="4" Click="optionsButton_Click" Style="{StaticResource mainMenuButton}"/>
+        <Button x:Name="multiplayerButton" Content=" Multiplayer" Grid.Column="1" Grid.Row="3" Click="multiplayerButton_Click" Style="{StaticResource mainMenuButton}"/>
+        <Button x:Name="singleplayerButton" Content=" Singleplayer" Grid.Column="1" Grid.Row="2" Click="singleplayerButton_Click" Style="{StaticResource mainMenuButton}"/>
+
+        <Label x:Name="newFeatureLabel" Content="New Feature!!!4!!4!!44!!44!!!" Grid.Column="2" Grid.Row="3" FontSize="50" Foreground="Yellow"/>
 
     </Grid>
 </Page>
