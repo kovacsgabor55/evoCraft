@@ -1,0 +1,123 @@
+﻿<userControlUnits:UserSelectabIeMovingControl x:Class="EvoCraft2.UI.BoarControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:converters="clr-namespace:UserControlUnits.Converters"
+             xmlns:local="clr-namespace:EvoCraft2.UI"
+             xmlns:userControlUnits="clr-namespace:UserControlUnits"
+             KeyDown="Canvas_KeyDown" IsHitTestVisible="False" Focusable="False"
+             mc:Ignorable="d" GotFocus="BoarControl_GotFocus" LostFocus="BoarControl_LostFocus" MouseLeftButtonDown="BoarControl_MouseLeftButtonDown"
+             d:DesignHeight="40" d:DesignWidth="36" Width="36" Height="40">
+    <UserControl.Resources>
+        <converters:BooleanToBrushConverter x:Key="booleanToBrushConverter"/>
+
+        <Storyboard x:Key="BoarStoryBoardU" RepeatBehavior="1x" Storyboard.TargetName="Boar">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Source" Duration="0:0:0">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <BitmapImage UriSource="Images/Miscellaneous/Units/Boar/Boar_U.png"/>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="BoarStoryBoardD" RepeatBehavior="1x" Storyboard.TargetName="Boar">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Source" Duration="0:0:0">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <BitmapImage UriSource="Images/Miscellaneous/Units/Boar/Boar_D.png"/>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="BoarStoryBoardL" RepeatBehavior="1x" Storyboard.TargetName="Boar">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Source" Duration="0:0:0">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <BitmapImage UriSource="Images/Miscellaneous/Units/Boar/Boar_R.png"/>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="BoarStoryBoardR" RepeatBehavior="1x" Storyboard.TargetName="Boar">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Source" Duration="0:0:0">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <BitmapImage UriSource="Images/Miscellaneous/Units/Boar/Boar_R.png"/>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="BoarStoryBoardUL" RepeatBehavior="1x" Storyboard.TargetName="Boar">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Source" Duration="0:0:0">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <BitmapImage UriSource="Images/Miscellaneous/Units/Boar/Boar_DR.png"/>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="BoarStoryBoardUR" RepeatBehavior="1x" Storyboard.TargetName="Boar">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Source" Duration="0:0:0">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <BitmapImage UriSource="Images/Miscellaneous/Units/Boar/Boar_UR.png"/>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="BoarStoryBoardDL" RepeatBehavior="1x" Storyboard.TargetName="Boar">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Source" Duration="0:0:0">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <BitmapImage UriSource="Images/Miscellaneous/Units/Boar/Boar_UR.png"/>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="BoarStoryBoardDR" RepeatBehavior="1x" Storyboard.TargetName="Boar">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Source" Duration="0:0:0">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <BitmapImage UriSource="Images/Miscellaneous/Units/Boar/Boar_DR.png"/>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="BoarStoryBoardX" RepeatBehavior="1x" Storyboard.TargetName="Boar">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Source" Duration="0:0:0">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <BitmapImage UriSource="Images/Miscellaneous/Units/Boar/Boar_X.png"/>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+    </UserControl.Resources>
+
+    <Grid Height="40" Width="36">
+        <Border BorderThickness="2" BorderBrush="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:BoarControl}, Path=IsSelected, Converter={StaticResource booleanToBrushConverter}}" Padding="0" Visibility="Visible">
+            <Canvas x:Name="MyCanvas" Focusable="True" Height="36" Width="32">
+                <Image x:Name="Boar" Canvas.Left="0" Canvas.Top="4" Source="{StaticResource Boar_U}" RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <TransformGroup >
+                            <RotateTransform x:Name="transform" />
+                            <ScaleTransform x:Name="scaleTransform" />
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <Rectangle Width="5" Height="5" Fill="Gray" Canvas.Right="0" Canvas.Bottom="0"/>
+                <Rectangle Width="32" Height="4" Fill="Green" Canvas.Left="0" Canvas.Top="0"/>
+            </Canvas>
+        </Border>
+    </Grid>
+</userControlUnits:UserSelectabIeMovingControl>

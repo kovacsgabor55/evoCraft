@@ -57,25 +57,74 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Ballista.xaml.cs">
+      <DependentUpon>Ballista.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Boar.xaml.cs">
+      <DependentUpon>Boar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Catapult.xaml.cs">
+      <DependentUpon>Catapult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BooleanToBrushConverter.cs" />
+    <Compile Include="Converters\ImageConverter.cs" />
+    <Compile Include="HFarm.xaml.cs">
+      <DependentUpon>HFarm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LogoScreen.xaml.cs">
       <DependentUpon>LogoScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OFarm.xaml.cs">
+      <DependentUpon>OFarm.xaml</DependentUpon>
     </Compile>
     <Compile Include="OlyanNincsen.xaml.cs">
       <DependentUpon>OlyanNincsen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Page1.xaml.cs">
+      <DependentUpon>Page1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Peasant.xaml.cs">
+      <DependentUpon>Peasant.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SaveXML.cs" />
+    <Compile Include="Seal.xaml.cs">
+      <DependentUpon>Seal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sheep.xaml.cs">
+      <DependentUpon>Sheep.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SoundPlayer.cs" />
     <Compile Include="StaticClass.cs" />
     <Compile Include="TutorialsPage.xaml.cs">
       <DependentUpon>TutorialsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserElementControl.cs" />
+    <Compile Include="UserSelectabIeMovingControl.cs" />
+    <Compile Include="UserSelectableControl.cs" />
     <Compile Include="WaitingRoom.xaml.cs">
       <DependentUpon>WaitingRoom.xaml</DependentUpon>
     </Compile>
+    <Page Include="Ballista.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Boar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Catapult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Create.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Credits.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HFarm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -123,6 +172,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="OFarm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="OlyanNincsen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -131,7 +184,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Page1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Peasant.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Seal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sheep.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -301,7 +370,8 @@
     <Resource Include="Images\Credits\ST.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Sounds\" />
+    <Folder Include="Images\Miscellaneous\Buildings\" />
+    <Folder Include="Sounds\Miscellaneous\Buildings\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EvoCraft2.Common\EvoCraft2.Common.csproj">
@@ -312,6 +382,153 @@
       <Project>{50988242-14c4-4ff8-9abe-5aafa3208027}</Project>
       <Name>EvoCraft2.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Human\Units\Peasant\Peasant_DeathDL1.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_DeathDL2.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_DeathDL3.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_DeathUR1.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_DeathUR2.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_DeathUR3.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_DM1.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_DM2.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_DM3.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_DM4.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_DRM1.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_DRM2.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_DRM3.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_DRM4.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_DRS.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_DS.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_R1.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_R2.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_R3.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_R4.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_RS.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_UM1.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_UM2.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_UM3.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_UM4.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_UR1.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_UR2.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_UR3.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_UR4.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_URM.png" />
+    <Resource Include="Images\Human\Units\Peasant\Peasant_US.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Human\Units\Ballista\Ballista_DA1.png" />
+    <Resource Include="Images\Human\Units\Ballista\Ballista_DA2.png" />
+    <Resource Include="Images\Human\Units\Ballista\Ballista_DM.png" />
+    <Resource Include="Images\Human\Units\Ballista\Ballista_DRA1.png" />
+    <Resource Include="Images\Human\Units\Ballista\Ballista_DRA2.png" />
+    <Resource Include="Images\Human\Units\Ballista\Ballista_DRM.png" />
+    <Resource Include="Images\Human\Units\Ballista\Ballista_DRS.png" />
+    <Resource Include="Images\Human\Units\Ballista\Ballista_DS.png" />
+    <Resource Include="Images\Human\Units\Ballista\Ballista_RA1.png" />
+    <Resource Include="Images\Human\Units\Ballista\Ballista_RA2.png" />
+    <Resource Include="Images\Human\Units\Ballista\Ballista_RM.png" />
+    <Resource Include="Images\Human\Units\Ballista\Ballista_RS.png" />
+    <Resource Include="Images\Human\Units\Ballista\Ballista_UA1.png" />
+    <Resource Include="Images\Human\Units\Ballista\Ballista_UA2.png" />
+    <Resource Include="Images\Human\Units\Ballista\Ballista_UM.png" />
+    <Resource Include="Images\Human\Units\Ballista\Ballista_URA1.png" />
+    <Resource Include="Images\Human\Units\Ballista\Ballista_URA2.png" />
+    <Resource Include="Images\Human\Units\Ballista\Ballista_URM.png" />
+    <Resource Include="Images\Human\Units\Ballista\Ballista_URS.png" />
+    <Resource Include="Images\Human\Units\Ballista\Ballista_US.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Human\Buildings\Farm\FarmBulidS.png" />
+    <Resource Include="Images\Human\Buildings\Farm\FarmOkS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Orc\Buildings\Farm\FarmBulidS.png" />
+    <Resource Include="Images\Orc\Buildings\Farm\FarmOkS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Orc\Units\Catapult\Catapult_DA1.png" />
+    <Resource Include="Images\Orc\Units\Catapult\Catapult_DA2.png" />
+    <Resource Include="Images\Orc\Units\Catapult\Catapult_DM.png" />
+    <Resource Include="Images\Orc\Units\Catapult\Catapult_DRA1.png" />
+    <Resource Include="Images\Orc\Units\Catapult\Catapult_DRA2.png" />
+    <Resource Include="Images\Orc\Units\Catapult\Catapult_DRM.png" />
+    <Resource Include="Images\Orc\Units\Catapult\Catapult_DRS.png" />
+    <Resource Include="Images\Orc\Units\Catapult\Catapult_DS.png" />
+    <Resource Include="Images\Orc\Units\Catapult\Catapult_RA1.png" />
+    <Resource Include="Images\Orc\Units\Catapult\Catapult_RA2.png" />
+    <Resource Include="Images\Orc\Units\Catapult\Catapult_RM.png" />
+    <Resource Include="Images\Orc\Units\Catapult\Catapult_RS.png" />
+    <Resource Include="Images\Orc\Units\Catapult\Catapult_UA1.png" />
+    <Resource Include="Images\Orc\Units\Catapult\Catapult_UA2.png" />
+    <Resource Include="Images\Orc\Units\Catapult\Catapult_UM.png" />
+    <Resource Include="Images\Orc\Units\Catapult\Catapult_URA1.png" />
+    <Resource Include="Images\Orc\Units\Catapult\Catapult_URA2.png" />
+    <Resource Include="Images\Orc\Units\Catapult\Catapult_URM.png" />
+    <Resource Include="Images\Orc\Units\Catapult\Catapult_URS.png" />
+    <Resource Include="Images\Orc\Units\Catapult\Catapult_US.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Miscellaneous\Units\Sheep\Sheep_D.png" />
+    <Resource Include="Images\Miscellaneous\Units\Sheep\Sheep_DR.png" />
+    <Resource Include="Images\Miscellaneous\Units\Sheep\Sheep_R.png" />
+    <Resource Include="Images\Miscellaneous\Units\Sheep\Sheep_U.png" />
+    <Resource Include="Images\Miscellaneous\Units\Sheep\Sheep_UR.png" />
+    <Resource Include="Images\Miscellaneous\Units\Sheep\Sheep_X.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Miscellaneous\Units\Seal\Seal_D.png" />
+    <Resource Include="Images\Miscellaneous\Units\Seal\Seal_DR.png" />
+    <Resource Include="Images\Miscellaneous\Units\Seal\Seal_R.png" />
+    <Resource Include="Images\Miscellaneous\Units\Seal\Seal_U.png" />
+    <Resource Include="Images\Miscellaneous\Units\Seal\Seal_UR.png" />
+    <Resource Include="Images\Miscellaneous\Units\Seal\Seal_X.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Miscellaneous\Units\Boar\Boar_D.png" />
+    <Resource Include="Images\Miscellaneous\Units\Boar\Boar_DR.png" />
+    <Resource Include="Images\Miscellaneous\Units\Boar\Boar_R.png" />
+    <Resource Include="Images\Miscellaneous\Units\Boar\Boar_U.png" />
+    <Resource Include="Images\Miscellaneous\Units\Boar\Boar_UR.png" />
+    <Resource Include="Images\Miscellaneous\Units\Boar\Boar_X.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sounds\Human\Buildings\Farm\HFarm.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Human\Units\Ballista\BallistaAttack.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Human\Units\Ballista\BallistaMove.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Miscellaneous\Units\Boar\BoarDeath.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Miscellaneous\Units\Boar\BoarSelect.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Miscellaneous\Units\Seal\SealDeath.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Miscellaneous\Units\Seal\SealSelect.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Miscellaneous\Units\Sheep\SheepDeath.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Miscellaneous\Units\Sheep\SheepSelect.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Orc\Buildings\Farm\OFarm.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Orc\Units\Catapult\CatapultAttack.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\Orc\Units\Catapult\CatapultMove.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
